@@ -1,0 +1,22 @@
+
+.logs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 7px rgba(0,0,0,0.1) ;
+  border-radius: 5px;
+  padding: 20px;
+  margin-left: 30px;
+  margin-top: 100px;
+  height: 50%;
+  width: 50%;
+}
+
+.btn-connection{
+  width: 100%;
+}
+
+.sizing-form{
+  width: 100%;
+  margin: 0;
+}
