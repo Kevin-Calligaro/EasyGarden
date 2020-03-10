@@ -1,0 +1,9 @@
+<h1>All vegetables</h1>
+
+<% @vegetables.each do |vegetable| %>
+  <li>
+    <h2><%= vegetable.specie %></h2>
+    <p>seeding between <%= vegetable.seeding_start %> and <%= vegetable.seeding_start %></p>
+    <p>How to seed this vegetables? <%= vegetable.seed_description %></p>
+  </li>
+<% end %>

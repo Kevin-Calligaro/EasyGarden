@@ -35,8 +35,8 @@ print '>>>>>>>>>>>>>>create vegetables<<<<<<<<<<<<<<<<<<<<<'
     harvest_end: Date.parse("01-10-2020"),
     harvest_description: "Pick fruits as required, with the calyx (stalk) still attached. When cropping slows in early autumn, green fruits can be gathered and kept in a warm, dark place to ripen.",
     area: 40,
-    description: 'Growing your own tomatoes is simple and just a couple of plants will reward you with plenty of delicious tomatoes in the summer. There are all sizes of tomatoes to try, from the tiniest cherry types, favourites with children, through to full-flavoured giant beefsteak tomatoes.'
-
+    description: 'Growing your own tomatoes is simple and just a couple of plants will reward you with plenty of delicious tomatoes in the summer. There are all sizes of tomatoes to try, from the tiniest cherry types, favourites with children, through to full-flavoured giant beefsteak tomatoes.',
+    photo_vegetable: 'tomatoe_photo.png'
 
     )
   tomato.save!
@@ -56,8 +56,8 @@ carrot = Vegetable.create!(
     harvest_description: "Carrots are ready for harvesting about 12-16 weeks after sowing. Pick as soon as they are large enough to use; don't aim for the largest roots or you'll sacrifice flavour. Lift carefully using a fork if the soil is heavy.",
     area: 30,
     description: "Carrots come in shapes and colours other than long and orange – look out for round carrots, as well as unusual colours such as red, yellow and even purple.
-They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden."
-
+They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden.",
+    photo_vegetable: 'carrot_photo.png'
     )
 carrot.save!
 
