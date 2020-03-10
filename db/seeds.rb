@@ -9,6 +9,7 @@ puts '>>>>>>>>>>>>>>Vamos chicos<<<<<<<<<<<<<<<<<<<<<'
 
 print '>>>>>>>>>>>>>>cleaning the db<<<<<<<<<<<<<<<<<<<<<'
   Vegetable.destroy_all
+  # User.destroy_all
 puts 'ok'
 
 print '>>>>>>>>>>>>>>create vegetables<<<<<<<<<<<<<<<<<<<<<'
@@ -36,10 +37,9 @@ print '>>>>>>>>>>>>>>create vegetables<<<<<<<<<<<<<<<<<<<<<'
     harvest_description: "Pick fruits as required, with the calyx (stalk) still attached. When cropping slows in early autumn, green fruits can be gathered and kept in a warm, dark place to ripen.",
     area: 40,
     description: 'Growing your own tomatoes is simple and just a couple of plants will reward you with plenty of delicious tomatoes in the summer. There are all sizes of tomatoes to try, from the tiniest cherry types, favourites with children, through to full-flavoured giant beefsteak tomatoes.',
-    photo_vegetable: 'tomatoe_photo.png'
-
-    )
-  tomato.save!
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
 
 carrot = Vegetable.create!(
     specie: "carrot",
@@ -55,172 +55,169 @@ carrot = Vegetable.create!(
     harvest_end: Date.parse("03-11-2020"),
     harvest_description: "Carrots are ready for harvesting about 12-16 weeks after sowing. Pick as soon as they are large enough to use; don't aim for the largest roots or you'll sacrifice flavour. Lift carefully using a fork if the soil is heavy.",
     area: 30,
-    description: "Carrots come in shapes and colours other than long and orange – look out for round carrots, as well as unusual colours such as red, yellow and even purple.
-They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden.",
-    photo_vegetable: 'carrot_photo.png'
+    description: "Carrots come in shapes and colours other than long and orange – look out for round carrots, as well as unusual colours such as red, yellow and even purple. They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
+
+egg_plant = Vegetable.create!(
+    specie: "egg_plant",
+    seeding_start: Date.parse("01-02-2020"),
+    seeding_end:Date.parse("01-05-2020"),
+    seed_description: "Eggplant seeds are sown from February to April-May, in pots, boxes or even on honeycomb trays, warm (18/20 ° C). As soon as the plants have developed two to four leaves, they can be repotted in individual pots. They then continue their growth in a greenhouse or veranda well exposed until planting.",
+    planting_start: Date.parse("01-04-2020"),
+    planting_end: Date.parse("30-06-2020"),
+    plant_description: "you can plant your eggplant outdoors. If possible, place them in a greenhouse or tunnel at least the first heat of summer. Otherwise they have to vegetate if the heat is not there. On lines spaced 60cm apart, plant an eggplant every 60cm. Bed plants have seen the first leaves. Water copiously and place a mulch to grab attention and hinder the growth of weeds.",
+    harvest_start: Date.parse("01-05-2020"),
+    harvest_end: Date.parse("30-09-2020"),
+    harvest_description: "The fruits are harvested well developed, from fifteen centimeters for long varieties. About ten centimeters for the rounds. Eggplant does not keep very long. The most effective method of preservation is to freeze ready-made meals. You can also dry it.",
+    area: 60,
+    description:"Eggplant is a heat-loving plant. Not very productive except in the south, it is most often grown in a greenhouse. On the other hand, the feet grafted on tomatoes are much better suited to temperate climates. They are more resilient and productive.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
+
+potato = Vegetable.create!(
+    specie: "potato",
+    seeding_start: nil,
+    seeding_end: nil,
+    seed_description: nil,
+    planting_start: Date.parse('15-03-2020') ,
+    planting_end: Date.parse('07-04-2020'),
+    plant_description: " The soil needs soil 10 ° deep to grow. Exposure: The potato needs sun to develop well. Turn the earth upside down for about 30 cm, it must be well loosened for planting. Wait until the tubers have sprouted before planting them. Dig furrows about 15 cm deep. Position the tuber vertically, ensuring that the seed is pointing upwards. Maintain a distance of approximately 30 to 40 cm between each tuber. If you have several furrows, keep a distance of 60 to 70 cm between each furrow.",
+    harvest_start: Date.parse('15-06-2020'),
+    harvest_end: Date.parse('15-09-2020'),
+    harvest_description: " It is unnecessary to harvest the potatoes before the foliage is completely yellowed. This essential stage of yellowing indicates that the harvest is imminent." ,
+    area:  30,
+    description: "Relatively easy to cultivate and maintain, the potato requires some care and gestures that will allow you to improve the yield and the harvest. Mounding of potatoes: When the plant reaches about 10-15 cm in height, mound the foot with light soil. This operation which consists of forming a small mound at the foot of the stems aims to keep the plant in the ground, protect it from the wind and allow it to develop at best. Watering the potatoes: Potatoes are especially worried about prolonged dryness and lack of water. Evening watering is recommended when it's hot and you see the foliage wilting. Do not wet the leaves to avoid the appearance of diseases such as fungi. In order to avoid any risk of drought in the soil, it is advisable to put a mulch at the base of the potato plants." ,
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
+
+radish = Vegetable.create!(
+    specie: "spring radish ",
+    seeding_start: Date.parse('01-02-2020'),
+    seeding_end: Date.parse('30-06-2020'),
+    seed_description: "The radish germinates when the soil temperature reaches 8 ° C, but its growth is really active from 12 ° C. At room temperature, the ideal is between 15 and 18 ° C. Depending on the region, the best harvests are therefore obtained with seedlings spreading between February 15 and April 20. However, the first sowing of February and March is carried out under a forcing veil or a Nantes caterpillar. Remove these protections in the event of high heat (above 25 ° C) and at the start of tuberization. All radish sowing is done in rows 20 cm apart, up to 35 cm for very large roots. For round varieties, sow 20 seeds per meter at a depth of 1 cm; and for half-lengths, place 30 seeds per meter at 2 cm deep. Cover the seeds with 2 cm of fine soil (0.5 cm only for the round varieties of radishes of every month). Keep the soil cool until emergence (3 to 5 days).",
+    planting_start: Date.parse('01-02-2020'),
+    planting_end: Date.parse('30-06-2020'),
+    plant_description: nil,
+    harvest_start: Date.parse('01-03-2020'),
+    harvest_end: Date.parse('30-07-2020'),
+    harvest_description: "Pick up the spring radishes 3 or 4 weeks after sowing, as needed. Do not wait until they are too big and hollow.",
+    area: 25,
+    description: "Except in the summer when it tolerates light shade, the radish likes bright and sunny situations. This fast-growing crop requires well-worked soil and sparse but regular watering.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
+
+pepper = Vegetable.create!(
+    specie: "pepper",
+    seeding_start: Date.parse('01-03-2020'),
+    seeding_end: Date.parse('30-05-2020'),
+    seed_description: "The cultivation of peppers is very similar to that of tomatoes. But sowing is rather tricky to succeed: it actually needs a temperature of around 28 ° C to germinate. And as its development is rather slow, it must be sown in March to consider transplanting to the vegetable garden in late May / early June. In other words: sowing is only open to well-equipped gardeners (mini-greenhouse or heating mats for example) ... and the energy required makes the operation not very ecological.",
+    planting_start: Date.parse('30-05-2020'),
+    planting_end: Date.parse('10-06-2020'),
+    plant_description: "Planting takes place towards the end of May, when the soil is well warmed (around 15 ° C). The plants will be spaced a good 50 cm apart. If you live north of the Loire, use a black plastic film, a removable tunnel",
+    harvest_start: Date.parse('30-07-2020'),
+    harvest_end: Date.parse('30-09-2020'),
+    harvest_description: "Fruits form around the end of June. The first pepper harvest (green) is done a month later, around the end of July, depending on the climate. If you wait, the fruit will take on color. Harvest the last before the first frosts.",
+    area: 50,
+    description: "The bell pepper (Capsicum annuum) likes the sun: only grow it if you can give it a sunny location. In the vegetable patch, it forms a foot about 1m high, with beautiful glazed foliage. It bears small white flowers, which later give very colorful fruits which ripen from green to yellow or red.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
+
+onion = Vegetable.create!(
+    specie: "onion",
+    seeding_start: Date.parse('01-02-2020'),
+    seeding_end: Date.parse('30-03-2020'),
+    seed_description: "Onions intended for winter storage should not be sown in autumn but in spring. Otherwise they will go to seed the following year and the bulbs will harden and hollow out.",
+    planting_start: Date.parse('01-03-2020'),
+    planting_end: Date.parse('30-04-2020'),
+    plant_description: "In spring you plant onions to keep or sweet onions to harvest later than those in autumn. Sowing takes place in February under shelters. The bulbs are planted in March or April. They are harvested as soon as the bulbs are big enough (June in general). Those to be preserved are harvested in summer, when the foliage is almost dry.",
+    harvest_start: Date.parse('01-06-2020'),
+    harvest_end: Date.parse('01-08-2020'),
+    harvest_description: "Those to keep are harvested in August. You have to wait until the foliage is two-thirds yellowed, then tear off all the bulbs. If it does not rain, dry them in the sun for a few days. Then cut the leaves and roots and store them in crates.",
+    area: 10,
+    description: "Onions are strong and do not require much care. It is one of the rare vegetables not to like being watered. If you let them grow a second year, they will produce a large ball of white flowers, highly prized by insects",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
+
+cauliflower = Vegetable.create!(
+    specie: "cauliflower",
+    seeding_start: Date.parse('01-03-2020'),
+    seeding_end: Date.parse('30-04-2020'),
+    seed_description: " Cauliflower cultivation is much slower since it takes almost 7 months between sowing and harvesting. Sow in March / April under cover for a fall harvest. We can also start sowing in February, warm. Sow in May to July directly in the ground for a winter harvest if the cabbages are protected from November",
+    planting_start: Date.parse('01-05-2020'),
+    planting_end: Date.parse('01-06-2020'),
+    plant_description: "The ideal planting period is just after the last frosts, around mid-May, until September for a harvest in November. Plant cauliflowers in good garden soil, ideally enriched with nitrogen fertilization. Space each plant 60 to 80 cm in all directions",
+    harvest_start: Date.parse('01-11-2020'),
+    harvest_end: Date.parse('15-11-2020'),
+    harvest_description: "The cauliflower is harvested practically throughout the year depending on the sowing periods. The harvest takes place about 3 months after planting but this can vary depending on weather conditions. Wait until the head is firmly closed and tear off or cut away the soil because there will be no other crop on this plane. Protect your cauliflowers from November for a winter harvest",
+    area: 70,
+    description: "As soon as the plants have at least 3 to 4 leaves, transplant directly into place while protecting your crop if this operation must be carried out before May. Transplanting is done every 40 cm. This spacing is necessary to allow the plants room to develop. Transplant to well-plowed soil.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
+
+broad_beans = Vegetable.create!(
+    specie: "broad_beans",
+    seeding_start:  Date.parse('01-02-2020'),
+    seeding_end:  Date.parse('30-05-2020'),
+    seed_description: "",
+    planting_start: Date.parse('01-04-2020'),
+    planting_end:  Date.parse('30-05-2020'),
+    plant_description: "",
+    harvest_start:  Date.parse('01-05-2020'),
+    harvest_end:  Date.parse('30-07-2020'),
+    harvest_description: "",
+    area: 40,
+    description: "" ,
+    photo_vegetable: "",
+    icon_vegetable: ""
+    ),
+
+courgette = Vegetable.create!(
+    specie: "courgette",
+    seeding_start: Date.parse('01-04-2020'),
+    seeding_end: Date.parse('30-05-2020'),
+    seed_description: "",
+    planting_start: Date.parse('01-05-2020'),
+    planting_end:  Date.parse('01-06-2020'),
+    plant_description: "",
+    harvest_start:  Date.parse('01-06-2020'),
+    harvest_end:  Date.parse('30-10-2020'),
+    harvest_description: "",
+    area: 100,
+    description: "",
+    photo_vegetable: "",
+    icon_vegetable: ""
     )
-carrot.save!
 
-# egg_plant = Vegetable.create!(
-#     specie: "egg_plant",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
 
-#     )
+puts 'Finished vegetables!'
 
-# aspergus = Vegetable.create!(
-#     specie: "aspergus",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
+# print 'Create user'
 
-#     )
+# user1 = User.create!(
+#   email: 'sarah_lee@gmail.com',
+#   first_name: 'Sarah',
+#   last_name: 'Lee',
+#   password: 'secret',
 
-# potato = Vegetable.create!(
-#     specie: "potato",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
+# )
 
-#     )
+# puts 'Finished user!'
 
-# radish = Vegetable.create!(
-#     specie: "radish",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
+# print 'create a garden'
 
-#     )
+# garden1 = Garden.create!(
+#   title: 'My garden',
+#   width: 5,
+#   height: 3
+# )
 
-# pepper = Vegetable.create!(
-#     specie: "pepper",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
-
-#     )
-
-# onion = Vegetable.create!(
-#     specie: "onion",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
-
-#     )
-
-# cauliflower = Vegetable.create!(
-#     specie: "cauliflower",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
-
-#     )
-
-# broad_beans = Vegetable.create!(
-#     specie: "broad_beans",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
-
-#     )
-
-# courgette = Vegetable.create!(
-#     specie: "courgette",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
-
-#     )
-
-# calabrese = Vegetable.create!(
-#     specie: "calabrese",
-#     seeding_start:
-#     seeding_end:
-#     seed_description:
-#     planting_start:
-#     planting_end:
-#     plant_description:
-#     harvest_start:
-#     harvest_end:
-#     harvest_description:
-#     area:
-#     description:
-
-#     )
-
-puts 'Finished!'
-
+# puts 'Garden done'
 
