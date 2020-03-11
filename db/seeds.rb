@@ -8,9 +8,12 @@
 puts '>>>>>>>>>>>>>>Vamos chicos<<<<<<<<<<<<<<<<<<<<<'
 
 print '>>>>>>>>>>>>>>cleaning the db<<<<<<<<<<<<<<<<<<<<<'
-  User.destroy_all
-  Vegetable.destroy_all
-  Garden.destroy_all
+
+Garden.destroy_all
+User.destroy_all
+Relationship.destroy_all
+Vegetable.destroy_all
+
 puts 'ok'
 
 print '>>>>>>>>>>>>>>create vegetables<<<<<<<<<<<<<<<<<<<<<'
@@ -40,7 +43,7 @@ print '>>>>>>>>>>>>>>create vegetables<<<<<<<<<<<<<<<<<<<<<'
     description: 'Growing your own tomatoes is simple and just a couple of plants will reward you with plenty of delicious tomatoes in the summer. There are all sizes of tomatoes to try, from the tiniest cherry types, favourites with children, through to full-flavoured giant beefsteak tomatoes.',
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 carrot = Vegetable.create!(
     specie: "carrot",
@@ -59,7 +62,7 @@ carrot = Vegetable.create!(
     description: "Carrots come in shapes and colours other than long and orange – look out for round carrots, as well as unusual colours such as red, yellow and even purple. They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden.",
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 egg_plant = Vegetable.create!(
     specie: "egg_plant",
@@ -76,7 +79,7 @@ egg_plant = Vegetable.create!(
     description:"Eggplant is a heat-loving plant. Not very productive except in the south, it is most often grown in a greenhouse. On the other hand, the feet grafted on tomatoes are much better suited to temperate climates. They are more resilient and productive.",
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 potato = Vegetable.create!(
     specie: "potato",
@@ -93,7 +96,7 @@ potato = Vegetable.create!(
     description: "Relatively easy to cultivate and maintain, the potato requires some care and gestures that will allow you to improve the yield and the harvest. Mounding of potatoes: When the plant reaches about 10-15 cm in height, mound the foot with light soil. This operation which consists of forming a small mound at the foot of the stems aims to keep the plant in the ground, protect it from the wind and allow it to develop at best. Watering the potatoes: Potatoes are especially worried about prolonged dryness and lack of water. Evening watering is recommended when it's hot and you see the foliage wilting. Do not wet the leaves to avoid the appearance of diseases such as fungi. In order to avoid any risk of drought in the soil, it is advisable to put a mulch at the base of the potato plants." ,
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 radish = Vegetable.create!(
     specie: "spring radish ",
@@ -110,7 +113,7 @@ radish = Vegetable.create!(
     description: "Except in the summer when it tolerates light shade, the radish likes bright and sunny situations. This fast-growing crop requires well-worked soil and sparse but regular watering.",
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 pepper = Vegetable.create!(
     specie: "pepper",
@@ -127,7 +130,7 @@ pepper = Vegetable.create!(
     description: "The bell pepper (Capsicum annuum) likes the sun: only grow it if you can give it a sunny location. In the vegetable patch, it forms a foot about 1m high, with beautiful glazed foliage. It bears small white flowers, which later give very colorful fruits which ripen from green to yellow or red.",
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 onion = Vegetable.create!(
     specie: "onion",
@@ -144,7 +147,7 @@ onion = Vegetable.create!(
     description: "Onions are strong and do not require much care. It is one of the rare vegetables not to like being watered. If you let them grow a second year, they will produce a large ball of white flowers, highly prized by insects",
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 cauliflower = Vegetable.create!(
     specie: "cauliflower",
@@ -161,7 +164,7 @@ cauliflower = Vegetable.create!(
     description: "As soon as the plants have at least 3 to 4 leaves, transplant directly into place while protecting your crop if this operation must be carried out before May. Transplanting is done every 40 cm. This spacing is necessary to allow the plants room to develop. Transplant to well-plowed soil.",
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 broad_beans = Vegetable.create!(
     specie: "broad_beans",
@@ -178,9 +181,191 @@ broad_beans = Vegetable.create!(
     description: "" ,
     photo_vegetable: "",
     icon_vegetable: ""
-    ),
+    )
 
 courgette = Vegetable.create!(
+    specie: "courgette",
+    seeding_start: Date.parse('01-04-2020'),
+    seeding_end: Date.parse('30-05-2020'),
+    sedding_desription: "",
+    planting_start: Date.parse('01-05-2020'),
+    planting_end:  Date.parse('01-06-2020'),
+    planting_description: "",
+    harvesting_start:  Date.parse('01-06-2020'),
+    harvesting_end:  Date.parse('30-10-2020'),
+    harvesting_description: "",
+    area: 100,
+    description: "",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+tomato2 = Vegetable.create!(
+    specie: "tomato",
+    seeding_start: Date.parse("01-02-2020"),
+    seeding_end: Date.parse("01-05-2020"),
+    sedding_desription: "Sow seed in late March to early April for outdoor crops, and in mid-February for growing in an unheated glasshouse. Seed can be expensive, but usually only a few plants are needed, and germination is usually good.
+      - Fill 9cm (3½in) pot with seed or multipurpose compost
+      - Level and firm the compost, then water
+      - Sow seeds on the compost surface, spacing them evenly, about a finger-width apart, to prevent damping off disease
+      - Cover the seed with a layer of vermiculite
+      - Keep at approximately 21°C (70°F), ideally in a heated propagator, until seedlings emerge
+      - Transfer seedlings to a heated greenhouse or, although less good, a sunny windowsill
+      Seedlings emerge after about five days. Place them in the best-possible light (such as a greenhouse) and at a temperature of around 18°C (65°F) to prevent seedlings becoming long, thin and ‘leggy’. Leggy plants produce their first flowers high up on the plant leading to a bare, unproductive lower stem.
+      Growing on:
+      Ideally, grow on in a glasshouse (or failing this, a well-lit windowsill), spacing plants so that their leaves never touch to avoid legginess. About a month after pricking out, the plants will be ready for planting into their final positions – this is indicated by the first flowers showing their yellow colour. The stress of being grown in the confines of a pot promotes flowers earlier than in less stressful positions, such as growing in the ground.",
+    planting_start: Date.parse("01-05-2020"),
+    planting_end: Date.parse("01-07-2020"),
+    planting_description:"Plant outside in early summer. In unheated greenhouses, planting can take place in mid-spring. Set plants 40cm (16in) apart and water in well.
+      When planting into open ground, create a shallow circular reservoir around the plant to help retain water.",
+    harvesting_start: Date.parse("01-07-2020"),
+    harvesting_end: Date.parse("01-10-2020"),
+    harvesting_description: "Pick fruits as required, with the calyx (stalk) still attached. When cropping slows in early autumn, green fruits can be gathered and kept in a warm, dark place to ripen.",
+    area: 40,
+    description: 'Growing your own tomatoes is simple and just a couple of plants will reward you with plenty of delicious tomatoes in the summer. There are all sizes of tomatoes to try, from the tiniest cherry types, favourites with children, through to full-flavoured giant beefsteak tomatoes.',
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+carrot2 = Vegetable.create!(
+    specie: "carrot",
+    seeding_start: Date.parse("01-02-2020"),
+    seeding_end: Date.parse("01-08-2020"),
+    sedding_desription:"Carrots require an open, sunny site and fertile well-drained soil. If your soil is stony, shallow or heavy clay, you may end up with stunted or forked carrots, so try short-rooted types. These also suit containers.
+      Early cultivars can be sown in February or March under cloches or with similar protection. The main outdoor sowing season is from April to early July.  Seed packets will state whether the cultivar is an early or maincrop type.
+      Sow 1cm (½in) deep in rows 15cm-30cm (6-12in) apart. By sowing thinly you can avoid thinning out. Aim for plants 5-7.5cm (2-3in) apart. Thin if needed at the seedling stage.",
+    planting_start: "",
+    planting_end: "",
+    planting_description: "",
+    harvesting_start: Date.parse("03-05-2020"),
+    harvesting_end: Date.parse("03-11-2020"),
+    harvesting_description: "Carrots are ready for harvesting about 12-16 weeks after sowing. Pick as soon as they are large enough to use; don't aim for the largest roots or you'll sacrifice flavour. Lift carefully using a fork if the soil is heavy.",
+    area: 30,
+    description: "Carrots come in shapes and colours other than long and orange – look out for round carrots, as well as unusual colours such as red, yellow and even purple. They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+egg_plant2 = Vegetable.create!(
+    specie: "egg_plant",
+    seeding_start: Date.parse("01-02-2020"),
+    seeding_end:Date.parse("01-05-2020"),
+    sedding_desription: "Eggplant seeds are sown from February to April-May, in pots, boxes or even on honeycomb trays, warm (18/20 ° C). As soon as the plants have developed two to four leaves, they can be repotted in individual pots. They then continue their growth in a greenhouse or veranda well exposed until planting.",
+    planting_start: Date.parse("01-04-2020"),
+    planting_end: Date.parse("30-06-2020"),
+    planting_description: "you can plant your eggplant outdoors. If possible, place them in a greenhouse or tunnel at least the first heat of summer. Otherwise they have to vegetate if the heat is not there. On lines spaced 60cm apart, plant an eggplant every 60cm. Bed plants have seen the first leaves. Water copiously and place a mulch to grab attention and hinder the growth of weeds.",
+    harvesting_start: Date.parse("01-05-2020"),
+    harvesting_end: Date.parse("30-09-2020"),
+    harvesting_description: "The fruits are harvested well developed, from fifteen centimeters for long varieties. About ten centimeters for the rounds. Eggplant does not keep very long. The most effective method of preservation is to freeze ready-made meals. You can also dry it.",
+    area: 60,
+    description:"Eggplant is a heat-loving plant. Not very productive except in the south, it is most often grown in a greenhouse. On the other hand, the feet grafted on tomatoes are much better suited to temperate climates. They are more resilient and productive.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+potato2 = Vegetable.create!(
+    specie: "potato",
+    seeding_start: nil,
+    seeding_end: nil,
+    sedding_desription: nil,
+    planting_start: Date.parse('15-03-2020') ,
+    planting_end: Date.parse('07-04-2020'),
+    planting_description: " The soil needs soil 10 ° deep to grow. Exposure: The potato needs sun to develop well. Turn the earth upside down for about 30 cm, it must be well loosened for planting. Wait until the tubers have sprouted before planting them. Dig furrows about 15 cm deep. Position the tuber vertically, ensuring that the seed is pointing upwards. Maintain a distance of approximately 30 to 40 cm between each tuber. If you have several furrows, keep a distance of 60 to 70 cm between each furrow.",
+    harvesting_start: Date.parse('15-06-2020'),
+    harvesting_end: Date.parse('15-09-2020'),
+    harvesting_description: " It is unnecessary to harvest the potatoes before the foliage is completely yellowed. This essential stage of yellowing indicates that the harvest is imminent." ,
+    area:  30,
+    description: "Relatively easy to cultivate and maintain, the potato requires some care and gestures that will allow you to improve the yield and the harvest. Mounding of potatoes: When the plant reaches about 10-15 cm in height, mound the foot with light soil. This operation which consists of forming a small mound at the foot of the stems aims to keep the plant in the ground, protect it from the wind and allow it to develop at best. Watering the potatoes: Potatoes are especially worried about prolonged dryness and lack of water. Evening watering is recommended when it's hot and you see the foliage wilting. Do not wet the leaves to avoid the appearance of diseases such as fungi. In order to avoid any risk of drought in the soil, it is advisable to put a mulch at the base of the potato plants." ,
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+radish2 = Vegetable.create!(
+    specie: "spring radish ",
+    seeding_start: Date.parse('01-02-2020'),
+    seeding_end: Date.parse('30-06-2020'),
+    sedding_desription: "The radish germinates when the soil temperature reaches 8 ° C, but its growth is really active from 12 ° C. At room temperature, the ideal is between 15 and 18 ° C. Depending on the region, the best harvests are therefore obtained with seedlings spreading between February 15 and April 20. However, the first sowing of February and March is carried out under a forcing veil or a Nantes caterpillar. Remove these protections in the event of high heat (above 25 ° C) and at the start of tuberization. All radish sowing is done in rows 20 cm apart, up to 35 cm for very large roots. For round varieties, sow 20 seeds per meter at a depth of 1 cm; and for half-lengths, place 30 seeds per meter at 2 cm deep. Cover the seeds with 2 cm of fine soil (0.5 cm only for the round varieties of radishes of every month). Keep the soil cool until emergence (3 to 5 days).",
+    planting_start: Date.parse('01-02-2020'),
+    planting_end: Date.parse('30-06-2020'),
+    planting_description: nil,
+    harvesting_start: Date.parse('01-03-2020'),
+    harvesting_end: Date.parse('30-07-2020'),
+    harvesting_description: "Pick up the spring radishes 3 or 4 weeks after sowing, as needed. Do not wait until they are too big and hollow.",
+    area: 20,
+    description: "Except in the summer when it tolerates light shade, the radish likes bright and sunny situations. This fast-growing crop requires well-worked soil and sparse but regular watering.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+pepper2 = Vegetable.create!(
+    specie: "pepper",
+    seeding_start: Date.parse('01-03-2020'),
+    seeding_end: Date.parse('30-05-2020'),
+    sedding_desription: "The cultivation of peppers is very similar to that of tomatoes. But sowing is rather tricky to succeed: it actually needs a temperature of around 28 ° C to germinate. And as its development is rather slow, it must be sown in March to consider transplanting to the vegetable garden in late May / early June. In other words: sowing is only open to well-equipped gardeners (mini-greenhouse or heating mats for example) ... and the energy required makes the operation not very ecological.",
+    planting_start: Date.parse('30-05-2020'),
+    planting_end: Date.parse('10-06-2020'),
+    planting_description: "Planting takes place towards the end of May, when the soil is well warmed (around 15 ° C). The plants will be spaced a good 50 cm apart. If you live north of the Loire, use a black plastic film, a removable tunnel",
+    harvesting_start: Date.parse('30-07-2020'),
+    harvesting_end: Date.parse('30-09-2020'),
+    harvesting_description: "Fruits form around the end of June. The first pepper harvest (green) is done a month later, around the end of July, depending on the climate. If you wait, the fruit will take on color. Harvest the last before the first frosts.",
+    area: 50,
+    description: "The bell pepper (Capsicum annuum) likes the sun: only grow it if you can give it a sunny location. In the vegetable patch, it forms a foot about 1m high, with beautiful glazed foliage. It bears small white flowers, which later give very colorful fruits which ripen from green to yellow or red.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+onion2 = Vegetable.create!(
+    specie: "onion",
+    seeding_start: Date.parse('01-02-2020'),
+    seeding_end: Date.parse('30-03-2020'),
+    sedding_desription: "Onions intended for winter storage should not be sown in autumn but in spring. Otherwise they will go to seed the following year and the bulbs will harden and hollow out.",
+    planting_start: Date.parse('01-03-2020'),
+    planting_end: Date.parse('30-04-2020'),
+    planting_description: "In spring you plant onions to keep or sweet onions to harvest later than those in autumn. Sowing takes place in February under shelters. The bulbs are planted in March or April. They are harvested as soon as the bulbs are big enough (June in general). Those to be preserved are harvested in summer, when the foliage is almost dry.",
+    harvesting_start: Date.parse('01-06-2020'),
+    harvesting_end: Date.parse('01-08-2020'),
+    harvesting_description: "Those to keep are harvested in August. You have to wait until the foliage is two-thirds yellowed, then tear off all the bulbs. If it does not rain, dry them in the sun for a few days. Then cut the leaves and roots and store them in crates.",
+    area: 10,
+    description: "Onions are strong and do not require much care. It is one of the rare vegetables not to like being watered. If you let them grow a second year, they will produce a large ball of white flowers, highly prized by insects",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+cauliflower2 = Vegetable.create!(
+    specie: "cauliflower",
+    seeding_start: Date.parse('01-03-2020'),
+    seeding_end: Date.parse('30-04-2020'),
+    sedding_desription: " Cauliflower cultivation is much slower since it takes almost 7 months between sowing and harvesting. Sow in March / April under cover for a fall harvest. We can also start sowing in February, warm. Sow in May to July directly in the ground for a winter harvest if the cabbages are protected from November",
+    planting_start: Date.parse('01-05-2020'),
+    planting_end: Date.parse('01-06-2020'),
+    planting_description: "The ideal planting period is just after the last frosts, around mid-May, until September for a harvest in November. Plant cauliflowers in good garden soil, ideally enriched with nitrogen fertilization. Space each plant 60 to 80 cm in all directions",
+    harvesting_start: Date.parse('01-11-2020'),
+    harvesting_end: Date.parse('15-11-2020'),
+    harvesting_description: "The cauliflower is harvested practically throughout the year depending on the sowing periods. The harvest takes place about 3 months after planting but this can vary depending on weather conditions. Wait until the head is firmly closed and tear off or cut away the soil because there will be no other crop on this plane. Protect your cauliflowers from November for a winter harvest",
+    area: 70,
+    description: "As soon as the plants have at least 3 to 4 leaves, transplant directly into place while protecting your crop if this operation must be carried out before May. Transplanting is done every 40 cm. This spacing is necessary to allow the plants room to develop. Transplant to well-plowed soil.",
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+broad_beans2 = Vegetable.create!(
+    specie: "broad_beans",
+    seeding_start:  Date.parse('01-02-2020'),
+    seeding_end:  Date.parse('30-05-2020'),
+    sedding_desription: "",
+    planting_start: Date.parse('01-04-2020'),
+    planting_end:  Date.parse('30-05-2020'),
+    planting_description: "",
+    harvesting_start:  Date.parse('01-05-2020'),
+    harvesting_end:  Date.parse('30-07-2020'),
+    harvesting_description: "",
+    area: 40,
+    description: "" ,
+    photo_vegetable: "",
+    icon_vegetable: ""
+    )
+
+courgette2 = Vegetable.create!(
     specie: "courgette",
     seeding_start: Date.parse('01-04-2020'),
     seeding_end: Date.parse('30-05-2020'),
@@ -227,279 +412,339 @@ puts 'Garden done'
 puts 'create relationship...'
 
 relationship1 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = carrot
-  status = "friend"
+  vegetable1: tomato,
+  vegetable2: carrot,
+  status: "friend"
 ),
 
 relationship2 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = egg_plant
-  status = "neutral"
+  vegetable1: tomato,
+  vegetable2: egg_plant,
+  status: "neutral"
 ),
 
 relationship3 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = potato
-  status = "neutral"
+  vegetable1: tomato,
+  vegetable2: potato,
+  status: "neutral"
 ),
 
 relationship4 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = radish
-  status = "neutral"
+  vegetable1: tomato,
+  vegetable2: radish,
+  status: "neutral"
 ),
 
 relationship5 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = pepper
-  status = "neutral"
+  vegetable1: tomato,
+  vegetable2: pepper,
+  status: "neutral"
 ),
 
 relationship6 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = onion
-  status = "friend"
+  vegetable1: tomato,
+  vegetable2: onion,
+  status: "friend"
 ),
 
 relationship7 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = cauliflower
-  status = "friend"
+  vegetable1: tomato,
+  vegetable2: cauliflower,
+  status: "friend"
 ),
 
 relationship8 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = broad_beans
-  status = "enemy"
+  vegetable1: tomato,
+  vegetable2: broad_beans,
+  status: "enemy"
 ),
 
 relationship9 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = courgette
-  status = "neutral"
+  vegetable1: tomato,
+  vegetable2: courgette,
+  status: "neutral"
 ),
 
 relationship10 = Relationship.create!(
-  vegetable1 = tomato
-  vegetable2 = tomato
-  status = "friends"
+  vegetable1: tomato,
+  vegetable2: tomato2,
+  status: "friends"
 ),
 
 relationship11 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = carrot
-  status = "friend"
+  vegetable1: carrot,
+  vegetable2: carrot2,
+  status: "friend"
 ),
 
 relationship12 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = egg_plant
-  status = "neutral"
+  vegetable1: carrot,
+  vegetable2: egg_plant,
+  status: "neutral"
 ),
 
 relationship13 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = potato
-  status = "neutral"
+  vegetable1: carrot,
+  vegetable2: potato,
+  status: "neutral"
 ),
 
 relationship14 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = radish
-  status = "friend"
+  vegetable1: carrot,
+  vegetable2: radish,
+  status: "friend"
 ),
 
 relationship15 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = pepper
-  status = "neutral"
+  vegetable1: carrot,
+  vegetable2: pepper,
+  status: "friend"
 ),
 
 relationship16 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = onion
-  status = "friend"
+  vegetable1: carrot,
+  vegetable2: onion,
+  status: "friend"
 ),
 
 relationship17 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = cauliflower
-  status = "neutral"
+  vegetable1: carrot,
+  vegetable2: cauliflower,
+  status: "neutral"
 ),
 
 relationship18 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = broad_beans
-  status = "enemy"
+  vegetable1: carrot,
+  vegetable2: broad_beans,
+  status: "enemy"
 ),
 
 relationship19 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = courgette
-  status = "neutral"
+  vegetable1: carrot,
+  vegetable2: courgette,
+  status: "neutral"
 ),
 
 relationship20 = Relationship.create!(
-  vegetable1 = carrot
-  vegetable2 = tomato
-  status = "friends"
+  vegetable1: carrot,
+  vegetable2: tomato,
+  status: "friends"
 ),
 
 relationship21 = Relationship.create!(
-  vegetable1 = egg_plant
-  vegetable2 = egg_plant
-  status = "friend"
+  vegetable1: egg_plant,
+  vegetable2: egg_plant2,
+  status: "friend"
 ),
 
 relationship22 = Relationship.create!(
-  vegetable1 = egg_plant
-  vegetable2 = potato
-  status = "neutral"
+  vegetable1: egg_plant,
+  vegetable2: potato,
+  status: "neutral"
 ),
 
 relationship23 = Relationship.create!(
-  vegetable1 = egg_plant
-  vegetable2 = radish
-  status = "neutral"
+  vegetable1: egg_plant,
+  vegetable2: radish,
+  status: "neutral"
 ),
 
 relationship24 = Relationship.create!(
-  vegetable1 = egg_plant
-  vegetable2 = pepper
-  status = "neutral"
+  vegetable1: egg_plant,
+  vegetable2: pepper,
+  status: "neutral"
 ),
 
 relationship25 = Relationship.create!(
-  vegetable1 = egg_plant
-  vegetable2 = onion
-  status = "friend"
+  vegetable1: egg_plant,
+  vegetable2: onion,
+  status: "friend"
 ),
 
 relationship26 = Relationship.create!(
-  vegetable1 = egg_plant
-  vegetable2 = cauliflower
-  status = "neutral"
+  vegetable1: egg_plant,
+  vegetable2: cauliflower,
+  status: "neutral"
 ),
 
 relationship27 = Relationship.create!(
-  vegetable1 = egg_plant
-  vegetable2 = broad_beans
-  status = "friend"
+  vegetable1: egg_plant,
+  vegetable2: broad_beans,
+  status: "friend"
 ),
 
 relationship28 = Relationship.create!(
-  vegetable1 = egg_plant
-  vegetable2 = courgette
-  status = "neutral"
+  vegetable1: egg_plant,
+  vegetable2: courgette,
+  status: "neutral"
 ),
 
 relationship29 = Relationship.create!(
-  vegetable1 = potato
-  vegetable2 = potato
-  status = "friend"
+  vegetable1: potato,
+  vegetable2: potato2,
+  status: "friend"
 ),
 
 relationship30 = Relationship.create!(
-  vegetable1 = potato
-  vegetable2 = radish
-  status = "enemy"
+  vegetable1: potato,
+  vegetable2: radish,
+  status: "enemy"
 ),
 
 relationship31 = Relationship.create!(
-  vegetable1 = potato
-  vegetable2 = pepper
-  status = "neutral"
+  vegetable1: potato,
+  vegetable2: pepper,
+  status: "neutral"
 ),
 
 relationship32 = Relationship.create!(
-  vegetable1 = potato
-  vegetable2 = onion
-  status = "neutral"
+  vegetable1: potato,
+  vegetable2: onion,
+  status: "neutral"
 ),
 
 relationship33 = Relationship.create!(
-  vegetable1 = potato
-  vegetable2 = cauliflower
-  status = "neutral"
+  vegetable1: potato,
+  vegetable2: cauliflower,
+  status: "neutral"
 ),
 
 relationship34 = Relationship.create!(
-  vegetable1 = potato
-  vegetable2 = broad_beans
-  status = "friend"
+  vegetable1: potato,
+  vegetable2: broad_beans,
+  status: "friend"
 ),
 
 relationship35 = Relationship.create!(
-  vegetable1 = potato
-  vegetable2 = courgette
-  status = "enemy"
+  vegetable1: potato,
+  vegetable2: courgette,
+  status: "enemy"
 ),
 
 relationship36 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = radish
-  status = "friend"
+  vegetable1: radish,
+  vegetable2: radish2,
+  status: "friend"
 ),
 
 relationship37 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = pepper
-  status = "neutral"
+  vegetable1: radish,
+  vegetable2: pepper,
+  status: "neutral"
 ),
 
 relationship38 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = onion
-  status = "neutral"
+  vegetable1: radish,
+  vegetable2: onion,
+  status: "neutral"
 ),
 
 relationship39 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = cauliflower
-  status = "neutral"
+  vegetable1: radish,
+  vegetable2: cauliflower,
+  status: "neutral"
 ),
 
 relationship40 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = broad_beans
-  status = "neutral"
+  vegetable1: radish,
+  vegetable2: broad_beans,
+  status: "neutral"
 ),
 
 relationship41 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = courgette
-  status = "neutral"
+  vegetable1: radish,
+  vegetable2: courgette,
+  status: "neutral"
 ),
 
-relationship37 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = pepper
-  status = "neutral"
+relationship42 = Relationship.create!(
+  vegetable1: pepper,
+  vegetable2: pepper2,
+  status: "friend"
 ),
 
-relationship38 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = onion
-  status = "neutral"
+relationship43 = Relationship.create!(
+  vegetable1: pepper,
+  vegetable2: onion,
+  status: "friend"
 ),
 
-relationship39 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = cauliflower
-  status = "neutral"
+relationship44 = Relationship.create!(
+  vegetable1: pepper,
+  vegetable2: cauliflower,
+  status: "neutral"
 ),
 
-relationship40 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = broad_beans
-  status = "neutral"
+relationship45 = Relationship.create!(
+  vegetable1: pepper,
+  vegetable2: broad_beans,
+  status: "neutral"
 ),
 
-relationship41 = Relationship.create!(
-  vegetable1 = radish
-  vegetable2 = courgette
-  status = "neutral"
+relationship46 = Relationship.create!(
+  vegetable1: pepper,
+  vegetable2: courgette,
+  status: "neutral"
 ),
 
+relationship47 = Relationship.create!(
+  vegetable1: onion,
+  vegetable2: onion2,
+  status: "friend"
+),
 
+relationship48 = Relationship.create!(
+  vegetable1: onion,
+  vegetable2: cauliflower,
+  status: "friend"
+),
+
+relationship49 = Relationship.create!(
+  vegetable1: onion,
+  vegetable2: broad_beans,
+  status: "neutral"
+),
+
+relationship50 = Relationship.create!(
+  vegetable1: onion,
+  vegetable2: courgette,
+  status: "neutral"
+),
+
+relationship51 = Relationship.create!(
+  vegetable1: cauliflower,
+  vegetable2: cauliflower2,
+  status: "friend"
+),
+
+relationship52 = Relationship.create!(
+  vegetable1: cauliflower,
+  vegetable2: broad_beans,
+  status: "neutral"
+),
+
+relationship53 = Relationship.create!(
+  vegetable1: cauliflower,
+  vegetable2: courgette,
+  status: "neutral"
+),
+
+relationship54 = Relationship.create!(
+  vegetable1: broad_beans,
+  vegetable2: broad_beans2,
+  status: "friend"
+),
+
+relationship55 = Relationship.create!(
+  vegetable1: broad_beans,
+  vegetable2: courgette,
+  status: "neutral"
+),
+
+relationship56 = Relationship.create!(
+  vegetable1: courgette,
+  vegetable2: courgette2,
+  status: "friends"
+)
+
+puts "done relationship !"
