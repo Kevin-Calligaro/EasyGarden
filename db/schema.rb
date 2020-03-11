@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_132849) do
+ActiveRecord::Schema.define(version: 2020_03_11_140758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "garden_vegetables", force: :cascade do |t|
+    t.bigint "garden_id"
+    t.bigint "vegetable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_garden_vegetables_on_garden_id"
+    t.index ["vegetable_id"], name: "index_garden_vegetables_on_vegetable_id"
+  end
 
   create_table "gardens", force: :cascade do |t|
     t.string "title"
@@ -25,17 +34,6 @@ ActiveRecord::Schema.define(version: 2020_03_10_132849) do
     t.index ["user_id"], name: "index_gardens_on_user_id"
   end
 
-  create_table "plants", force: :cascade do |t|
-    t.bigint "garden_id"
-    t.bigint "vegetable_id"
-    t.date "planting_date"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["garden_id"], name: "index_plants_on_garden_id"
-    t.index ["vegetable_id"], name: "index_plants_on_vegetable_id"
-  end
-
   create_table "relationships", force: :cascade do |t|
     t.string "status"
     t.bigint "vegetable1_id"
@@ -44,6 +42,17 @@ ActiveRecord::Schema.define(version: 2020_03_10_132849) do
     t.datetime "updated_at", null: false
     t.index ["vegetable1_id"], name: "index_relationships_on_vegetable1_id"
     t.index ["vegetable2_id"], name: "index_relationships_on_vegetable2_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "garden_vegetable_id"
+    t.integer "step"
+    t.string "action"
+    t.date "date"
+    t.boolean "done", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_vegetable_id"], name: "index_tasks_on_garden_vegetable_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,13 +74,13 @@ ActiveRecord::Schema.define(version: 2020_03_10_132849) do
     t.string "specie"
     t.date "seeding_start"
     t.date "seeding_end"
-    t.string "seed_description"
+    t.string "sedding_desription"
     t.date "planting_start"
     t.date "planting_end"
-    t.string "plant_description"
-    t.date "harvest_start"
-    t.date "harvest_end"
-    t.string "harvest_description"
+    t.string "planting_desription"
+    t.date "harvesting_start"
+    t.date "harvesting_end"
+    t.string "harvesting_description"
     t.integer "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,9 +89,9 @@ ActiveRecord::Schema.define(version: 2020_03_10_132849) do
     t.string "icon_vegetable"
   end
 
+  add_foreign_key "garden_vegetables", "gardens"
+  add_foreign_key "garden_vegetables", "vegetables"
   add_foreign_key "gardens", "users"
-  add_foreign_key "plants", "gardens"
-  add_foreign_key "plants", "vegetables"
   add_foreign_key "relationships", "vegetables", column: "vegetable1_id"
   add_foreign_key "relationships", "vegetables", column: "vegetable2_id"
 end
