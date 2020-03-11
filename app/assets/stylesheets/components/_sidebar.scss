@@ -1,0 +1,52 @@
+body{
+  position: relative;
+}
+.sidebar-container{
+  width: 20vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #faf8f5;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+.title-sidebar{
+  margin-top: 160px;
+  width: 22vw;
+  height: 30px;
+  background-color: rgba(0,170,37,0.25);
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  position: relative;
+  h1{
+    text-align: center;
+    position: absolute;
+    bottom: -30px;
+    left: 90px;
+  }
+}
+
+.action-task{
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+  h2{
+    font-size: 18px;
+  }
+}
+
+.action-color{
+  background-color: rgba(30, 139, 195, 0.4);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  position: relative;
+}
+
+.action-logo{
+  position: absolute;
+  left: 12px;
+  top: 10px;
+}
