@@ -1,5 +1,6 @@
 class GardenVegetable < ApplicationRecord
-  has_many :tasks
   belongs_to :garden
   belongs_to :vegetable
+
+  has_many :tasks, dependent: :destroy
 end

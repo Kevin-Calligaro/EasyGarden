@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_140758) do
+ActiveRecord::Schema.define(version: 2020_03_11_145426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_140758) do
     t.string "sedding_desription"
     t.date "planting_start"
     t.date "planting_end"
-    t.string "planting_desription"
+    t.string "planting_description"
     t.date "harvesting_start"
     t.date "harvesting_end"
     t.string "harvesting_description"
