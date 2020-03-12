@@ -5,10 +5,10 @@ body{
   width: 20vw;
   height: 100vh;
   position: absolute;
-  background-color: #faf8f5;
+  background-image: #faf8f5;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: 2;
   box-shadow: 0 4px 4px rgba(0,0,0,0.25);
 }
 
@@ -38,11 +38,12 @@ body{
 }
 
 .action-color{
-  background-color: rgba(30, 139, 195, 0.4);
-  border-radius: 50%;
+  background-image: asset-url("background-urgency/urgence_1.png");
+  background-size: cover;
   width: 45px;
   height: 45px;
   position: relative;
+  z-index: 1;
 }
 
 .action-logo{
