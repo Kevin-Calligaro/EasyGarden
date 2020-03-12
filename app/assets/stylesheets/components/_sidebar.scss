@@ -49,4 +49,15 @@ body{
   position: absolute;
   left: 12px;
   top: 10px;
+  p{
+    font-size: 15px;
+  }
+}
+
+.specie-type{
+  text-transform: capitalize;
+}
+
+.fa-plus-circle{
+  font-size: 18px;
 }
