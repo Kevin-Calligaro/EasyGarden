@@ -13,6 +13,8 @@ Garden.destroy_all
 User.destroy_all
 Relationship.destroy_all
 Vegetable.destroy_all
+GardenVegetable.destroy_all
+Task.destroy_all
 
 puts 'ok'
 
@@ -52,11 +54,11 @@ carrot = Vegetable.create!(
     sedding_desription:"Carrots require an open, sunny site and fertile well-drained soil. If your soil is stony, shallow or heavy clay, you may end up with stunted or forked carrots, so try short-rooted types. These also suit containers.
       Early cultivars can be sown in February or March under cloches or with similar protection. The main outdoor sowing season is from April to early July.  Seed packets will state whether the cultivar is an early or maincrop type.
       Sow 1cm (½in) deep in rows 15cm-30cm (6-12in) apart. By sowing thinly you can avoid thinning out. Aim for plants 5-7.5cm (2-3in) apart. Thin if needed at the seedling stage.",
-    planting_start: "",
-    planting_end: "",
-    planting_description: "",
-    harvesting_start: Date.parse("03-05-2020"),
-    harvesting_end: Date.parse("03-11-2020"),
+    planting_start: nil,
+    planting_end: nil,
+    planting_description: nil,
+    harvesting_start: Date.parse("01-05-2020"),
+    harvesting_end: Date.parse("01-11-2020"),
     harvesting_description: "Carrots are ready for harvesting about 12-16 weeks after sowing. Pick as soon as they are large enough to use; don't aim for the largest roots or you'll sacrifice flavour. Lift carefully using a fork if the soil is heavy.",
     area: 30,
     description: "Carrots come in shapes and colours other than long and orange – look out for round carrots, as well as unusual colours such as red, yellow and even purple. They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden.",
@@ -748,3 +750,105 @@ relationship56 = Relationship.create!(
 )
 
 puts "done relationship !"
+
+puts "add vegetable on garden"
+
+garden_vegetable_carrot = GardenVegetable.create!(
+  vegetable: carrot,
+  garden: garden1
+)
+
+garden_vegetable_potato = GardenVegetable.create!(
+  vegetable: potato,
+  garden: garden1
+)
+
+garden_vegetable_tomato = GardenVegetable.create!(
+  vegetable: tomato,
+  garden: garden1
+)
+
+garden_vegetable_egg_plant = GardenVegetable.create!(
+  vegetable: egg_plant,
+  garden: garden1
+)
+
+garden_vegetable_courgette = GardenVegetable.create!(
+  vegetable: courgette,
+  garden: garden1
+)
+
+garden_vegetable_onion = GardenVegetable.create!(
+  vegetable: onion,
+  garden: garden1
+)
+
+puts "Les legumes sont dans le jardin, je repète, les legumes sont dans le jardin"
+
+puts "Task for carrot..."
+
+Task.create!(
+  garden_vegetable: garden_vegetable_carrot,
+  step: 1,
+  action: "seeding",
+  date: Date.parse("20-02-2020"),
+  done: true
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_carrot,
+  step: 2,
+  action: "harvesting",
+  date: Date.parse("20-05-2020"),
+  done: false
+)
+
+puts "Done!"
+
+puts "Task for potato..."
+
+Task.create!(
+  garden_vegetable: garden_vegetable_potato,
+  step: 1,
+  action: "planting",
+  date: Date.parse('15-03-2020'),
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_potato,
+  step: 2,
+  action: "harvesting",
+  date: Date.parse('15-06-2020'),
+  done: false
+)
+
+puts "Done!"
+
+puts "Task for tomato..."
+
+Task.create!(
+  garden_vegetable: garden_vegetable_tomato,
+  step: 1,
+  action: "seeding",
+  date: Date.parse("01-02-2020"),
+  done: true
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_tomato,
+  step: 2,
+  action: "planting",
+  date: Date.parse("01-05-2020"),
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_tomato,
+  step: 3,
+  action: "harvesting",
+  date: Date.parse("01-07-2020"),
+  done: false
+)
+
+puts "Done!"
