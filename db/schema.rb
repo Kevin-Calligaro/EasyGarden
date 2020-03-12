@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_145426) do
+ActiveRecord::Schema.define(version: 2020_03_12_103126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,4 +94,5 @@ ActiveRecord::Schema.define(version: 2020_03_11_145426) do
   add_foreign_key "gardens", "users"
   add_foreign_key "relationships", "vegetables", column: "vegetable1_id"
   add_foreign_key "relationships", "vegetables", column: "vegetable2_id"
+  add_foreign_key "tasks", "garden_vegetables"
 end

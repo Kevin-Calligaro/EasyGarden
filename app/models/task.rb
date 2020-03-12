@@ -1,3 +1,3 @@
 class Task < ApplicationRecord
-  belong_to :garden_vegetable
+  belongs_to :garden_vegetable
 end
