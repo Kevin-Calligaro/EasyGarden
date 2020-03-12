@@ -5,18 +5,74 @@ p {
   font-size: 10px;
 }
 
+.garden-area {
+  background-image: asset-url("garden-texture.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+}
+
+
 .garden-container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 120px;
   width: (20 * $L);
   height: (15 * $H);
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  .line-t {
+    position: absolute;
+    top:0px;
+    background-image: asset-url('line_h.png');
+    height: 10px;
+    width: (20 * $L)+100px;
+    right:-50px;
+    z-index:11;
+    background-position: center;
+    background-size: cover;
+  }
+  .line-b {
+    position: absolute;
+    bottom:-10px;
+    background-image: asset-url('line_b.png');
+    height: 20px;
+    width: (20 * $L)+100px;
+    right:-50px;
+    z-index:11;
+    background-position: center;
+    background-size: cover;
+  }
+  .line-l {
+    position: absolute;
+    left:-30px;
+    background-image: asset-url('line_l.png');
+    height: (15 * $H) + 100px;
+    width: 60px;
+    top:-50px;
+    z-index:11;
+    background-position: center;
+    background-size: cover;
+  }
+  .line-r {
+    position: absolute;
+    right:-10px;
+    background-image: asset-url('line_r.png');
+    height: (15 * $H) + 100px;
+    width: 60px;
+    top:-50px;
+    z-index:11;
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 .garden-units {
   width: ($L);
   height: ($H);
-  background-color: pink;
-  border: 1px solid black;
+  // border: 1px solid lightgrey;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -26,7 +82,8 @@ p {
 }
 
 .vegetable {
-  z-index: 10;
+  z-index: 11;
+  margin: auto;
 }
 
 
@@ -48,4 +105,30 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.calibre-1 {
+  height: $H;
+  width: $L;
+  object-fit: contain;
+
+}
+.calibre-2 {
+  height: 2 * $H;
+  width: 2 * $L;
+  object-fit: contain;
+}
+.calibre-3 {
+  height: 3 * $H;
+  width: 3 * $L;
+  object-fit: contain;
+  object-position: center;
+}
+
+.panier {
+  display: flex;
+}
+
+.garden-area {
+
 }

@@ -3,9 +3,14 @@
   <article class="BlockLayout BlockLayout--typePositioned" tabindex="0">
 
 
-
+<div class="garden-area">
 <!-- creation du jardin 40.times => 4metres, etc. -->
                   <div class="garden-container">
+                    <div class="line-t"></div>
+                    <div class="line-b"></div>
+                    <div class="line-l"></div>
+                    <div class="line-r"></div>
+
                     <% 20.times do |index_y| %>
                       <% 15.times do |index_x| %>
                         <div class="BlockWrapper BlockWrapper--isDropzone garden-units">
@@ -14,59 +19,90 @@
                       <% end %>
                     <% end %>
                 </div>
+</div>
+
 
 <h1>Ma reserve de légume</h1>
 <!-- LEGUME A PLANTER -->
                   <div class="vegetable-container">
-                    <% 4.times do |index_y| %>
-                      <% 3.times do |index_x| %>
+                      <div class="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied">
+<div class="panier">
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent">
+                          <%= image_tag 'carots.png', class: "calibre-1" %>
+                        </div>
+                      </a>
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent">
+                          <%= image_tag 'carots.png', class: "calibre-1" %>
+                        </div>
+                      </a>
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent">
+                          <%= image_tag 'carots.png', class: "calibre-1" %>
+                        </div>
+                      </a>
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent">
+                          <%= image_tag 'radis.png', class: "calibre-1" %>
+                        </div>
+                      </a>
 
-                      <div class="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied vegetable-units">
-                        <span><div class="BlockContent"></div></span>
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent calibre-3">
+                          <%= image_tag 'tomatoes.png', class: "calibre-3" %>
+                        </div>
+                      </a>
 
-<!-- LEGUME -->
-                        <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
-                          <div class="BlockContent">
-                            <h3>O</h3>
-                          </div>
-                        </a>
-<!-- LEGUME -->
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent calibre-3">
+                          <%= image_tag 'potatoes.png', class: "calibre-3" %>
+                        </div>
+                      </a>
+
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent calibre-3">
+                          <%= image_tag 'bean.png', class: "calibre-2" %>
+                        </div>
+                      </a>
+
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent calibre-3">
+                          <%= image_tag 'ognons.png', class: "calibre-1" %>
+                        </div>
+                      </a>
+
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent calibre-3">
+                          <%= image_tag 'courgettes.png', class: "calibre-3" %>
+                        </div>
+                      </a>
+
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                        <div class="BlockContent calibre-3">
+                          <%= image_tag 'coliflowers.png', class: "calibre-3" %>
+                        </div>
+                      </a>
+
+</div>
+
 
                       </div>
-                      <% end %>
-                    <% end %>
                   </div>
   </article>
 </section>
 <!-- ----------------------------------------------------------------------------------------------------------------------- -->
 <!--
-<section id="Collidable" class="Collidable">
-  <article class="BlockLayout BlockLayout--typePositioned" tabindex="0">
-
-
-    <div class="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied">
-      <span class="Block Block--typeHollow"><div class="BlockContent"><h3 class="Heading Heading--size2 text-no-select">drop</h3></div></span>
-
-      <a href="#" class="Block Block--item1 Block--isDraggable" title="Click to drag" style="">
-        <div class="BlockContent">
-          <h3 class="Heading Heading--size2 text-no-select">drag</h3>
-          <div class="Pattern Pattern--typeHalftone"></div>
-          <div class="Pattern Pattern--typePlaced"></div>
-        </div>
-      </a>
-
-    </div>
-
-    <span class="Block Block--typeStripes Block--item2 CollidableObstacle"><div class="BlockContent"></div></span>
-    <span class="Block Block--typeStripes Block--item3 CollidableObstacle"><div class="BlockContent"></div></span>
-
-
-    <div class="BlockWrapper BlockWrapper--isDropzone">
-      <span class="Block Block--typeHollow Block--item4">
-        <div class="BlockContent"><h3 class="Heading Heading--size2 text-no-select">drop</h3></div></span>
-    </div>
-
-
     <div class="CollidableWall CollidableWall--itemTop CollidableObstacle">
 
     </div>
