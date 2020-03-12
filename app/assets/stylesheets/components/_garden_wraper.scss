@@ -1,0 +1,22 @@
+.custom-fn__wrapper {
+    width: 599px;
+    height: 399px;
+    border: 1px solid #1A1A1A;
+    position: relative;
+}
+
+.custom-fn__div {
+    display: inline-block;
+    width: 99px;
+    height: 99px;
+    background: #ffc107;
+    cursor: move;
+    top: 100px;
+    left: 100px;
+}
+
+.custom-fn__line {
+    background: rgba(105,105,105,0.8);
+    display: inline-block;
+    position: absolute;
+}

@@ -1,0 +1,35 @@
+$L: 20px; //10cm
+$H: 20px; //10cm
+
+
+
+.garden-container {
+  background-color: red;
+  width: (40 * $L);
+  height: (30 * $H);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.garden-units {
+  width: ($L);
+  height: ($H);
+  background-color: pink;
+  border: 1px solid black;
+}
+
+
+.vegetable-container {
+  background-color: red;
+  width: (12 * $L);
+  height: (9 * $H);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vegetable-units {
+  width: ($L);
+  height: ($H);
+  background-color: blue;
+  border: 1px solid black;
+}
