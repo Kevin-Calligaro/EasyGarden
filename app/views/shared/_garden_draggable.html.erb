@@ -1,0 +1,23 @@
+
+
+<!-- creation du jardin 40.times => 4metres, etc. -->
+<div class="garden-container">
+  <% 40.times do |index_y| %>
+    <% 30.times do |index_x| %>
+      <div class="<%=index_x%>x <%=index_y%>y garden-units"><p><%= index_y %></p></div>
+      <li>test</li>
+    <% end %>
+  <% end %>
+</div>
+
+<!-- légume fictif -->
+<div class="vegetable-container" id="example3Left">
+  <% 4.times do |index_y| %>
+    <% 3.times do |index_x| %>
+      <div class="<%=index_x%>x <%=index_y%>y vegetable-units"><p><%= index_y %></p></div>
+    <% end %>
+  <% end %>
+</div>
+
+
+
