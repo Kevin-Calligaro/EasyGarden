@@ -1,12 +1,13 @@
-$L: 20px; //10cm
-$H: 20px; //10cm
+$L: 40px; //10cm
+$H: 40px; //10cm
 
-
+p {
+  font-size: 10px;
+}
 
 .garden-container {
-  background-color: red;
-  width: (40 * $L);
-  height: (30 * $H);
+  width: (20 * $L);
+  height: (15 * $H);
   display: flex;
   flex-wrap: wrap;
 }
@@ -16,11 +17,20 @@ $H: 20px; //10cm
   height: ($H);
   background-color: pink;
   border: 1px solid black;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vegetable {
+  z-index: 10;
 }
 
 
 .vegetable-container {
-  background-color: red;
   width: (12 * $L);
   height: (9 * $H);
   display: flex;
@@ -32,4 +42,10 @@ $H: 20px; //10cm
   height: ($H);
   background-color: blue;
   border: 1px solid black;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

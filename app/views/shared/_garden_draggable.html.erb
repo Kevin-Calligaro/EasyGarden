@@ -1,23 +1,83 @@
 
+<section id="Collidable" class="Collidable">
+  <article class="BlockLayout BlockLayout--typePositioned" tabindex="0">
+
+
 
 <!-- creation du jardin 40.times => 4metres, etc. -->
-<div class="garden-container">
-  <% 40.times do |index_y| %>
-    <% 30.times do |index_x| %>
-      <div class="<%=index_x%>x <%=index_y%>y garden-units"><p><%= index_y %></p></div>
-      <li>test</li>
-    <% end %>
-  <% end %>
-</div>
+                  <div class="garden-container">
+                    <% 20.times do |index_y| %>
+                      <% 15.times do |index_x| %>
+                        <div class="BlockWrapper BlockWrapper--isDropzone garden-units">
+                          <span class="garden-square"><div class="BlockContent"></div></span>
+                        </div>
+                      <% end %>
+                    <% end %>
+                </div>
 
-<!-- légume fictif -->
-<div class="vegetable-container" id="example3Left">
-  <% 4.times do |index_y| %>
-    <% 3.times do |index_x| %>
-      <div class="<%=index_x%>x <%=index_y%>y vegetable-units"><p><%= index_y %></p></div>
-    <% end %>
-  <% end %>
-</div>
+<h1>Ma reserve de légume</h1>
+<!-- LEGUME A PLANTER -->
+                  <div class="vegetable-container">
+                    <% 4.times do |index_y| %>
+                      <% 3.times do |index_x| %>
+
+                      <div class="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied vegetable-units">
+                        <span><div class="BlockContent"></div></span>
+
+<!-- LEGUME -->
+                        <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                          <div class="BlockContent">
+                            <h3>O</h3>
+                          </div>
+                        </a>
+<!-- LEGUME -->
+
+                      </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+  </article>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<!--
+<section id="Collidable" class="Collidable">
+  <article class="BlockLayout BlockLayout--typePositioned" tabindex="0">
 
 
+    <div class="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied">
+      <span class="Block Block--typeHollow"><div class="BlockContent"><h3 class="Heading Heading--size2 text-no-select">drop</h3></div></span>
 
+      <a href="#" class="Block Block--item1 Block--isDraggable" title="Click to drag" style="">
+        <div class="BlockContent">
+          <h3 class="Heading Heading--size2 text-no-select">drag</h3>
+          <div class="Pattern Pattern--typeHalftone"></div>
+          <div class="Pattern Pattern--typePlaced"></div>
+        </div>
+      </a>
+
+    </div>
+
+    <span class="Block Block--typeStripes Block--item2 CollidableObstacle"><div class="BlockContent"></div></span>
+    <span class="Block Block--typeStripes Block--item3 CollidableObstacle"><div class="BlockContent"></div></span>
+
+
+    <div class="BlockWrapper BlockWrapper--isDropzone">
+      <span class="Block Block--typeHollow Block--item4">
+        <div class="BlockContent"><h3 class="Heading Heading--size2 text-no-select">drop</h3></div></span>
+    </div>
+
+
+    <div class="CollidableWall CollidableWall--itemTop CollidableObstacle">
+
+    </div>
+    <div class="CollidableWall CollidableWall--itemRight CollidableObstacle">
+
+    </div>
+    <div class="CollidableWall CollidableWall--itemBottom CollidableObstacle">
+
+    </div>
+    <div class="CollidableWall CollidableWall--itemLeft CollidableObstacle">
+
+    </div>
+  </article>
+</section> -->
