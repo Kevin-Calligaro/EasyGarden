@@ -1,22 +1,29 @@
 <div class="description-show">
   <i class="fas fa-minus-circle p-2"></i>
   <div class="title-description">
-    <h1>Tomato</h1>
+    <h1>tomate </h1>
   </div>
-  <p class="general-description">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos fugiat aliquid, illo praesentium dolore excepturi doloribus quae quibusdam quis atque, inventore obcaecati delectus sunt aperiam reprehenderit optio in sint accusantium.
-  </p>
-
+  <div class="d-flex">
+    <p class="general-description">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos fugiat aliquid, illo praesentium dolore excepturi doloribus quae quibusdam quis atque, inventore obcaecati delectus sunt aperiam reprehenderit optio in sint accusantium.
+    </p>
+    <div class="vege-photo-description">
+        <%= image_tag("courgette-photo.png", class: "photo-description") %>
+    </div>
+  </div>
   <div class="onglet-description">
     <nav>
       <div class="nav nav-tabs list-inline tabs-underlined" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link tab-underlined active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Seeding</a>
-        <a class="nav-item nav-link tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Planting</a>
-        <a class="nav-item nav-link tab-underlined" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Harvesting</a>
+        <a class="nav-item nav-link tab-underlined active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag("icon-seeding.png", class: "icon-action-description") %> Seeding</a>
+        <a class="nav-item nav-link tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag("icon-planting.png", class: "icon-action-description") %> Planting</a>
+        <a class="nav-item nav-link tab-underlined" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag("icon-harvesting.png", class: "icon-action-description") %> Harvesting</a>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> Sow seed in late March to early April for outdoor crops, and in mid-February for growing in an unheated glasshouse. Seed can be expensive, but usually only a few plants are needed, and germination is usually good.
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <h1>Seeding</h1>
+        <h5><em>From february to march</em></h3>
+        Sow seed in late March to early April for outdoor crops, and in mid-February for growing in an unheated glasshouse. Seed can be expensive, but usually only a few plants are needed, and germination is usually good.
       - Fill 9cm (3½in) pot with seed or multipurpose compost
       - Level and firm the compost, then water
       - Sow seeds on the compost surface, spacing them evenly, about a finger-width apart, to prevent damping off disease
