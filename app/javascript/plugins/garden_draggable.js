@@ -1,17 +1,48 @@
-import { Draggable } from '@shopify/draggable';
 
+// Learn more or give us feedback
+// eslint-disable-next-line import/no-unresolved
+import {Droppable, Plugins} from '@shopify/draggable';
 
-const initDraggable = () => {
-const draggable = new Draggable(document.querySelectorAll('.garden-container'), {
-  draggable:'li'
-});
+export default function PluginsCollidable() {
+  const containerSelector = '#Collidable .BlockLayout';
+  const containers = document.querySelectorAll(containerSelector);
+  const wallClass = 'CollidableWall';
+  const walls = document.querySelectorAll(`.${wallClass}`);
 
-draggable.on('drag:start', () => console.log('drag:start'));
-draggable.on('drag:move', () => console.log('drag:move'));
-draggable.on('drag:stop', () => console.log('drag:stop'));
+  if (containers.length === 0) {
+    return false;
+  }
 
-console.log('coucou')
+  const droppable = new Droppable(containers, {
+    draggable: '.Block--isDraggable',
+    dropzone: '.BlockWrapper--isDropzone',
+    collidables: '.CollidableObstacle',
+    mirror: {
+      appendTo: containerSelector,
+      constrainDimensions: true,
+    },
+    plugins: [Plugins.Collidable],
+  });
 
+  // --- Draggable events --- //
+  droppable.on('collidable:in', ({collidingElement}) => {
+    if (collidingElement.classList.contains(wallClass)) {
+      walls.forEach((wall) => wall.classList.add('isColliding'));
+    } else {
+      collidingElement.classList.add('isColliding');
+    }
+  });
+
+  droppable.on('collidable:out', ({collidingElement}) => {
+    if (collidingElement.classList.contains(wallClass)) {
+      walls.forEach((wall) => wall.classList.remove('isColliding'));
+    } else {
+      collidingElement.classList.remove('isColliding');
+    }
+  });
+
+  return droppable;
 };
 
-export { initDraggable };
+// export const PluginsCollidable = () => {};
+export { PluginsCollidable };

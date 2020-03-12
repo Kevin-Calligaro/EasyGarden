@@ -23,5 +23,4 @@ new Sortable(example3Right, {
 
 
 
-// export { initSortable };
 export { cloning };
