@@ -6,6 +6,15 @@
     <% garden_vegetable.tasks.each do |task| %>
       <% if task.done == false %>
         <div class="action-task">
+          <% if garden_vegetable.vegetable.seeding_start == nil %>
+            <% duration_time1 = garden_vegetable.vegetable.harvesting_start - garden_vegetable.vegetable.planting_start %>
+          <% elsif garden_vegetable.vegetable.planting_start == nil %>
+            <% duration_time1 = garden_vegetable.vegetable.harvesting_start - garden_vegetable.vegetable.seeding_start %>
+          <% else %>
+            <% duration_time1 = garden_vegetable.vegetable.planting_start - garden_vegetable.vegetable.seeding_start %>
+            <% duration_time2 = garden_vegetable.vegetable.harvesting_start - garden_vegetable.vegetable.planting_start %>
+          <% end %>
+
           <div class="action-color">
             <div class="action-logo">
               <p>⛏️</p>
