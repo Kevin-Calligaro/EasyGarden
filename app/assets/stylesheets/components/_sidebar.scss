@@ -3,7 +3,7 @@ body{
 }
 .sidebar-container{
   width: 20vw;
-  height: 100vh;
+  height: auto;
   position: absolute;
   background-image: #faf8f5;
   left: 0;
@@ -13,7 +13,6 @@ body{
 }
 
 .title-sidebar{
-  margin-top: 160px;
   width: 22vw;
   height: 30px;
   background-color: rgba(0,170,37,0.25);
@@ -53,6 +52,13 @@ body{
   p{
     font-size: 15px;
   }
+}
+.logo-easy-garden{
+
+  width: 210px;
+  height: 120px;
+  margin: 30px;
+
 }
 
 .specie-type{
