@@ -25,7 +25,7 @@ export default function PluginsCollidable() {
   });
 
   // --- Draggable events --- //
-  droppable.on('collidable:in', ({collidingElement}) => {
+  droppable.on('collidable:in', (collidingElement) => {
     if (collidingElement.classList.contains(wallClass)) {
       walls.forEach((wall) => wall.classList.add('isColliding'));
     } else {
@@ -41,9 +41,25 @@ export default function PluginsCollidable() {
     }
   });
 
+  droppable.on('droppable:start', (event) => {
+  });
+
+  droppable.on('droppable:stop', (event) => {
+    const pos = event.data.dropzone.previousElementSibling.dataset.position;
+    const id = event.data.dragEvent.source.dataset.id;
+    const all = pos + id;
+    console.log(all)
+    const moving = document.querySelector('.draggable-source--is-dragging');
+      if(moving.dataset.vegJsonId === "") {
+    const uniqueId = Math.floor(Math.random() * (999 - 100) + 100);
+    moving.dataset.vegJsonId = uniqueId };
+    console.log(moving);
+  });
 
   return droppable;
+
 };
 
 // export const PluginsCollidable = () => {};
+
 export { PluginsCollidable };
