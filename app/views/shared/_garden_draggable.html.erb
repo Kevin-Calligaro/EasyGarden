@@ -13,7 +13,7 @@
 
                     <% 20.times do |index_y| %>
                       <% 15.times do |index_x| %>
-                        <div class="BlockWrapper BlockWrapper--isDropzone garden-units">
+                        <div class="BlockWrapper BlockWrapper--isDropzone garden-units" data-position="x<%= index_x %>-y<%= index_y %>">
                           <span class="garden-square"><div class="BlockContent"></div></span>
                         </div>
                       <% end %>
@@ -28,67 +28,67 @@
                       <div class="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied">
 <div class="panier">
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="1"  title="Click to plant" style="">
+                        <div class="BlockContent" ondragstart="dragstart_handler(event);">
+                          <%= image_tag 'carots.png', class: "calibre-1" %>
+                        </div>
+                      </a>
+                      <span><div class="BlockContent"></div></span>
+                      <a href="#" class="Block--isDraggable vegetable" data-id="1" title="Click to plant" style="">
                         <div class="BlockContent">
                           <%= image_tag 'carots.png', class: "calibre-1" %>
                         </div>
                       </a>
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="1" data-veg-json-id="" title="Click to plant" style="">
                         <div class="BlockContent">
                           <%= image_tag 'carots.png', class: "calibre-1" %>
                         </div>
                       </a>
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
-                        <div class="BlockContent">
-                          <%= image_tag 'carots.png', class: "calibre-1" %>
-                        </div>
-                      </a>
-                      <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="2" data-veg-json-id="" title="Click to plant" style="">
                         <div class="BlockContent">
                           <%= image_tag 'radis.png', class: "calibre-1" %>
                         </div>
                       </a>
 
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="3" data-veg-json-id="" title="Click to plant" style="">
                         <div class="BlockContent calibre-3">
                           <%= image_tag 'tomatoes.png', class: "calibre-3" %>
                         </div>
                       </a>
 
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="4" data-veg-json-id="" title="Click to plant" style="">
                         <div class="BlockContent calibre-3">
-                          <%= image_tag 'potatoes.png', class: "calibre-3" %>
+                          <%= image_tag 'potatoes.png', class: "calibre-3"%>
                         </div>
                       </a>
 
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="5" data-veg-json-id="" title="Click to plant" style="">
                         <div class="BlockContent calibre-3">
                           <%= image_tag 'bean.png', class: "calibre-2" %>
                         </div>
                       </a>
 
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="6" data-veg-json-id="" title="Click to plant" style="">
                         <div class="BlockContent calibre-3">
                           <%= image_tag 'ognons.png', class: "calibre-1" %>
                         </div>
                       </a>
 
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="7" data-veg-json-id="" title="Click to plant" style="">
                         <div class="BlockContent calibre-3">
                           <%= image_tag 'courgettes.png', class: "calibre-3" %>
                         </div>
                       </a>
 
                       <span><div class="BlockContent"></div></span>
-                      <a href="#" class="Block--isDraggable vegetable" title="Click to plant" style="">
+                      <a href="#" class="Block--isDraggable vegetable" data-id="8" data-veg-json-id="" title="Click to plant" style="">
                         <div class="BlockContent calibre-3">
                           <%= image_tag 'coliflowers.png', class: "calibre-3" %>
                         </div>
