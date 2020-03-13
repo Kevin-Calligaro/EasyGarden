@@ -1,41 +1,51 @@
-<div class="description-show">
-  <i class="fas fa-minus-circle p-2"></i>
-  <div class="title-description">
-    <h1>tomate </h1>
-  </div>
-  <div class="d-flex">
-    <p class="general-description">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos fugiat aliquid, illo praesentium dolore excepturi doloribus quae quibusdam quis atque, inventore obcaecati delectus sunt aperiam reprehenderit optio in sint accusantium.
-    </p>
-    <div class="vege-photo-description">
-        <%= image_tag("courgette-photo.png", class: "photo-description") %>
+<%  @garden_vegetables.each do |garden_vegetable|%>
+  <div class="description-show">
+    <i class="fas fa-minus-circle p-2"></i>
+    <div class="title-description">
+      <h1><%= garden_vegetable.vegetable.specie.capitalize %> </h1>
     </div>
-  </div>
-  <div class="onglet-description">
-    <nav>
-      <div class="nav nav-tabs list-inline tabs-underlined" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link tab-underlined active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag("icon-seeding.png", class: "icon-action-description") %> Seeding</a>
-        <a class="nav-item nav-link tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag("icon-planting.png", class: "icon-action-description") %> Planting</a>
-        <a class="nav-item nav-link tab-underlined" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag("icon-harvesting.png", class: "icon-action-description") %> Harvesting</a>
+    <div class="d-flex">
+      <p class="general-description">
+        <%= garden_vegetable.vegetable.description %>      </p>
+      <div class="vege-photo-description">
+          <%= image_tag("courgette-photo.png", class: "photo-description") %>
       </div>
-    </nav>
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <h1>Seeding</h1>
-        <h5><em>From february to march</em></h3>
-        Sow seed in late March to early April for outdoor crops, and in mid-February for growing in an unheated glasshouse. Seed can be expensive, but usually only a few plants are needed, and germination is usually good.
-      - Fill 9cm (3½in) pot with seed or multipurpose compost
-      - Level and firm the compost, then water
-      - Sow seeds on the compost surface, spacing them evenly, about a finger-width apart, to prevent damping off disease
-      - Cover the seed with a layer of vermiculite
-      - Keep at approximately 21°C (70°F), ideally in a heated propagator, until seedlings emerge
-      - Transfer seedlings to a heated greenhouse or, although less good, a sunny windowsill
-      Seedlings emerge after about five days. Place them in the best-possible light (such as a greenhouse) and at a temperature of around 18°C (65°F) to prevent seedlings becoming long, thin and ‘leggy’. Leggy plants produce their first flowers high up on the plant leading to a bare, unproductive lower stem.
-      Growing on:
-      Ideally, grow on in a glasshouse (or failing this, a well-lit windowsill), spacing plants so that their leaves never touch to avoid legginess. About a month after pricking out, the plants will be ready for planting into their final positions – this is indicated by the first flowers showing their yellow colour. The stress of being grown in the confines of a pot promotes flowers earlier than in less stressful positions, such as growing in the ground.",
     </div>
-      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas, voluptatem laborum. Inventore cupiditate, pariatur cum deserunt quibusdam saepe, atque rerum assumenda sed harum non, natus quasi ducimus aspernatur. Eos!</div>
-      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo id at architecto dolorem, exercitationem temporibus porro, laborum omnis quae. Officiis amet beatae repellat corrupti repudiandae veritatis reprehenderit, rem cupiditate temporibus.</div>
+    <div class="onglet-description">
+      <nav>
+        <div class="nav nav-tabs list-inline tabs-underlined" id="nav-tab-<%=garden_vegetable.id%>" role="tablist">
+          <a class="nav-item nav-link tab-underlined active" id="nav-home-tab-<%=garden_vegetable.id%>" data-toggle="tab" href="#nav-home-<%=garden_vegetable.id%>" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag("icon-seeding.png", class: "icon-action-description") %> Seeding</a>
+          <a class="nav-item nav-link tab-underlined" id="nav-profile-tab-<%=garden_vegetable.id%>" data-toggle="tab" href="#nav-profile-<%=garden_vegetable.id%>" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag("icon-planting.png", class: "icon-action-description") %> Planting</a>
+          <a class="nav-item nav-link tab-underlined" id="nav-contact-tab-<%=garden_vegetable.id%>" data-toggle="tab" href="#nav-contact-<%=garden_vegetable.id%>" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag("icon-harvesting.png", class: "icon-action-description") %> Harvesting</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <% if garden_vegetable.vegetable.seeding_start?%>
+          <div class="tab-pane fade show active" id="nav-home-<%=garden_vegetable.id%>" role="tabpanel" aria-labelledby="nav-home-tab">
+            <h1>Seeding</h1>
+            <h5><em>From <%= garden_vegetable.vegetable.seeding_start%> to <%=garden_vegetable.vegetable.seeding_end %></em></h3>
+            <p>
+              <%= garden_vegetable.vegetable.sedding_desription%>
+            </p>
+          </div>
+        <% end %>
+        <% if garden_vegetable.vegetable.planting_start?%>
+          <div class="tab-pane fade" id="nav-profile-<%=garden_vegetable.id%>" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <h1>Planting</h1>
+            <h5><em>From <%= garden_vegetable.vegetable.planting_start%> to <%=garden_vegetable.vegetable.planting_end %></em></h3>
+            <p>
+              <%= garden_vegetable.vegetable.planting_description%>
+            </p>
+          </div>
+        <% end %>
+        <div class="tab-pane fade" id="nav-contact-<%=garden_vegetable.id%>" role="tabpanel" aria-labelledby="nav-contact-tab">
+           <h1>Harvesting</h1>
+          <h5><em>From <%= garden_vegetable.vegetable.harvesting_start%> to <%=garden_vegetable.vegetable.harvesting_end %></em></h3>
+          <p>
+            <%= garden_vegetable.vegetable.harvesting_description%>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
