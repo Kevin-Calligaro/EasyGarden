@@ -14,8 +14,12 @@
     <div class="onglet-description">
       <nav>
         <div class="nav nav-tabs list-inline tabs-underlined" id="nav-tab-<%=garden_vegetable.id%>" role="tablist">
-          <a class="nav-item nav-link tab-underlined active" id="nav-home-tab-<%=garden_vegetable.id%>" data-toggle="tab" href="#nav-home-<%=garden_vegetable.id%>" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag("icon-seeding.png", class: "icon-action-description") %> Seeding</a>
-          <a class="nav-item nav-link tab-underlined" id="nav-profile-tab-<%=garden_vegetable.id%>" data-toggle="tab" href="#nav-profile-<%=garden_vegetable.id%>" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag("icon-planting.png", class: "icon-action-description") %> Planting</a>
+          <% if garden_vegetable.vegetable.seeding_start?%>
+            <a class="nav-item nav-link tab-underlined active" id="nav-home-tab-<%=garden_vegetable.id%>" data-toggle="tab" href="#nav-home-<%=garden_vegetable.id%>" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag("icon-seeding.png", class: "icon-action-description") %> Seeding</a>
+          <% end %>
+          <% if garden_vegetable.vegetable.planting_start?%>
+            <a class="nav-item nav-link tab-underlined" id="nav-profile-tab-<%=garden_vegetable.id%>" data-toggle="tab" href="#nav-profile-<%=garden_vegetable.id%>" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag("icon-planting.png", class: "icon-action-description") %> Planting</a>
+         <% end %>
           <a class="nav-item nav-link tab-underlined" id="nav-contact-tab-<%=garden_vegetable.id%>" data-toggle="tab" href="#nav-contact-<%=garden_vegetable.id%>" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag("icon-harvesting.png", class: "icon-action-description") %> Harvesting</a>
         </div>
       </nav>
