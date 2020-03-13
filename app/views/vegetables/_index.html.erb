@@ -13,7 +13,7 @@
           <p><em>Planting</em> <br> From <%= garden_vegetable.vegetable.planting_start.strftime("%b")%> to <%=garden_vegetable.vegetable.planting_end.strftime("%b") %></p>
         <% end %>
         <div class="d-flex align-items-center">
-          <a class="button-see" vegetable_id="<%= garden_vegetable.id %>">See More</a>
+          <button class="button-see" vegetable_id="<%= garden_vegetable.id %>">See More</button>
         </div>
       </div>
     </div>
