@@ -393,7 +393,7 @@ user1 = User.create!(
   email: 'sarah.lee@gmail.com',
   first_name: 'Sarah',
   last_name: 'Lee',
-  password: 'secret'
+  password: 'secret'@
 )
 
 puts 'Finished user!'
