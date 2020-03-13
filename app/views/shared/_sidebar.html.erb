@@ -22,8 +22,14 @@
           </div>
           <div class="Action-title d-flex justify-content-evenly">
             <div class="specie-type">
-              <%= task.action %>
-              <strong><%= garden_vegetable.vegetable.specie %></strong>
+              <h2><%= task.action %> <strong><%= garden_vegetable.vegetable.specie %></strong></h2>
+              <% first_tasks = Task.where(step: 1, garden_vegetable: garden_vegetable) %>
+              <% second_tasks = Task.where(step: 2, garden_vegetable: garden_vegetable) %>
+              <% third_tasks = Task.where(step: 3, garden_vegetable: garden_vegetable) %>
+              <% first_task = first_tasks.each do |first_task| %>
+                <%= first_task.done %>
+              <% end %>
+              <%= button_to( "Mark as done", :action => "mark_as_done", :controller => "tasks") %>
             </div>
           </div>
           <div class="see-more">
