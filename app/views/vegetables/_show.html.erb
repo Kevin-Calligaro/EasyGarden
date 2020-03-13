@@ -1,5 +1,5 @@
 <%  @garden_vegetables.each do |garden_vegetable|%>
-  <div class="description-show" vegetable_id=<%= garden_vegetable.id %>>
+  <div class="description-show display-none" vegetable_id=<%= garden_vegetable.id %>>
     <i class="fas fa-minus-circle p-2"></i>
     <div class="title-description">
       <h1><%= garden_vegetable.vegetable.specie.capitalize %> </h1>
