@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../plugins/show_edit";
 // import { cloning } from '../plugins/garden';
 
 // cloning();
