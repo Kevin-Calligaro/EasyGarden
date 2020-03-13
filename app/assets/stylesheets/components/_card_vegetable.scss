@@ -1,4 +1,4 @@
-.button-see{
+#button-see{
   text-decoration: none;
 
 }
@@ -22,7 +22,7 @@
     }
 }
 
-.button-see {
+#button-see {
   color: black;
   padding: 4px 7px;
   border: 1px solid rgba(0, 170, 37, 0.45);
@@ -35,10 +35,28 @@
 
     }
 }
-
-
 .card-vege-photo{
   position: absolute;
   left: -14px;
   top: -20px;
 }
+
+.card-vege-icon{
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  width: 40px;
+  height:40px;
+
+}
+
+
+
+
+
+
+
+
+
+
+

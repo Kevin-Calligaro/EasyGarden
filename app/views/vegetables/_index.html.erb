@@ -3,6 +3,7 @@
     <div class="card-vegetable">
       <div class="vege-photo">
         <%= image_tag("courgette-photo.png", class: "card-vege-photo") %>
+        <%= image_tag("courgettes.png", class: "card-vege-icon") %>
       </div>
         <h2><%= garden_vegetable.vegetable.specie.capitalize%></h2>
       <div class="d-flex justify-content-between">
@@ -12,9 +13,12 @@
           <p><em>Planting</em> <br> From <%= garden_vegetable.vegetable.planting_start.strftime("%b")%> to <%=garden_vegetable.vegetable.planting_end.strftime("%b") %></p>
         <% end %>
         <div class="d-flex align-items-center">
-          <%= link_to 'See More', '#', class: 'button-see' %>
+          <button class="button-see" vegetable_id="<%= garden_vegetable.id %>">See More</button>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+
+
+
