@@ -1,19 +1,19 @@
 <div class="col">
-  <% @garden_vegetables.each do |garden_vegetable| %>
+  <% @vegetables.each do |vegetable| %>
     <div class="card-vegetable">
       <div class="vege-photo">
         <%= image_tag("courgette-photo.png", class: "card-vege-photo") %>
         <%= image_tag("courgettes.png", class: "card-vege-icon") %>
       </div>
-        <h2><%= garden_vegetable.vegetable.specie.capitalize%></h2>
+        <h2><%= vegetable.specie.capitalize%></h2>
       <div class="d-flex justify-content-between">
-        <% if garden_vegetable.vegetable.seeding_start? %>
-          <p><em>Seeding</em> <br> From <%= garden_vegetable.vegetable.seeding_start.strftime("%b")%> to <%=garden_vegetable.vegetable.seeding_end.strftime("%b") %></p>
+        <% if vegetable.seeding_start? %>
+          <p><em>Seeding</em> <br> From <%= vegetable.seeding_start.strftime("%b")%> to <%=vegetable.seeding_end.strftime("%b") %></p>
         <% else %>
-          <p><em>Planting</em> <br> From <%= garden_vegetable.vegetable.planting_start.strftime("%b")%> to <%=garden_vegetable.vegetable.planting_end.strftime("%b") %></p>
+          <p><em>Planting</em> <br> From <%= vegetable.planting_start.strftime("%b")%> to <%=vegetable.planting_end.strftime("%b") %></p>
         <% end %>
         <div class="d-flex align-items-center">
-          <button class="button-see" vegetable_id="<%= garden_vegetable.id %>">See More</button>
+          <button class="button-see" vegetable_id="<%= vegetable.id %>">See More</button>
         </div>
       </div>
     </div>
