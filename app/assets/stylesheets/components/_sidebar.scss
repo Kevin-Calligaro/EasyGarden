@@ -3,8 +3,8 @@ body{
 }
 .sidebar-container{
   width: 20vw;
-  height: auto;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   background-color: rgba(250,248,245,0.8);
   left: 0;
   top: 0;
@@ -14,6 +14,7 @@ body{
 
 .title-sidebar{
   width: 22vw;
+
   height: 30px;
   background-color: rgba(0,170,37,0.25);
   border-bottom-right-radius: 12px;
@@ -27,8 +28,16 @@ body{
   }
 }
 
+.cards-vegetables{
+
+  position: fixed;
+  overflow-y: scroll;
+  top: 245px;
+  width: 20vw;
+  bottom: 20px;
+}
 .action-task{
-  margin-top: 60px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-around;
   h2{
