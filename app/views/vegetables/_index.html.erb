@@ -1,9 +1,25 @@
 <div class="col">
+  <div class="backet">
   <% @garden_vegetables.each do |garden_vegetable| %>
     <div class="card-vegetable">
       <div class="vege-photo">
         <%= image_tag("courgette-photo.png", class: "card-vege-photo") %>
-        <%= image_tag("courgettes.png", class: "card-vege-icon") %>
+
+
+          <div class="BlockWrapper testicule BlockWrapper--isDropzone draggable-dropzone--occupied">
+            <span><div class="BlockContent"></div></span>
+            <a href="#" class="Block--isDraggable vegetable" data-id="1" title="Click to plant" style="">
+            <div class="BlockContent">
+              <%= image_tag garden_vegetable.vegetable.photo_vegetable, class: "calibre-1 card-vege-icon" %>
+            </div>
+            </a>v
+          </div>
+
+
+
+        <%#= image_tag("courgettes.png", class: "card-vege-icon") %>
+
+
       </div>
         <h2><%= garden_vegetable.vegetable.specie.capitalize%></h2>
       <div class="d-flex justify-content-between">
@@ -18,7 +34,6 @@
       </div>
     </div>
   <% end %>
+  </div>
 </div>
-
-
 

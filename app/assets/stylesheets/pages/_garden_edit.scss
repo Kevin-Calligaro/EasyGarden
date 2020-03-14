@@ -1,5 +1,6 @@
 .display-none {
   display: none;
+  transition: 0.4s;
 }
 .description-show{
   z-index: 43;
@@ -10,6 +11,7 @@
   height: auto;
   background: rgba(250,248,245,0.9) ;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.4s;
 
 }
 

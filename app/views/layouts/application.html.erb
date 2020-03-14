@@ -10,10 +10,14 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <section id="Collidable" class="Collidable">
+      <article class="BlockLayout BlockLayout--typePositioned" tabindex="0">
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
+    </section>
+  </article>
   </body>
 </html>
