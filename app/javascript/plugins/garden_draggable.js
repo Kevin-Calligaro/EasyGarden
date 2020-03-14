@@ -18,8 +18,9 @@ export default function PluginsCollidable() {
     dropzone: '.BlockWrapper--isDropzone',
     collidables: '.CollidableObstacle',
     mirror: {
-      appendTo: containerSelector,
       constrainDimensions: true,
+      cursorOffsetX: -27,
+      cursorOffsetY: 27,
     },
     plugins: [Plugins.Collidable],
   });
@@ -42,13 +43,22 @@ export default function PluginsCollidable() {
   });
 
   const myJson =[]
+  let clone = ""
+  droppable.on('droppable:start', (event) => {
+    // console.log(event.dragEvent.data.originalSource.outerHTML);
+    clone = (event.dragEvent.data.originalSource.outerHTML)
+
+    // const emptyCard =
+    // event.data.dropzone.innerHTML = clone
+  });
+
 
   droppable.on('droppable:stop', (event) => {
 
     const pos = event.data.dropzone.previousElementSibling.dataset.position; // je recup la data-position du span cible => x1y2
     const id  = event.data.dragEvent.source.dataset.id; // je recup la data-id du veg source => x1y2
-    console.log(pos);
-    console.log(id);
+    //console.log(pos);
+    //console.log(id);
     const moving = document.querySelector('.draggable--original');
 
      // console.log(moving);
@@ -60,24 +70,34 @@ export default function PluginsCollidable() {
       moving.dataset.gardenVeggieId = uniqueId
     } else {
       const toDelete = myJson.find( vege => vege.jsonId === uniqueId);
-      console.log(toDelete)
-      console.log(myJson.indexOf(toDelete));
+      //console.log(toDelete)
+      //console.log(myJson.indexOf(toDelete));
       myJson.splice(myJson.indexOf(toDelete), 1);
       moving.dataset.gardenVeggieId = uniqueId
     };
 
-    console.log(moving);
+    //console.log(moving);
     let myData = {
         "id" : id,
         "position" : pos,
         "jsonId" : uniqueId,
     };
 
-    myJson.push( myData )
+    const backet = document.querySelector(".backet");
+    const vegeCards = backet.querySelectorAll(".testicule");
+    // console.log(vegeCards);
 
-    console.log(myJson);
+      vegeCards.forEach ((card) => {
+      const test = card;
+      console.log(test);
+      });
+
+    myJson.push( myData )
+    // console.log(myJson)
 
   });
+
+
 
   return droppable;
 

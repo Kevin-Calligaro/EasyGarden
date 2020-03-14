@@ -32,4 +32,4 @@ seeMoreButtons.forEach((button) => {
       card.classList.add("display-none");
     }
   });
-})
+});
