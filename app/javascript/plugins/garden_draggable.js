@@ -98,6 +98,7 @@ export default function PluginsCollidable() {
   });
 
 
+
   return droppable;
 
 };
