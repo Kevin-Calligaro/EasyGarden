@@ -25,6 +25,7 @@ seeMoreButtons.forEach((button) => {
       // On "affiche" notre card, en supprimant la class 'display-none'
       card.classList.remove("display-none");
 
+
     // Si la card de droite est displayed
     } else {
       // On la supprime en ajoutant la class display-none
