@@ -50,10 +50,10 @@ p {
   }
   .line-l {
     position: absolute;
-    left:-30px;
+    left:0px;
     background-image: asset-url('line_l.png');
     height: (15 * $H) + 100px;
-    width: 60px;
+    width: 10px;
     top:-50px;
     z-index:11;
     background-position: center;
@@ -64,7 +64,7 @@ p {
     right:-10px;
     background-image: asset-url('line_r.png');
     height: (15 * $H) + 100px;
-    width: 60px;
+    width: 10px;
     top:-50px;
     z-index:11;
     background-position: center;
