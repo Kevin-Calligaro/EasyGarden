@@ -2,5 +2,10 @@
   <div class="title-garden" style="position: absolute;right: 650px;top: 75px;">
     <h1><%= @garden.title %></h1>
   </div>
+  <div class="container-info">
+  <div class="vegetable-description">
+    <%= render 'garden_vegetables/show' %>
+  </div>
+</div>
   <%= render 'shared/sidebar' %>
 </div>

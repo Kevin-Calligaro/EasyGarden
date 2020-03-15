@@ -6,7 +6,7 @@
   <% @garden_vegetables.each do |garden_vegetable| %>
     <% garden_vegetable.tasks.each do |task| %>
       <% if task.done == false %>
-        <div class="action-task">
+        <div class="action-task" >
           <div class="action-color">
             <div class="action-logo">
               <p>⛏️</p>
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="see-more">
-            <p><i class="fas fa-plus-circle"></i></p>
+            <button class="button-plus" task_id="<%= garden_vegetable.id %>"><i class="fas fa-plus-circle" ></i></button>
           </div>
         </div>
       <% end %>
