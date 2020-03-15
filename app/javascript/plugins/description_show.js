@@ -1,20 +1,21 @@
 
 // Choppe tous les bouttons de gauche
-const tasks = document.querySelectorAll(".button-plus");
+const taskButtons = document.querySelectorAll(".button-plus");
 
 // Choppe toutes les cards de droite
 const cards = Array.from(document.querySelectorAll(".description-show"));
 
-tasks.forEach((task) => {
+taskButtons.forEach((button) => {
 
   // Sur chaque button, event listener
-  task.addEventListener('click', (event) => {
+  button.addEventListener('click', (event) => {
     // On récupére l'id, commun au button & à la card
-    const taskId = task.getAttribute("task_id");
-    console.log(task);
+    const taskId = button.getAttribute("task_id");
+    console.log(taskId);
     // On choppe la card, à partir de l'id du button
-    const card = cards.find(element => element.getAttribute("task_id") === taskId.first)
+    const card = cards.find(element => element.getAttribute("garden_vegetable_id") === taskId);
      console.log(card);
+
     // Si la card de droite n'est pas displayed
     if (card.classList.contains("display-none")) {
       // On prend toutes les cards actuellement affichées
