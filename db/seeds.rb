@@ -44,7 +44,7 @@ print '>>>>>>>>>>>>>>create vegetables<<<<<<<<<<<<<<<<<<<<<'
     area: 40,
     description: 'Growing your own tomatoes is simple and just a couple of plants will reward you with plenty of delicious tomatoes in the summer. There are all sizes of tomatoes to try, from the tiniest cherry types, favourites with children, through to full-flavoured giant beefsteak tomatoes.',
     photo_vegetable: "tomato.png",
-    icon_vegetable: ""
+    icon_vegetable: "tomato.png"
     )
 
 carrot = Vegetable.create!(
@@ -63,7 +63,7 @@ carrot = Vegetable.create!(
     area: 30,
     description: "Carrots come in shapes and colours other than long and orange – look out for round carrots, as well as unusual colours such as red, yellow and even purple. They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden.",
     photo_vegetable: "carrot.png",
-    icon_vegetable: ""
+    icon_vegetable: "carrot.png"
     )
 
 egg_plant = Vegetable.create!(
@@ -80,7 +80,7 @@ egg_plant = Vegetable.create!(
     area: 60,
     description:"Eggplant is a heat-loving plant. Not very productive except in the south, it is most often grown in a greenhouse. On the other hand, the feet grafted on tomatoes are much better suited to temperate climates. They are more resilient and productive.",
     photo_vegetable: "egg_plant.png",
-    icon_vegetable: ""
+    icon_vegetable: "egg_plant.png"
     )
 
 potato = Vegetable.create!(
@@ -97,7 +97,7 @@ potato = Vegetable.create!(
     area:  30,
     description: "Relatively easy to cultivate and maintain, the potato requires some care and gestures that will allow you to improve the yield and the harvest. Mounding of potatoes: When the plant reaches about 10-15 cm in height, mound the foot with light soil. This operation which consists of forming a small mound at the foot of the stems aims to keep the plant in the ground, protect it from the wind and allow it to develop at best. Watering the potatoes: Potatoes are especially worried about prolonged dryness and lack of water. Evening watering is recommended when it's hot and you see the foliage wilting. Do not wet the leaves to avoid the appearance of diseases such as fungi. In order to avoid any risk of drought in the soil, it is advisable to put a mulch at the base of the potato plants." ,
     photo_vegetable: "potato.png",
-    icon_vegetable: ""
+    icon_vegetable: "potato.png"
     )
 
 radish = Vegetable.create!(
@@ -114,7 +114,7 @@ radish = Vegetable.create!(
     area: 20,
     description: "Except in the summer when it tolerates light shade, the radish likes bright and sunny situations. This fast-growing crop requires well-worked soil and sparse but regular watering.",
     photo_vegetable: "radish.png",
-    icon_vegetable: ""
+    icon_vegetable: "radish.png"
     )
 
 pepper = Vegetable.create!(
@@ -131,7 +131,7 @@ pepper = Vegetable.create!(
     area: 50,
     description: "The bell pepper (Capsicum annuum) likes the sun: only grow it if you can give it a sunny location. In the vegetable patch, it forms a foot about 1m high, with beautiful glazed foliage. It bears small white flowers, which later give very colorful fruits which ripen from green to yellow or red.",
     photo_vegetable: "pepper.png",
-    icon_vegetable: ""
+    icon_vegetable: "pepper.png"
     )
 
 onion = Vegetable.create!(
@@ -148,7 +148,7 @@ onion = Vegetable.create!(
     area: 10,
     description: "Onions are strong and do not require much care. It is one of the rare vegetables not to like being watered. If you let them grow a second year, they will produce a large ball of white flowers, highly prized by insects",
     photo_vegetable: "onion.png",
-    icon_vegetable: ""
+    icon_vegetable: "onion.png"
     )
 
 cauliflower = Vegetable.create!(
@@ -165,7 +165,7 @@ cauliflower = Vegetable.create!(
     area: 70,
     description: "As soon as the plants have at least 3 to 4 leaves, transplant directly into place while protecting your crop if this operation must be carried out before May. Transplanting is done every 40 cm. This spacing is necessary to allow the plants room to develop. Transplant to well-plowed soil.",
     photo_vegetable: "cauliflower.png",
-    icon_vegetable: ""
+    icon_vegetable: "cauliflower.png"
     )
 
 broad_beans = Vegetable.create!(
@@ -182,7 +182,7 @@ broad_beans = Vegetable.create!(
     area: 40,
     description: "" ,
     photo_vegetable: "beans.png",
-    icon_vegetable: ""
+    icon_vegetable: "beans.png"
     )
 
 courgette = Vegetable.create!(
@@ -199,7 +199,7 @@ courgette = Vegetable.create!(
     area: 100,
     description: "",
     photo_vegetable: "courgette.png",
-    icon_vegetable: ""
+    icon_vegetable: "courgette.png"
     )
 
 tomato2 = Vegetable.create!(

@@ -43,13 +43,14 @@ export default function PluginsCollidable() {
   });
 
   const myJson =[]
-  let clone = ""
   droppable.on('droppable:start', (event) => {
-    // console.log(event.dragEvent.data.originalSource.outerHTML);
-    clone = (event.dragEvent.data.originalSource.outerHTML)
+    const backet = document.querySelector(".backet");
+    const cible = event.data.dropzone.previousElementSibling.nextElementSibling;
+    cible.id = ("needVeg");
+    const cible2 = event.data.dropzone.previousElementSibling.nextElementSibling.firstElementChild;
+    cible2.id = ("needVeg2");
 
-    // const emptyCard =
-    // event.data.dropzone.innerHTML = clone
+
   });
 
 
@@ -57,11 +58,8 @@ export default function PluginsCollidable() {
 
     const pos = event.data.dropzone.previousElementSibling.dataset.position; // je recup la data-position du span cible => x1y2
     const id  = event.data.dragEvent.source.dataset.id; // je recup la data-id du veg source => x1y2
-    //console.log(pos);
-    //console.log(id);
     const moving = document.querySelector('.draggable--original');
 
-     // console.log(moving);
 
     let uniqueId = parseInt(moving.dataset.gardenVeggieId, 10);
 
@@ -70,37 +68,29 @@ export default function PluginsCollidable() {
       moving.dataset.gardenVeggieId = uniqueId
     } else {
       const toDelete = myJson.find( vege => vege.jsonId === uniqueId);
-      //console.log(toDelete)
-      //console.log(myJson.indexOf(toDelete));
+
       myJson.splice(myJson.indexOf(toDelete), 1);
       moving.dataset.gardenVeggieId = uniqueId
     };
 
-    //console.log(moving);
+    let clone = (event.data.dropzone.lastChild)
+
+    const vegeCards = document.querySelector("#needVeg")
+    const vegeSpan = document.querySelector("#needVeg2")
+    console.log(event)
+    // vegeCards.insertBefore(clone, vegeSpan.nextSibling );
+    vegeCards.id ="good"
+    vegeSpan.id ="good1"
+
     let myData = {
         "id" : id,
         "position" : pos,
         "jsonId" : uniqueId,
     };
-
-    const backet = document.querySelector(".backet");
-    const vegeCards = backet.querySelectorAll(".testicule");
-    // console.log(vegeCards);
-
-      vegeCards.forEach ((card) => {
-      const test = card;
-      console.log(test);
-      });
-
     myJson.push( myData )
     // console.log(myJson)
-
   });
-
-
-
   return droppable;
-
 };
 
 export { PluginsCollidable };

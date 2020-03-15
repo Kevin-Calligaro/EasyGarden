@@ -10,14 +10,17 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 20px;
+  width: (20 * $L)+300;
+  height: (15 * $H)+200;
+  margin: 0px auto auto 300px;
+  border: 1px solid black;
 }
 
 
 .garden-container {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  margin-left: 500px;
+  margin: 100px auto;
+  border: 1px solid red;
+
   width: (20 * $L);
   height: (15 * $H);
   display: flex;
