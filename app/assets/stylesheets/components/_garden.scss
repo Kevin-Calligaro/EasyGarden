@@ -13,14 +13,12 @@ p {
   width: (20 * $L)+300;
   height: (15 * $H)+200;
   margin: 0px auto auto 300px;
-  border: 1px solid black;
+  border: 1px solid $light-gray;
 }
 
 
 .garden-container {
   margin: 100px auto;
-  border: 1px solid red;
-
   width: (20 * $L);
   height: (15 * $H);
   display: flex;
