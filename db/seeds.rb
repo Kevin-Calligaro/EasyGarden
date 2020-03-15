@@ -185,8 +185,8 @@ broad_beans = Vegetable.create!(
     icon_vegetable: ""
     )
 
-courgette = Vegetable.create!(
-    specie: "courgette",
+zucchini = Vegetable.create!(
+    specie: "zucchini",
     seeding_start: Date.parse('01-04-2020'),
     seeding_end: Date.parse('30-05-2020'),
     sedding_desription: "",
@@ -198,7 +198,7 @@ courgette = Vegetable.create!(
     harvesting_description: "",
     area: 100,
     description: "",
-    photo_vegetable: "courgette.png",
+    photo_vegetable: "zucchini.png",
     icon_vegetable: ""
     )
 
@@ -367,8 +367,8 @@ broad_beans2 = Vegetable.create!(
     icon_vegetable: ""
     )
 
-courgette2 = Vegetable.create!(
-    specie: "courgette",
+zucchini2 = Vegetable.create!(
+    specie: "zucchini",
     seeding_start: Date.parse('01-04-2020'),
     seeding_end: Date.parse('30-05-2020'),
     sedding_desription: "",
@@ -462,7 +462,7 @@ relationship8 = Relationship.create!(
 
 relationship9 = Relationship.create!(
   vegetable1: tomato,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -522,7 +522,7 @@ relationship18 = Relationship.create!(
 
 relationship19 = Relationship.create!(
   vegetable1: carrot,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -576,7 +576,7 @@ relationship27 = Relationship.create!(
 
 relationship28 = Relationship.create!(
   vegetable1: egg_plant,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -618,7 +618,7 @@ relationship34 = Relationship.create!(
 
 relationship35 = Relationship.create!(
   vegetable1: potato,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "enemy"
 ),
 
@@ -654,7 +654,7 @@ relationship40 = Relationship.create!(
 
 relationship41 = Relationship.create!(
   vegetable1: radish,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -684,7 +684,7 @@ relationship45 = Relationship.create!(
 
 relationship46 = Relationship.create!(
   vegetable1: pepper,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -708,7 +708,7 @@ relationship49 = Relationship.create!(
 
 relationship50 = Relationship.create!(
   vegetable1: onion,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -726,7 +726,7 @@ relationship52 = Relationship.create!(
 
 relationship53 = Relationship.create!(
   vegetable1: cauliflower,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -738,13 +738,13 @@ relationship54 = Relationship.create!(
 
 relationship55 = Relationship.create!(
   vegetable1: broad_beans,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
 relationship56 = Relationship.create!(
-  vegetable1: courgette,
-  vegetable2: courgette2,
+  vegetable1: zucchini,
+  vegetable2: zucchini2,
   status: "friends"
 )
 
@@ -772,8 +772,8 @@ garden_vegetable_egg_plant = GardenVegetable.create!(
   garden: garden1
 )
 
-garden_vegetable_courgette = GardenVegetable.create!(
-  vegetable: courgette,
+garden_vegetable_zucchini = GardenVegetable.create!(
+  vegetable: zucchini,
   garden: garden1
 )
 
