@@ -24,11 +24,11 @@
         </div>
       </nav> -->
 
-      <div class="" id="">
+      <div class="general-description" id="">
         <% if task.action == "seeding" %>
           <% if task.garden_vegetable.vegetable.seeding_start?%>
             <div class="" id="nav-home-<%=task.garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-home-tab">
-              <h1>Seeding</h1>
+              <h3>Seeding</h3>
               <h5><em>From <%= task.garden_vegetable.vegetable.seeding_start.strftime("%B")%> to <%=task.garden_vegetable.vegetable.seeding_end.strftime("%B") %></em></h3>
               <p>
                 <%= task.garden_vegetable.vegetable.sedding_desription%>
@@ -38,7 +38,7 @@
         <% elsif task.action == "planting" %>
           <% if task.garden_vegetable.vegetable.planting_start?%>
             <div class="" id="nav-profile-<%=task.garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <h1>Planting</h1>
+              <h3>Planting</h3>
               <h5><em>From <%= task.garden_vegetable.vegetable.planting_start.strftime("%B")%> to <%= task.garden_vegetable.vegetable.planting_end.strftime("%B") %></em></h3>
               <p>
                 <%= task.garden_vegetable.vegetable.planting_description%>
@@ -47,7 +47,7 @@
           <% end %>
         <% elsif task.action == "harvesting" %>
           <div class="" id="nav-contact-<%=task.garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-contact-tab">
-             <h1>Harvesting</h1>
+             <h3>Harvesting</h3>
             <h5><em>From <%= task.garden_vegetable.vegetable.harvesting_start.strftime("%B")%> to <%= task.garden_vegetable.vegetable.harvesting_end.strftime("%B") %></em></h3>
             <p>
               <%= task.garden_vegetable.vegetable.harvesting_description%>
