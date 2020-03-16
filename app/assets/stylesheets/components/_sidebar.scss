@@ -48,21 +48,16 @@ body{
 }
 
 .action-color{
-  background-image: asset-url("background-urgency/urgence_1.png");
-  background-size: cover;
-  width: 45px;
-  height: 45px;
   position: relative;
   z-index: 1;
+  width: 20px;
+  height: 20px;
 }
 
 .action-logo{
   position: absolute;
   left: 12px;
   top: 10px;
-  p{
-    font-size: 15px;
-  }
 }
 .logo-easy-garden{
 

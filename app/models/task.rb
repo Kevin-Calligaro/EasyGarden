@@ -14,15 +14,42 @@ class Task < ApplicationRecord
     self.garden_vegetable.tasks.where.not(id: self.id).where("step > ? ", self.step).order(step: :asc)
   end
 
+  def first_tasks_urgency
+    if self.garden_vegetable.vegetable.seeding_start != nil
+      if DateTime.now < self.garden_vegetable.vegetable.seeding_start
+        "not urgent"
+      elsif DateTime.now >= self.garden_vegetable.vegetable.seeding_start
+        "urgent soon"
+      # elsif DateTime.now >= DateTime.now + ((self.garden_vegetable.vegetable.planting_start - self.garden_vegetable.vegetable.seeding_start) / 2) || DateTime.now + ((self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.seeding_start) / 2) || DateTime.now + ((self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.planting_start) / 2)
+      #   "urgent"
+      else DateTime.now >= self.garden_vegetable.vegetable.seeding_end || self.garden_vegetable.vegetable.planting_end
+        "very urgent"
+      end
+
+    elsif self.garden_vegetable.vegetable.seeding_start == nil
+      if DateTime.now < self.garden_vegetable.vegetable.planting_start
+        "not urgent"
+      elsif DateTime.now >= self.garden_vegetable.vegetable.planting_start
+        "urgent soon"
+      # elsif DateTime.now >= DateTime.now + ((self.garden_vegetable.vegetable.planting_start - self.garden_vegetable.vegetable.seeding_start) / 2) || DateTime.now + ((self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.seeding_start) / 2) || DateTime.now + ((self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.planting_start) / 2)
+      #   "urgent"
+      else DateTime.now >= self.garden_vegetable.vegetable.planting_end
+        "very urgent"
+      end
+    end
+  end
+
   def urgency
-    if DateTime.now < self.date
-      "not urgent"
-    elsif DateTime.now <= self.date + 7
-      "urgent soon"
-    elsif DateTime.now <= self.date + 14
-      "urgent"
-    else DateTime.now <= self.date + 21
-      "very urgent"
+    if self.date != nil
+      if DateTime.now < self.date
+        "not urgent"
+      elsif DateTime.now <= self.date + 7
+        "urgent soon"
+      elsif DateTime.now <= self.date + 14
+        "urgent"
+      else DateTime.now <= self.date + 21
+        "very urgent"
+      end
     end
   end
 
