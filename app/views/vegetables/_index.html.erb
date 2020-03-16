@@ -1,8 +1,35 @@
 
+<div class="col cards-vegetables">
+  <div class="backet">
+    <% @vegetables.each do |vegetable| %>
+
     <div class="card-vegetable">
       <div class="vege-photo">
-        <%= image_tag("courgette-photo.png", class: "card-vege-photo") %>
+        <%= image_tag vegetable.photo_vegetable, class: "card-vege-photo" %>
+        <div class="BlockWrapper testicule BlockWrapper--isDropzone draggable-dropzone--occupied">
+          <span><div class="BlockContent"></div></span>
+          <a href="#" class="Block--isDraggable vegetable" data-id="1" title="Click to plant" style="">
+
+            <div class="BlockContent">
+              <%= image_tag vegetable.icon_vegetable, class: "calibre-1 card-vege-icon" %>
+            </div>
+          </a>
+        </div>
+
       </div>
-      <h2>Tomate</h2>
-      <p><em>Seeding between</em> <br>February and April</p>
+      <h2><%= vegetable.specie.capitalize%></h2>
+      <div class="d-flex justify-content-between">
+        <% if vegetable.seeding_start? %>
+        <p><em>Seeding</em> <br> From <%= vegetable.seeding_start.strftime("%b")%> to <%= vegetable.seeding_end.strftime("%b") %></p>
+        <% else %>
+        <p><em>Planting</em> <br> From <%= vegetable.planting_start.strftime("%b")%> to <%= vegetable.planting_end.strftime("%b") %></p>
+        <% end %>
+        <div class="d-flex align-items-center">
+          <button class="button-see select" vegetable_id="<%= vegetable.id %>">See More</button>
+        </div>
+      </div>
     </div>
+    <% end %>
+  </div>
+</div>
+

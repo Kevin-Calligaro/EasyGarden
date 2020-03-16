@@ -17,7 +17,7 @@ p {
 .garden-container {
   margin-top: 60px;
   margin-bottom: 60px;
-  margin-left: 120px;
+  margin-left: 500px;
   width: (20 * $L);
   height: (15 * $H);
   display: flex;
@@ -92,6 +92,7 @@ p {
   height: (9 * $H);
   display: flex;
   flex-wrap: wrap;
+  margin-left: 500px;
 }
 
 .vegetable-units {

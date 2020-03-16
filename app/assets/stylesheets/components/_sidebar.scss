@@ -4,8 +4,8 @@ body{
 .sidebar-container{
   width: 20vw;
   height: 100vh;
-  position: absolute;
-  background-image: #faf8f5;
+  position: fixed;
+  background-color: rgba(250,248,245,0.8);
   left: 0;
   top: 0;
   z-index: 2;
@@ -13,8 +13,8 @@ body{
 }
 
 .title-sidebar{
-  margin-top: 160px;
   width: 22vw;
+
   height: 30px;
   background-color: rgba(0,170,37,0.25);
   border-bottom-right-radius: 12px;
@@ -28,8 +28,17 @@ body{
   }
 }
 
+.cards-vegetables{
+
+  position: fixed;
+  overflow-y: scroll;
+  top: 245px;
+  width: 20vw;
+  bottom: 20px;
+}
+
 .action-task{
-  margin-top: 60px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-around;
   h2{
@@ -53,6 +62,13 @@ body{
   p{
     font-size: 15px;
   }
+}
+.logo-easy-garden{
+
+  width: 210px;
+  height: 120px;
+  margin: 30px;
+
 }
 
 .specie-type{

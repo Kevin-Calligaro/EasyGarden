@@ -17,6 +17,7 @@ class Task < ApplicationRecord
   private
 
   def set_following_tasks_due_dates
-    if
+    if self.where(step: 1).action == "seeding"
+      self.where(step: 2).date = self.where(step: 1).date + (self.garden_vegetable.vegetable.planting_start)
   end
 end

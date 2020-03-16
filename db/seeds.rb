@@ -43,8 +43,8 @@ print '>>>>>>>>>>>>>>create vegetables<<<<<<<<<<<<<<<<<<<<<'
     harvesting_description: "Pick fruits as required, with the calyx (stalk) still attached. When cropping slows in early autumn, green fruits can be gathered and kept in a warm, dark place to ripen.",
     area: 40,
     description: 'Growing your own tomatoes is simple and just a couple of plants will reward you with plenty of delicious tomatoes in the summer. There are all sizes of tomatoes to try, from the tiniest cherry types, favourites with children, through to full-flavoured giant beefsteak tomatoes.',
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "tomatoes_photo.png",
+    icon_vegetable: "tomato.png"
     )
 
 carrot = Vegetable.create!(
@@ -62,8 +62,8 @@ carrot = Vegetable.create!(
     harvesting_description: "Carrots are ready for harvesting about 12-16 weeks after sowing. Pick as soon as they are large enough to use; don't aim for the largest roots or you'll sacrifice flavour. Lift carefully using a fork if the soil is heavy.",
     area: 30,
     description: "Carrots come in shapes and colours other than long and orange – look out for round carrots, as well as unusual colours such as red, yellow and even purple. They can be grown in containers if you are short on space, or your soil is stony or heavy clay. Sow regularly for prolonged cropping.They freeze and store well too, but like most vegetables, taste best freshly picked from the garden.",
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "carrot_photo.png",
+    icon_vegetable: "carrot.png"
     )
 
 egg_plant = Vegetable.create!(
@@ -79,8 +79,8 @@ egg_plant = Vegetable.create!(
     harvesting_description: "The fruits are harvested well developed, from fifteen centimeters for long varieties. About ten centimeters for the rounds. Eggplant does not keep very long. The most effective method of preservation is to freeze ready-made meals. You can also dry it.",
     area: 60,
     description:"Eggplant is a heat-loving plant. Not very productive except in the south, it is most often grown in a greenhouse. On the other hand, the feet grafted on tomatoes are much better suited to temperate climates. They are more resilient and productive.",
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "egg_plant_photo.png",
+    icon_vegetable: "egg_plant.png"
     )
 
 potato = Vegetable.create!(
@@ -96,8 +96,8 @@ potato = Vegetable.create!(
     harvesting_description: " It is unnecessary to harvest the potatoes before the foliage is completely yellowed. This essential stage of yellowing indicates that the harvest is imminent." ,
     area:  30,
     description: "Relatively easy to cultivate and maintain, the potato requires some care and gestures that will allow you to improve the yield and the harvest. Mounding of potatoes: When the plant reaches about 10-15 cm in height, mound the foot with light soil. This operation which consists of forming a small mound at the foot of the stems aims to keep the plant in the ground, protect it from the wind and allow it to develop at best. Watering the potatoes: Potatoes are especially worried about prolonged dryness and lack of water. Evening watering is recommended when it's hot and you see the foliage wilting. Do not wet the leaves to avoid the appearance of diseases such as fungi. In order to avoid any risk of drought in the soil, it is advisable to put a mulch at the base of the potato plants." ,
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "potatos_photo.png",
+    icon_vegetable: "potato.png"
     )
 
 radish = Vegetable.create!(
@@ -113,8 +113,8 @@ radish = Vegetable.create!(
     harvesting_description: "Pick up the spring radishes 3 or 4 weeks after sowing, as needed. Do not wait until they are too big and hollow.",
     area: 20,
     description: "Except in the summer when it tolerates light shade, the radish likes bright and sunny situations. This fast-growing crop requires well-worked soil and sparse but regular watering.",
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "radish_photo.png",
+    icon_vegetable: "radish.png"
     )
 
 pepper = Vegetable.create!(
@@ -130,8 +130,8 @@ pepper = Vegetable.create!(
     harvesting_description: "Fruits form around the end of June. The first pepper harvest (green) is done a month later, around the end of July, depending on the climate. If you wait, the fruit will take on color. Harvest the last before the first frosts.",
     area: 50,
     description: "The bell pepper (Capsicum annuum) likes the sun: only grow it if you can give it a sunny location. In the vegetable patch, it forms a foot about 1m high, with beautiful glazed foliage. It bears small white flowers, which later give very colorful fruits which ripen from green to yellow or red.",
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "pepper_photo.png",
+    icon_vegetable: "pepper.png"
     )
 
 onion = Vegetable.create!(
@@ -147,8 +147,8 @@ onion = Vegetable.create!(
     harvesting_description: "Those to keep are harvested in August. You have to wait until the foliage is two-thirds yellowed, then tear off all the bulbs. If it does not rain, dry them in the sun for a few days. Then cut the leaves and roots and store them in crates.",
     area: 10,
     description: "Onions are strong and do not require much care. It is one of the rare vegetables not to like being watered. If you let them grow a second year, they will produce a large ball of white flowers, highly prized by insects",
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "onion_photo.png",
+    icon_vegetable: "onion.png"
     )
 
 cauliflower = Vegetable.create!(
@@ -164,8 +164,8 @@ cauliflower = Vegetable.create!(
     harvesting_description: "The cauliflower is harvested practically throughout the year depending on the sowing periods. The harvest takes place about 3 months after planting but this can vary depending on weather conditions. Wait until the head is firmly closed and tear off or cut away the soil because there will be no other crop on this plane. Protect your cauliflowers from November for a winter harvest",
     area: 70,
     description: "As soon as the plants have at least 3 to 4 leaves, transplant directly into place while protecting your crop if this operation must be carried out before May. Transplanting is done every 40 cm. This spacing is necessary to allow the plants room to develop. Transplant to well-plowed soil.",
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "cauliflower_photo.png",
+    icon_vegetable: "cauliflower.png"
     )
 
 broad_beans = Vegetable.create!(
@@ -181,12 +181,12 @@ broad_beans = Vegetable.create!(
     harvesting_description: "",
     area: 40,
     description: "" ,
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "beans_photo.png",
+    icon_vegetable: "beans.png"
     )
 
-courgette = Vegetable.create!(
-    specie: "courgette",
+zucchini = Vegetable.create!(
+    specie: "zucchini",
     seeding_start: Date.parse('01-04-2020'),
     seeding_end: Date.parse('30-05-2020'),
     sedding_desription: "",
@@ -198,8 +198,8 @@ courgette = Vegetable.create!(
     harvesting_description: "",
     area: 100,
     description: "",
-    photo_vegetable: "",
-    icon_vegetable: ""
+    photo_vegetable: "zucchini_photo.png",
+    icon_vegetable: "zucchini.png"
     )
 
 tomato2 = Vegetable.create!(
@@ -367,8 +367,8 @@ broad_beans2 = Vegetable.create!(
     icon_vegetable: ""
     )
 
-courgette2 = Vegetable.create!(
-    specie: "courgette",
+zucchini2 = Vegetable.create!(
+    specie: "zucchini",
     seeding_start: Date.parse('01-04-2020'),
     seeding_end: Date.parse('30-05-2020'),
     sedding_desription: "",
@@ -393,8 +393,7 @@ user1 = User.create!(
   email: 'sarah.lee@gmail.com',
   first_name: 'Sarah',
   last_name: 'Lee',
-  password: 'secret',
-
+  password: 'secret'
 )
 
 puts 'Finished user!'
@@ -463,7 +462,7 @@ relationship8 = Relationship.create!(
 
 relationship9 = Relationship.create!(
   vegetable1: tomato,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -523,7 +522,7 @@ relationship18 = Relationship.create!(
 
 relationship19 = Relationship.create!(
   vegetable1: carrot,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -577,7 +576,7 @@ relationship27 = Relationship.create!(
 
 relationship28 = Relationship.create!(
   vegetable1: egg_plant,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -619,7 +618,7 @@ relationship34 = Relationship.create!(
 
 relationship35 = Relationship.create!(
   vegetable1: potato,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "enemy"
 ),
 
@@ -655,7 +654,7 @@ relationship40 = Relationship.create!(
 
 relationship41 = Relationship.create!(
   vegetable1: radish,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -685,7 +684,7 @@ relationship45 = Relationship.create!(
 
 relationship46 = Relationship.create!(
   vegetable1: pepper,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -709,7 +708,7 @@ relationship49 = Relationship.create!(
 
 relationship50 = Relationship.create!(
   vegetable1: onion,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -727,7 +726,7 @@ relationship52 = Relationship.create!(
 
 relationship53 = Relationship.create!(
   vegetable1: cauliflower,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
@@ -739,13 +738,13 @@ relationship54 = Relationship.create!(
 
 relationship55 = Relationship.create!(
   vegetable1: broad_beans,
-  vegetable2: courgette,
+  vegetable2: zucchini,
   status: "neutral"
 ),
 
 relationship56 = Relationship.create!(
-  vegetable1: courgette,
-  vegetable2: courgette2,
+  vegetable1: zucchini,
+  vegetable2: zucchini2,
   status: "friends"
 )
 
@@ -773,8 +772,8 @@ garden_vegetable_egg_plant = GardenVegetable.create!(
   garden: garden1
 )
 
-garden_vegetable_courgette = GardenVegetable.create!(
-  vegetable: courgette,
+garden_vegetable_zucchini = GardenVegetable.create!(
+  vegetable: zucchini,
   garden: garden1
 )
 

@@ -1,10 +1,10 @@
 <div class="sidebar-container">
+  <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
   <div class="title-sidebar">
-    <h1>Next tasks</h1>
+    <h1>Vegetables</h1>
   </div>
   <div class="action-task">
     <%= render 'vegetables/index' %>
-
   </div>
 </div>
 
@@ -14,3 +14,5 @@
     <%= render 'vegetables/show' %>
   </div>
 </div>
+
+<%= render 'shared/garden_draggable' %>
