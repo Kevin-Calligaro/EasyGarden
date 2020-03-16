@@ -67,7 +67,7 @@ carrot = Vegetable.create!(
     )
 
 egg_plant = Vegetable.create!(
-    specie: "egg_plant",
+    specie: "egg-plant",
     seeding_start: Date.parse("01-02-2020"),
     seeding_end:Date.parse("01-05-2020"),
     sedding_desription: "Eggplant seeds are sown from February to April-May, in pots, boxes or even on honeycomb trays, warm (18/20 ° C). As soon as the plants have developed two to four leaves, they can be repotted in individual pots. They then continue their growth in a greenhouse or veranda well exposed until planting.",
@@ -164,6 +164,10 @@ cauliflower = Vegetable.create!(
     harvesting_description: "The cauliflower is harvested practically throughout the year depending on the sowing periods. The harvest takes place about 3 months after planting but this can vary depending on weather conditions. Wait until the head is firmly closed and tear off or cut away the soil because there will be no other crop on this plane. Protect your cauliflowers from November for a winter harvest",
     area: 70,
     description: "As soon as the plants have at least 3 to 4 leaves, transplant directly into place while protecting your crop if this operation must be carried out before May. Transplanting is done every 40 cm. This spacing is necessary to allow the plants room to develop. Transplant to well-plowed soil.",
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7ffbef5c5492c37761652f9cfe44d03e81b363d3
     photo_vegetable: "cauliflower_photo.png",
     icon_vegetable: "cauliflower.png"
     )
