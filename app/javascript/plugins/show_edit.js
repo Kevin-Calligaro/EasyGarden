@@ -8,7 +8,7 @@ seeMoreButtons.forEach((button) => {
   // Sur chaque button, event listener
   button.addEventListener('click', (event) => {
     // On récupére l'id, commun au button & à la card
-    const vegetableId = button.getAttribute("tasks_id");
+    const vegetableId = button.getAttribute("vegetable_id");
     console.log(vegetableId);
 
     // On choppe la card, à partir de l'id du button

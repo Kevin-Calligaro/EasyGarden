@@ -164,10 +164,6 @@ cauliflower = Vegetable.create!(
     harvesting_description: "The cauliflower is harvested practically throughout the year depending on the sowing periods. The harvest takes place about 3 months after planting but this can vary depending on weather conditions. Wait until the head is firmly closed and tear off or cut away the soil because there will be no other crop on this plane. Protect your cauliflowers from November for a winter harvest",
     area: 70,
     description: "As soon as the plants have at least 3 to 4 leaves, transplant directly into place while protecting your crop if this operation must be carried out before May. Transplanting is done every 40 cm. This spacing is necessary to allow the plants room to develop. Transplant to well-plowed soil.",
-<<<<<<< HEAD
-=======
-
->>>>>>> 7ffbef5c5492c37761652f9cfe44d03e81b363d3
     photo_vegetable: "cauliflower_photo.png",
     icon_vegetable: "cauliflower.png"
     )
