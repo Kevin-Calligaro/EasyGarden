@@ -4,28 +4,29 @@
       <% if task.step == 1 %>
         <% case task.first_tasks_urgency %>
           <% when "not urgent" %>
-            <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.7' %>
-          <% when "urgent soon" %>
-            <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
-          <% when "urgent" %>
-            <%= image_tag "background-urgency/urgence_3", style: 'height:45px;width:45px;opacity:0.7' %>
+            <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.5' %>
           <% when "very urgent" %>
             <%= image_tag "background-urgency/urgence_4", style: 'height:45px;width:45px;opacity:0.7' %>
+          <% when "urgent" %>
+            <%= image_tag "background-urgency/urgence_3", style: 'height:45px;width:45px;opacity:0.7' %>
+          <% when "urgent soon" %>
+            <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
         <% end %>
 
       <% else %>
-        <% case task.urgency %>
-          <% when "not urgent" %>
-            <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.7' %>
-          <% when "urgent soon" %>
-            <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
-          <% when "urgent" %>
-            <%= image_tag "background-urgency/urgence_3", style: 'height:45px;width:45px;opacity:0.7' %>
-          <% when "very urgent" %>
-            <%= image_tag "background-urgency/urgence_4", style: 'height:45px;width:45px;opacity:0.7' %>
+        <% if task.step %>
+          <% case task.urgency %>
+            <% when "not urgent" %>
+              <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.5' %>
+            <% when "very urgent" %>
+              <%= image_tag "background-urgency/urgence_4", style: 'height:45px;width:45px;opacity:0.7' %>
+            <% when "urgent" %>
+              <%= image_tag "background-urgency/urgence_3", style: 'height:45px;width:45px;opacity:0.7' %>
+            <% when "urgent soon" %>
+              <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
+          <% end %>
         <% end %>
       <% end %>
-
       <div class="action-logo">
         <% if task.action == "seeding" %>
           <%= image_tag "icon-seeding.png" %>

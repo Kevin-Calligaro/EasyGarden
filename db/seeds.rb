@@ -813,7 +813,7 @@ Task.create!(
   garden_vegetable: garden_vegetable_potato,
   step: 1,
   action: "planting",
-  date: Date.parse('15-03-2020'),
+  date: Date.parse('25-02-2020'),
   done: false
 )
 
