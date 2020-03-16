@@ -1,0 +1,60 @@
+<%  @tasks.each do |task|%>
+  <div class="description-show display-none" data-task-id="<%= task.id %>">
+    <i class="fas fa-minus-circle p-2"></i>
+    <div class="title-description">
+      <h1><%= task.garden_vegetable.vegetable.specie.capitalize %> </h1>
+    </div>
+    <div class="d-flex">
+      <p class="general-description">
+        <%= task.garden_vegetable.vegetable.description %>      </p>
+      <div class="vege-photo-description">
+        <%= image_tag task.garden_vegetable.vegetable.photo_vegetable, class: "photo-description" %>
+      </div>
+    </div>
+    <div class="onglet-description">
+      <!-- <nav>
+        <div class="nav nav-tabs list-inline tabs-underlined" id="nav-tab-<%=task.garden_vegetable.vegetable.id%>" role="tablist">
+          <% if task.garden_vegetable.vegetable.seeding_start?%>
+            <a class="nav-item nav-link tab-underlined active" id="nav-home-tab-<%=task.garden_vegetable.vegetable.id%>" data-toggle="tab" href="#nav-home-<%=task.garden_vegetable.vegetable.id%>" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag("icon-seeding.png", class: "icon-action-description") %> Seeding</a>
+          <% end %>
+          <% if task.garden_vegetable.vegetable.planting_start?%>
+            <a class="nav-item nav-link tab-underlined" id="nav-profile-tab-<%=task.garden_vegetable.vegetable.id%>" data-toggle="tab" href="#nav-profile-<%=task.garden_vegetable.vegetable.id%>" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag("icon-planting.png", class: "icon-action-description") %> Planting</a>
+         <% end %>
+          <a class="nav-item nav-link tab-underlined" id="nav-contact-tab-<%=task.garden_vegetable.vegetable.id%>" data-toggle="tab" href="#nav-contact-<%=task.garden_vegetable.vegetable.id%>" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag("icon-harvesting.png", class: "icon-action-description") %> Harvesting</a>
+        </div>
+      </nav> -->
+
+      <div class="" id="">
+        <% if task.action == "seeding" %>
+          <% if task.garden_vegetable.vegetable.seeding_start?%>
+            <div class="" id="nav-home-<%=task.garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-home-tab">
+              <h1>Seeding</h1>
+              <h5><em>From <%= task.garden_vegetable.vegetable.seeding_start.strftime("%B")%> to <%=task.garden_vegetable.vegetable.seeding_end.strftime("%B") %></em></h3>
+              <p>
+                <%= task.garden_vegetable.vegetable.sedding_desription%>
+              </p>
+            </div>
+          <% end %>
+        <% elsif task.action == "planting" %>
+          <% if task.garden_vegetable.vegetable.planting_start?%>
+            <div class="" id="nav-profile-<%=task.garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <h1>Planting</h1>
+              <h5><em>From <%= task.garden_vegetable.vegetable.planting_start.strftime("%B")%> to <%= task.garden_vegetable.vegetable.planting_end.strftime("%B") %></em></h3>
+              <p>
+                <%= task.garden_vegetable.vegetable.planting_description%>
+              </p>
+            </div>
+          <% end %>
+        <% elsif task.action == "harvesting" %>
+          <div class="" id="nav-contact-<%=task.garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-contact-tab">
+             <h1>Harvesting</h1>
+            <h5><em>From <%= task.garden_vegetable.vegetable.harvesting_start.strftime("%B")%> to <%= task.garden_vegetable.vegetable.harvesting_end.strftime("%B") %></em></h3>
+            <p>
+              <%= task.garden_vegetable.vegetable.harvesting_description%>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

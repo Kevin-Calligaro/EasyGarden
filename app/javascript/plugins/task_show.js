@@ -9,10 +9,17 @@ plusButtons.forEach((button) => {
   // Sur chaque button, event listener
   button.addEventListener('click', (event) => {
     // On récupére l'id, commun au button & à la card
-    const taskId = button.getAttribute("garden_vegetable_id");
+    const taskId = button.getAttribute("task_id");
     console.log(taskId);
     // On choppe la card, à partir de l'id du button
-    const card = cards.find(element => element.getAttribute("garden_vegetable_id") === taskId);
+    const card = cards.find(element => {
+            console.log(element);
+            console.log(toString(element.dataset.taskId) === toString(taskId));
+            console.log(element.dataset.taskId)
+
+      return element.dataset.taskId === taskId
+    });
+
     console.log(card);
 
     // Si la card de droite n'est pas displayed
