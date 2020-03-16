@@ -3,25 +3,4 @@
   <div class="title-sidebar">
     <h1>Next tasks</h1>
   </div>
-  <% @garden_vegetables.each do |garden_vegetable| %>
-    <% garden_vegetable.tasks.each do |task| %>
-      <% if task.done == false %>
-        <div class="action-task">
-          <div class="action-color">
-            <div class="action-logo">
-              <p>⛏️</p>
-            </div>
-          </div>
-          <div class="Action-title d-flex justify-content-evenly">
-            <div class="specie-type">
-              <h2><%= task.action %> <strong><%= garden_vegetable.vegetable.specie %></strong></h2>
-            </div>
-          </div>
-          <div class="see-more">
-            <button><i class="fas fa-plus-circle button-see select " task_id="<%= garden_vegetable.tasks.ids %>"></i></button>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  <% end %>
 </div>
