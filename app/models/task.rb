@@ -14,6 +14,18 @@ class Task < ApplicationRecord
     self.garden_vegetable.tasks.where.not(id: self.id).where("step > ? ", self.step).order(step: :asc)
   end
 
+  def urgency
+    if DateTime.now < self.date
+      "not urgent"
+    elsif DateTime.now <= self.date + 7
+      "urgent soon"
+    elsif DateTime.now <= self.date + 14
+      "urgent"
+    else DateTime.now <= self.date + 21
+      "very urgent"
+    end
+  end
+
   private
 
   def set_following_tasks_due_dates
@@ -33,12 +45,6 @@ class Task < ApplicationRecord
       harvesting = followings_tasks.find_by(step: 3)
       harvesting.date = self.date + (self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.seeding_start).days
       harvesting.save!
-    end
-  end
-
-  def urgency_tasks
-    if followings_tasks.date - DateTime.now <= 7
-      urgency = "rouge"
     end
   end
 end
