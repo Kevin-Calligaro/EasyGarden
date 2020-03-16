@@ -2,7 +2,8 @@ body{
   position: relative;
 }
 .sidebar-container{
-  width: 20vw;
+  width: 25vw;
+  min-width: 150px;
   height: 100vh;
   position: fixed;
   background-color: rgba(250,248,245,0.8);
@@ -33,7 +34,7 @@ body{
   position: fixed;
   overflow-y: scroll;
   top: 245px;
-  width: 20vw;
+  width: 25vw;
   bottom: 20px;
 }
 
