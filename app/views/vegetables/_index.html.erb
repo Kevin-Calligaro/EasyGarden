@@ -5,13 +5,13 @@
 
     <div class="card-vegetable">
       <div class="vege-photo">
-        <%= image_tag("courgette-photo.png", class: "card-vege-photo") %>
+        <%= image_tag vegetable.photo_vegetable, class: "card-vege-photo" %>
         <div class="BlockWrapper testicule BlockWrapper--isDropzone draggable-dropzone--occupied">
           <span><div class="BlockContent"></div></span>
           <a href="#" class="Block--isDraggable vegetable" data-id="1" title="Click to plant" style="">
 
             <div class="BlockContent">
-              <%= image_tag vegetable.photo_vegetable, class: "calibre-1 card-vege-icon" %>
+              <%= image_tag vegetable.icon_vegetable, class: "calibre-1 card-vege-icon" %>
             </div>
           </a>
         </div>
