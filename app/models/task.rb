@@ -35,4 +35,10 @@ class Task < ApplicationRecord
       harvesting.save!
     end
   end
+
+  def urgency_tasks
+    if followings_tasks.date - DateTime.now <= 7
+      urgency = "rouge"
+    end
+  end
 end

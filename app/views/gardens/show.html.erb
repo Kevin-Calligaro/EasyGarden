@@ -2,5 +2,12 @@
   <div class="title-garden" style="position: absolute;right: 650px;top: 75px;">
     <h1><%= @garden.title %></h1>
   </div>
-  <%= render 'shared/sidebar' %>
+  <div class="sidebar-container">
+  <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
+  <div class="title-sidebar">
+    <h1>Next tasks</h1>
+  </div>
+  <%= render 'tasks/index' %>
+</div>
+
 </div>
