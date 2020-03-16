@@ -17,5 +17,6 @@ class Task < ApplicationRecord
   private
 
   def set_following_tasks_due_dates
+    if
   end
 end
