@@ -15,7 +15,3 @@ class Vegetable < ApplicationRecord
     Vegetable.where.not(id: id).where(id: vegetable_ids)
   end
 end
-
-# rails c
-# veggie = Vegetable.first
-# veggie.vegetalbes.friend
