@@ -1,22 +1,10 @@
 
 <% @tasks_not_done.each do |task| %>
-  <div class="action-task">
-    <div class="action-color">
-      <% if task.step == 1 %>
-        <% case task.first_tasks_urgency %>
-          <% when "not urgent" %>
-            <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.5' %>
-          <% when "very urgent" %>
-            <%= image_tag "background-urgency/urgence_4", style: 'height:45px;width:45px;opacity:0.7' %>
-          <% when "urgent" %>
-            <%= image_tag "background-urgency/urgence_3", style: 'height:45px;width:45px;opacity:0.7' %>
-          <% when "urgent soon" %>
-            <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
-        <% end %>
-
-      <% else %>
-        <% if task.step %>
-          <% case task.urgency %>
+  <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
+    <div class="action-task">
+      <div class="action-color">
+        <% if task.step == 1 %>
+          <% case task.first_tasks_urgency %>
             <% when "not urgent" %>
               <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.5' %>
             <% when "very urgent" %>
@@ -26,25 +14,45 @@
             <% when "urgent soon" %>
               <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
           <% end %>
+        <% elsif task.step > 1 && task.date != nil %>
+          <% if task.step %>
+            <% case task.urgency %>
+              <% when "not urgent" %>
+                <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.5' %>
+              <% when "very urgent" %>
+                <%= image_tag "background-urgency/urgence_4", style: 'height:45px;width:45px;opacity:0.7' %>
+              <% when "urgent" %>
+                <%= image_tag "background-urgency/urgence_3", style: 'height:45px;width:45px;opacity:0.7' %>
+              <% when "urgent soon" %>
+                <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-      <div class="action-logo">
-        <% if task.action == "seeding" %>
-          <%= image_tag "icon-seeding.png" %>
-        <% elsif task.action == "planting" %>
-          <%= image_tag "icon-planting.png" %>
-        <% else %>
-          <%= image_tag "icon-harvesting.png" %>
+        <div class="action-logo">
+          <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
+            <% if task.action == "seeding" %>
+              <%= image_tag "icon-seeding.png" %>
+            <% elsif task.action == "planting" %>
+              <%= image_tag "icon-planting.png" %>
+            <% else %>
+              <%= image_tag "icon-harvesting.png" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="Action-title d-flex justify-content-evenly">
+        <div class="specie-type">
+          <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
+            <h2><%= task.action %> <strong><%= task.garden_vegetable.vegetable.specie %></strong></h2>
+          <% end %>
+        </div>
+      </div>
+      <div class="see-more">
+        <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
+          <p><i class="fas fa-plus-circle button-plus" task_id="<%=task.id%>"></i></p>
+          <%= link_to "done", mark_as_done_task_path(task.id), method: :patch %>
         <% end %>
       </div>
     </div>
-    <div class="Action-title d-flex justify-content-evenly">
-      <div class="specie-type">
-        <h2><%= task.action %> <strong><%= task.garden_vegetable.vegetable.specie %></strong></h2>
-      </div>
-    </div>
-    <div class="see-more">
-      <i class="fas fa-plus-circle button-plus" task_id="<%=task.id%>"></i>
-    </div>
-  </div>
+  <% end %>
 <% end %>
