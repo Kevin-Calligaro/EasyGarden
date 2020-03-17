@@ -1,4 +1,4 @@
-.button{
+button{
   text-decoration: none;
 }
 .button-see {
@@ -13,3 +13,11 @@
 .button-see:hover{
     background-color: rgba(0, 170, 37, 0.45);
   }
+.button-plus{
+  color: gray;
+}
+
+.button-plus:hover{
+  color: rgba(0, 170, 37, 0.45);
+}
+

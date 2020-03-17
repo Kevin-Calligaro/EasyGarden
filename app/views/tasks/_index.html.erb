@@ -1,3 +1,4 @@
+
 <% @tasks_not_done.each do |task| %>
   <div class="action-task">
     <div class="action-color">
@@ -43,7 +44,7 @@
       </div>
     </div>
     <div class="see-more">
-      <p><i class="fas fa-plus-circle"></i></p>
+      <i class="fas fa-plus-circle button-plus" task_id="<%=task.id%>" garden_vegetable_id="<%= garden_vegetable.id %>"></i>
     </div>
   </div>
 <% end %>
