@@ -33,11 +33,22 @@ plusButtons.forEach((button) => {
       // On "affiche" notre card, en supprimant la class 'display-none'
       card.classList.remove("display-none");
 
+      plusButtons.forEach((button) =>{
+        button.classList.remove("fa-minus-circle");
+        button.classList.add("fa-plus-circle")
+
+      })
+
+      button.classList.remove("fa-plus-circle")
+      button.classList.add("fa-minus-circle")
 
     // Si la card de droite est displayed
     } else {
       // On la supprime en ajoutant la class display-none
       card.classList.add("display-none");
+      button.classList.remove("fa-minus-circle")
+
+      button.classList.add("fa-plus-circle");
     }
   });
 });
