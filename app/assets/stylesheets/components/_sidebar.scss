@@ -3,7 +3,7 @@ body{
 }
 .sidebar-container{
   width: 25vw;
-  min-width: 150px;
+  min-width: 300px;
   height: 100vh;
   position: fixed;
   background-color: rgba(250,248,245,0.8);
@@ -15,7 +15,7 @@ body{
 
 .title-sidebar{
   width: 27vw;
-
+  min-width: 320px;
   height: 30px;
   background-color: rgba(0,170,37,0.25);
   border-bottom-right-radius: 12px;
@@ -30,11 +30,11 @@ body{
 }
 
 .cards-vegetables{
-
   position: fixed;
   overflow-y: scroll;
   top: 245px;
-  width: 25vw;
+  width: auto;
+  min-width: 250px;
   bottom: 20px;
 }
 
@@ -43,7 +43,7 @@ body{
   display: flex;
   justify-content: space-around;
   h2{
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 

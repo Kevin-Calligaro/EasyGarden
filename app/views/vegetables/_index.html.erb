@@ -27,7 +27,8 @@
         <p><em>Planting</em> <br> From <%= vegetable.planting_start.strftime("%b")%> to <%= vegetable.planting_end.strftime("%b") %></p>
         <% end %>
         <div class="d-flex align-items-center">
-          <button class="button-see select" vegetable_id="<%= vegetable.id %>">See More</button>
+          <button class="button-see select display" vegetable_id="<%= vegetable.id %>">See More</button>
+          <button class="button-see select display-none" vegetable_id="<%= vegetable.id %>">See More</button>
         </div>
       </div>
     </div>

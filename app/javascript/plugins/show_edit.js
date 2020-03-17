@@ -9,7 +9,6 @@ seeMoreButtons.forEach((button) => {
   button.addEventListener('click', (event) => {
     // On récupére l'id, commun au button & à la card
     const vegetableId = button.getAttribute("vegetable_id");
-    console.log(vegetableId);
 
     // On choppe la card, à partir de l'id du button
     const card = cards.find(element => element.getAttribute("vegetable_id") === vegetableId)
@@ -22,14 +21,28 @@ seeMoreButtons.forEach((button) => {
       // On "supprime" (en ajoutant la class 'display-none') toutes les cards affichées
       Array.from(displayedCards).forEach(card => card.classList.add("display-none"));
 
+
+      // on ajoute see less
+
       // On "affiche" notre card, en supprimant la class 'display-none'
       card.classList.remove("display-none");
+
+      seeMoreButtons.forEach((button) =>{
+        button.textContent ="See More";
+      })
+
+      button.textContent ="See Less";
 
 
     // Si la card de droite est displayed
     } else {
       // On la supprime en ajoutant la class display-none
       card.classList.add("display-none");
+
+      if (button.textContent === "See Less") {
+      // on ajoute see less
+      button.textContent ="See More";
+      }
     }
   });
 });
