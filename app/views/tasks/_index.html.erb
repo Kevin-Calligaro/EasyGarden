@@ -1,21 +1,50 @@
-<% @garden_vegetables.each do |garden_vegetable| %>
-  <% garden_vegetable.tasks.each do |task| %>
-    <% if task.done == false %>
-      <div class="action-task">
-        <div class="action-color">
-          <div class="action-logo">
-            <p>⛏️</p>
-          </div>
-        </div>
-        <div class="Action-title d-flex justify-content-evenly">
-          <div class="specie-type">
-            <h2><%= task.action %> <strong><%= garden_vegetable.vegetable.specie %></strong></h2>
-          </div>
-        </div>
-        <div class="see-more">
-          <i class="fas fa-plus-circle button-plus" task_id="<%=task.id%>" garden_vegetable_id="<%= garden_vegetable.id %>"></i>
-        </div>
+
+<% @tasks_not_done.each do |task| %>
+  <div class="action-task">
+    <div class="action-color">
+      <% if task.step == 1 %>
+        <% case task.first_tasks_urgency %>
+          <% when "not urgent" %>
+            <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.5' %>
+          <% when "very urgent" %>
+            <%= image_tag "background-urgency/urgence_4", style: 'height:45px;width:45px;opacity:0.7' %>
+          <% when "urgent" %>
+            <%= image_tag "background-urgency/urgence_3", style: 'height:45px;width:45px;opacity:0.7' %>
+          <% when "urgent soon" %>
+            <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
+        <% end %>
+
+      <% else %>
+        <% if task.step %>
+          <% case task.urgency %>
+            <% when "not urgent" %>
+              <%= image_tag "background-urgency/urgence_1", style: 'height:45px;width:45px;opacity:0.5' %>
+            <% when "very urgent" %>
+              <%= image_tag "background-urgency/urgence_4", style: 'height:45px;width:45px;opacity:0.7' %>
+            <% when "urgent" %>
+              <%= image_tag "background-urgency/urgence_3", style: 'height:45px;width:45px;opacity:0.7' %>
+            <% when "urgent soon" %>
+              <%= image_tag "background-urgency/urgence_2", style: 'height:45px;width:45px;opacity:0.7' %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <div class="action-logo">
+        <% if task.action == "seeding" %>
+          <%= image_tag "icon-seeding.png" %>
+        <% elsif task.action == "planting" %>
+          <%= image_tag "icon-planting.png" %>
+        <% else %>
+          <%= image_tag "icon-harvesting.png" %>
+        <% end %>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+    <div class="Action-title d-flex justify-content-evenly">
+      <div class="specie-type">
+        <h2><%= task.action %> <strong><%= task.garden_vegetable.vegetable.specie %></strong></h2>
+      </div>
+    </div>
+    <div class="see-more">
+      <i class="fas fa-plus-circle button-plus" task_id="<%=task.id%>" garden_vegetable_id="<%= garden_vegetable.id %>"></i>
+    </div>
+  </div>
 <% end %>

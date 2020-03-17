@@ -131,6 +131,34 @@ p {
   display: flex;
 }
 
-.garden-area {
+.green-area {
+  transition: 1s;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: asset-url("background-urgency/urgence_1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+  top: -25px;
+  left: -25px;
+}
+.red-area {
+  transition: 1s;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: asset-url("background-urgency/urgence_4.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+  top: -25px;
+  left: -25px;
+}
 
+
+.hidden{
+  display: none;
 }

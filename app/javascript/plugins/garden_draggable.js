@@ -49,9 +49,16 @@ export default function PluginsCollidable() {
     cible.id = ("needVeg");
     const cible2 = event.data.dropzone.previousElementSibling.nextElementSibling.firstElementChild;
     cible2.id = ("needVeg2");
-
-
   });
+
+
+
+
+
+
+
+
+
 
 
   droppable.on('droppable:stop', (event) => {
@@ -73,24 +80,42 @@ export default function PluginsCollidable() {
       moving.dataset.gardenVeggieId = uniqueId
     };
 
-    let clone = (event.data.dropzone.lastChild)
+    let cloneSource = (event.data.dropzone.lastChild.outerHTML) // Clone the dragged vege
+    const clone = document.createElement("div"); // create object
+    clone.innerHTML = cloneSource; // inject html in object
 
-    const vegeCards = document.querySelector("#needVeg")
-    const vegeSpan = document.querySelector("#needVeg2")
-    console.log(event)
-    // vegeCards.insertBefore(clone, vegeSpan.nextSibling );
-    vegeCards.id ="good"
-    vegeSpan.id ="good1"
+    const backet = document.querySelector(".backet"); // select sidebar
+    const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
+    const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
+
+    vegeCards.insertBefore(clone, vegeSpan.nextSibling ); // new vege !
+    vegeCards.id ="" // remove the target
+    vegeSpan.id ="" // remove ""
 
     let myData = {
         "id" : id,
         "position" : pos,
         "jsonId" : uniqueId,
     };
+
+    const garden = document.querySelector(".garden-container");
+    const area = garden.querySelector(".hidden");
+    area.classList.remove("hidden");
+
     myJson.push( myData )
     // console.log(myJson)
   });
+
   return droppable;
 };
 
 export { PluginsCollidable };
+
+
+
+
+
+
+
+
+
