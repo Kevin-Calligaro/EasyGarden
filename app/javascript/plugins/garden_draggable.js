@@ -3,6 +3,8 @@
 // eslint-disable-next-line import/no-unresolved
 import {Droppable, Plugins} from '@shopify/draggable';
 
+const garden_vegetables_data =[]
+
 export default function PluginsCollidable() {
   const containerSelector = '#Collidable .BlockLayout';
   const containers = document.querySelectorAll(containerSelector);
@@ -42,7 +44,6 @@ export default function PluginsCollidable() {
     }
   });
 
-  const myJson =[]
   droppable.on('droppable:start', (event) => {
     const backet = document.querySelector(".backet");
     const cible = event.data.dropzone.previousElementSibling.nextElementSibling;
@@ -67,15 +68,24 @@ export default function PluginsCollidable() {
       uniqueId = Math.floor(Math.random() * (999 - 100) + 100);
       moving.dataset.gardenVeggieId = uniqueId
     } else {
-      const toDelete = myJson.find( vege => vege.jsonId === uniqueId);
+      const toDelete = garden_vegetables_data.find( vege => vege.jsonId === uniqueId);
 
-      myJson.splice(myJson.indexOf(toDelete), 1);
+      garden_vegetables_data.splice(garden_vegetables_data.indexOf(toDelete), 1);
       moving.dataset.gardenVeggieId = uniqueId
     };
 
     let cloneSource = (event.data.dropzone.lastChild.outerHTML) // Clone the dragged vege
     const clone = document.createElement("div"); // create object
     clone.innerHTML = cloneSource; // inject html in object
+
+    let myData = {
+        "vegetable_id" : id,
+        "position" : pos,
+        "garden_vegetable_id" : uniqueId,
+    };
+    garden_vegetables_data.push( myData )
+    console.log(garden_vegetables_data)
+
 
     const backet = document.querySelector(".backet"); // select sidebar
     const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
@@ -88,18 +98,11 @@ export default function PluginsCollidable() {
 
 
 
-    let myData = {
-        "id" : id,
-        "position" : pos,
-        "jsonId" : uniqueId,
-    };
-    myJson.push( myData )
-    // console.log(myJson)
   });
   return droppable;
 };
 
-export { PluginsCollidable };
+export { PluginsCollidable, garden_vegetables_data };
 
 
 

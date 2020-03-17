@@ -1,18 +1,32 @@
-<div class="sidebar-container">
-  <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
-  <div class="title-sidebar">
-    <h1>Vegetables</h1>
+<div class="edit-container">
+
+  <div class="sidebar-container">
+    <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
+    <div class="title-sidebar">
+      <h1>Vegetables</h1>
+    </div>
+    <div class="action-task">
+      <%= render 'vegetables/index' %>
+    </div>
   </div>
-  <div class="action-task">
-    <%= render 'vegetables/index' %>
+
+
+  <div class="container-info">
+    <div class="vegetable-description">
+      <%= render 'vegetables/show' %>
+    </div>
   </div>
+
+  <%= render 'shared/garden_draggable' %>
+
+  <div class="save-garden-button">
+    <form  action="/garden_vegetables" method="post" >
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :garden_id, @garden.id %>
+      <label for="data-spot"></label>
+      <input type="text" id="data-spot" name="data-spot"></input>
+      <button class="test-data">Test data</button>
+    </form>
+  </div>
+
 </div>
-
-
-<div class="container-info">
-  <div class="vegetable-description">
-    <%= render 'vegetables/show' %>
-  </div>
-</div>
-
-<%= render 'shared/garden_draggable' %>
