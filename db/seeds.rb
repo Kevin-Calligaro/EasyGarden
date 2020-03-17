@@ -688,5 +688,21 @@ Task.create!(
   done: false
 )
 
+Task.create!(
+  garden_vegetable: garden_vegetable_radish,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_zucchini,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
 
 puts "Done!"
