@@ -7,7 +7,132 @@ body{
   }
 }
 
-
 .container{
   align-items: center;
+}
+
+.home-page{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.banner{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.03) 100%), asset-url("banner-home.png");
+  background-size: cover;
+  background-position: center;
+  width: 99vw;
+  height: 65vh;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.logo-easy-garden-banner{
+  position: absolute;
+  width: 450px;
+  height: 200px;
+  left: 60px;
+  bottom: 200px;
+}
+
+.home-container{
+  background-image: asset-url("garden-texture.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: space-evenly;
+  width: 90vw;
+  height: 100%;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+.step-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 360px;
+  text-align: center;
+  h2{
+    margin: 10px;
+  }
+  h3{
+    margin-top: 30px;
+  }
+}
+
+.step-content{
+  margin-top: 20px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.btn-create-garden{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.button-create-garden{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.btn-text-create{
+  text-decoration: none;
+}
+
+.trait{
+  background-image: asset-url("line_h.png");
+  width: 250px;
+  height: 7px;
+  margin-top: 50px;
+}
+
+.carrot-logo{
+  background-image: asset-url("carrot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -300px;
+  width: 150px;
+  height: 150px;
+}
+
+.oignon-logo{
+  background-image: asset-url("onion.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -300px;
+  width: 150px;
+  height: 150px;
+}
+
+.patate-logo{
+  background-image: asset-url("potato.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -300px;
+  width: 150px;
+  height: 150px;
 }
