@@ -653,7 +653,7 @@ Task.create!(
   step: 1,
   action: "seeding",
   date: nil,
-  done: true
+  done: false
 )
 
 Task.create!(
