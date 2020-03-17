@@ -12,7 +12,8 @@ button{
 }
 .button-see:hover{
     background-color: rgba(0, 170, 37, 0.45);
-  }
+}
+
 .button-plus{
   color: gray;
 }
@@ -21,3 +22,29 @@ button{
   color: rgba(0, 170, 37, 0.45);
 }
 
+.button-done{
+  min-width: 85px;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid rgba(0, 170, 37, 0.45);
+  box-sizing: border-box;
+  border-radius: 18px;
+  padding: 10px;
+  margin: 10px;
+  margin-right: 30px;
+  color: black;
+}
+
+.button-done:hover{
+  text-decoration: none;
+  background-color: rgba(0, 170, 37, 0.45);
+  text-align: center;
+  color: black;
+  min-width: 85px;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 18px;
+  padding: 10px;
+  margin: 10px;
+  margin-right: 30px;
+}
