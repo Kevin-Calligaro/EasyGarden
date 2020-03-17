@@ -793,35 +793,15 @@ Task.create!(
   garden_vegetable: garden_vegetable_carrot,
   step: 1,
   action: "seeding",
-  date: Date.parse("20-02-2020"),
-  done: true
+  date: nil,
+  done: false
 )
 
 Task.create!(
   garden_vegetable: garden_vegetable_carrot,
   step: 2,
   action: "harvesting",
-  date: Date.parse("20-05-2020"),
-  done: false
-)
-
-puts "Done!"
-
-puts "Task for potato..."
-
-Task.create!(
-  garden_vegetable: garden_vegetable_potato,
-  step: 1,
-  action: "planting",
-  date: Date.parse('25-02-2020'),
-  done: false
-)
-
-Task.create!(
-  garden_vegetable: garden_vegetable_potato,
-  step: 2,
-  action: "harvesting",
-  date: Date.parse('15-06-2020'),
+  date: nil,
   done: false
 )
 
@@ -833,7 +813,7 @@ Task.create!(
   garden_vegetable: garden_vegetable_tomato,
   step: 1,
   action: "seeding",
-  date: Date.parse("01-02-2020"),
+  date: nil,
   done: true
 )
 
@@ -841,7 +821,7 @@ Task.create!(
   garden_vegetable: garden_vegetable_tomato,
   step: 2,
   action: "planting",
-  date: Date.parse("01-05-2020"),
+  date: nil,
   done: false
 )
 
@@ -849,7 +829,7 @@ Task.create!(
   garden_vegetable: garden_vegetable_tomato,
   step: 3,
   action: "harvesting",
-  date: Date.parse("01-07-2020"),
+  date: nil,
   done: false
 )
 
