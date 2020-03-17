@@ -5,8 +5,10 @@
     <div class="title-sidebar">
       <h1>Vegetables</h1>
     </div>
-    <div class="">
-      <%= render 'vegetables/index' %>
+
+    <div class="action-task">
+      <%= render 'vegetables/index'%>
+
     </div>
   </div>
 
@@ -17,7 +19,7 @@
     </div>
   </div>
 
-  <%= render 'shared/garden_draggable' %>
+  <%= render 'shared/garden_draggable', garden_vegetables: @garden_vegetables  %>
 
   <div class="save-garden-button">
     <form  action="/garden_vegetables" method="post" >
