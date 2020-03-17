@@ -105,8 +105,8 @@ radish = Vegetable.create!(
     seeding_start: Date.parse('01-02-2020'),
     seeding_end: Date.parse('30-06-2020'),
     sedding_desription: "The radish germinates when the soil temperature reaches 8 ° C, but its growth is really active from 12 ° C. At room temperature, the ideal is between 15 and 18 ° C. Depending on the region, the best harvests are therefore obtained with seedlings spreading between February 15 and April 20. However, the first sowing of February and March is carried out under a forcing veil or a Nantes caterpillar. Remove these protections in the event of high heat (above 25 ° C) and at the start of tuberization. All radish sowing is done in rows 20 cm apart, up to 35 cm for very large roots. For round varieties, sow 20 seeds per meter at a depth of 1 cm; and for half-lengths, place 30 seeds per meter at 2 cm deep. Cover the seeds with 2 cm of fine soil (0.5 cm only for the round varieties of radishes of every month). Keep the soil cool until emergence (3 to 5 days).",
-    planting_start: Date.parse('01-02-2020'),
-    planting_end: Date.parse('30-06-2020'),
+    planting_start: nil,
+    planting_end: nil,
     planting_description: nil,
     harvesting_start: Date.parse('01-03-2020'),
     harvesting_end: Date.parse('30-07-2020'),
@@ -164,10 +164,6 @@ cauliflower = Vegetable.create!(
     harvesting_description: "The cauliflower is harvested practically throughout the year depending on the sowing periods. The harvest takes place about 3 months after planting but this can vary depending on weather conditions. Wait until the head is firmly closed and tear off or cut away the soil because there will be no other crop on this plane. Protect your cauliflowers from November for a winter harvest",
     area: 70,
     description: "As soon as the plants have at least 3 to 4 leaves, transplant directly into place while protecting your crop if this operation must be carried out before May. Transplanting is done every 40 cm. This spacing is necessary to allow the plants room to develop. Transplant to well-plowed soil.",
-<<<<<<< HEAD
-=======
-
->>>>>>> 7ffbef5c5492c37761652f9cfe44d03e81b363d3
     photo_vegetable: "cauliflower_photo.png",
     icon_vegetable: "cauliflower.png"
     )
@@ -291,8 +287,8 @@ radish2 = Vegetable.create!(
     seeding_start: Date.parse('01-02-2020'),
     seeding_end: Date.parse('30-06-2020'),
     sedding_desription: "The radish germinates when the soil temperature reaches 8 ° C, but its growth is really active from 12 ° C. At room temperature, the ideal is between 15 and 18 ° C. Depending on the region, the best harvests are therefore obtained with seedlings spreading between February 15 and April 20. However, the first sowing of February and March is carried out under a forcing veil or a Nantes caterpillar. Remove these protections in the event of high heat (above 25 ° C) and at the start of tuberization. All radish sowing is done in rows 20 cm apart, up to 35 cm for very large roots. For round varieties, sow 20 seeds per meter at a depth of 1 cm; and for half-lengths, place 30 seeds per meter at 2 cm deep. Cover the seeds with 2 cm of fine soil (0.5 cm only for the round varieties of radishes of every month). Keep the soil cool until emergence (3 to 5 days).",
-    planting_start: Date.parse('01-02-2020'),
-    planting_end: Date.parse('30-06-2020'),
+    planting_start: nil,
+    planting_end: nil,
     planting_description: nil,
     harvesting_start: Date.parse('01-03-2020'),
     harvesting_end: Date.parse('30-07-2020'),
@@ -387,8 +383,6 @@ zucchini2 = Vegetable.create!(
     photo_vegetable: "",
     icon_vegetable: ""
     )
-
-
 puts 'Finished vegetables!'
 
 print 'Create user'
@@ -786,9 +780,14 @@ garden_vegetable_onion = GardenVegetable.create!(
   garden: garden1
 )
 
+garden_vegetable_radish = GardenVegetable.create!(
+  vegetable: radish,
+  garden: garden1
+)
+
 puts "Les legumes sont dans le jardin, je repète, les legumes sont dans le jardin"
 
-puts "Task for carrot..."
+puts "Task for each garden_vegetable..."
 
 Task.create!(
   garden_vegetable: garden_vegetable_carrot,
@@ -814,7 +813,7 @@ Task.create!(
   garden_vegetable: garden_vegetable_potato,
   step: 1,
   action: "planting",
-  date: Date.parse('15-03-2020'),
+  date: Date.parse('25-02-2020'),
   done: false
 )
 
@@ -853,5 +852,22 @@ Task.create!(
   date: Date.parse("01-07-2020"),
   done: false
 )
+
+Task.create!(
+  garden_vegetable: garden_vegetable_radish,
+  step: 1,
+  action: "seeding",
+  date: nil,
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_radish,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
 
 puts "Done!"
