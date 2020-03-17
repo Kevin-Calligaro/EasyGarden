@@ -9,8 +9,8 @@ class GardensController < ApplicationController
   def edit
     @garden = Garden.find(params[:id])
     @garden_vegetables = GardenVegetable.all
+    @garden_vegetable = GardenVegetable.new
     @vegetables = Vegetable.all
-
   end
 
   def new

@@ -7,7 +7,15 @@ import { persisteData } from '../persiste';
 
 // cloning();
 
-import { PluginsCollidable } from '../plugins/garden_draggable.js';
+import { PluginsCollidable, garden_vegetables_data } from '../plugins/garden_draggable.js';
 
 PluginsCollidable();
-persisteData();
+
+
+const buttontest = document.querySelector(".test-data");
+
+buttontest.addEventListener('click', (event) => {
+  // event.preventDefault();
+  persisteData();
+  console.log(garden_vegetables_data)
+});
