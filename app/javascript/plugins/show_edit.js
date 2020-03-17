@@ -1,6 +1,5 @@
 // Choppe tous les bouttons de gauche
 const seeMoreButtons = document.querySelectorAll(".button-see");
-
 // Choppe toutes les cards de droite
 const cards = Array.from(document.querySelectorAll(".description-show"));
 
@@ -10,6 +9,7 @@ seeMoreButtons.forEach((button) => {
   button.addEventListener('click', (event) => {
     // On récupére l'id, commun au button & à la card
     const vegetableId = button.getAttribute("vegetable_id");
+    console.log(vegetableId);
 
     // On choppe la card, à partir de l'id du button
     const card = cards.find(element => element.getAttribute("vegetable_id") === vegetableId)
