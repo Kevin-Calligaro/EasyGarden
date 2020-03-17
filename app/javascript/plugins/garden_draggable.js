@@ -65,7 +65,8 @@ export default function PluginsCollidable() {
   droppable.on('droppable:stop', (event) => {
 
     const pos = event.data.dropzone.previousElementSibling.dataset.position; // je recup la data-position du span cible => x1y2
-    const id  = event.data.dragEvent.source.dataset.id; // je recup la data-id du veg source => x1y2
+    const id  = event.data.dragEvent.source.dataset.vegId; // je recup la data-id du veg source => x1y2
+    console.log(id);
     const moving = document.querySelector('.draggable--original');
 
 
@@ -102,17 +103,15 @@ export default function PluginsCollidable() {
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
 
-    let myData = {
-        "id" : id,
-        "position" : pos,
-        "jsonId" : uniqueId,
-    };
+    // let myData = {
+    //     "id" : id,
+    //     "position" : pos,
+    //     "jsonId" : uniqueId,
+    // };
 
     const garden = document.querySelector(".garden-container");
     const area = garden.querySelector(".hidden");
     area.classList.remove("hidden");
-
-    myJson.push( myData )
     // console.log(myJson)
 
   });
