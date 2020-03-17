@@ -19,9 +19,9 @@ class Task < ApplicationRecord
     if self.garden_vegetable.vegetable.planting_start == nil
       if DateTime.now < self.garden_vegetable.vegetable.seeding_start
         "not urgent"
-      elsif DateTime.now >= self.garden_vegetable.vegetable.seeding_end - 7
+      elsif DateTime.now >= self.garden_vegetable.vegetable.seeding_end - 14
         "very urgent"
-      elsif DateTime.now <= DateTime.now + ((self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.seeding_start) / 2)
+      elsif DateTime.now <= self.garden_vegetable.vegetable.seeding_start + ((self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.seeding_start) / 2)
         "urgent"
       elsif DateTime.now >= self.garden_vegetable.vegetable.seeding_start
         "urgent soon"
@@ -32,7 +32,7 @@ class Task < ApplicationRecord
         "not urgent"
       elsif DateTime.now >= self.garden_vegetable.vegetable.seeding_end - 7
         "very urgent"
-      elsif DateTime.now <= DateTime.now + ((self.garden_vegetable.vegetable.planting_start - self.garden_vegetable.vegetable.seeding_start) / 2)
+      elsif DateTime.now <=self.garden_vegetable.vegetable.seeding_start + ((self.garden_vegetable.vegetable.planting_start - self.garden_vegetable.vegetable.seeding_start) / 2)
         "urgent"
       elsif DateTime.now >= self.garden_vegetable.vegetable.seeding_start
         "urgent soon"
@@ -43,7 +43,7 @@ class Task < ApplicationRecord
         "not urgent"
       elsif DateTime.now >= self.garden_vegetable.vegetable.planting_end - 7
         "very urgent"
-      elsif DateTime.now <= DateTime.now + ((self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.planting_start) / 2)
+      elsif DateTime.now <= self.garden_vegetable.vegetable.planting_start + ((self.garden_vegetable.vegetable.harvesting_start - self.garden_vegetable.vegetable.planting_start) / 2)
         "urgent"
       elsif DateTime.now >= self.garden_vegetable.vegetable.planting_start
         "urgent soon"

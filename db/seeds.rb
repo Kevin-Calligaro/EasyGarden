@@ -653,7 +653,7 @@ Task.create!(
   step: 1,
   action: "seeding",
   date: nil,
-  done: true
+  done: false
 )
 
 Task.create!(
@@ -682,6 +682,22 @@ Task.create!(
 
 Task.create!(
   garden_vegetable: garden_vegetable_radish,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_radish,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_zucchini,
   step: 2,
   action: "harvesting",
   date: nil,
