@@ -1,6 +1,5 @@
 // Choppe tous les bouttons de gauche
 const seeMoreButtons = document.querySelectorAll(".button-see");
-
 // Choppe toutes les cards de droite
 const cards = Array.from(document.querySelectorAll(".description-show"));
 
@@ -22,14 +21,28 @@ seeMoreButtons.forEach((button) => {
       // On "supprime" (en ajoutant la class 'display-none') toutes les cards affichées
       Array.from(displayedCards).forEach(card => card.classList.add("display-none"));
 
+
+      // on ajoute see less
+
       // On "affiche" notre card, en supprimant la class 'display-none'
       card.classList.remove("display-none");
+
+      seeMoreButtons.forEach((button) =>{
+        button.textContent ="See More";
+      })
+
+      button.textContent ="See Less";
 
 
     // Si la card de droite est displayed
     } else {
       // On la supprime en ajoutant la class display-none
       card.classList.add("display-none");
+
+      if (button.textContent === "See Less") {
+      // on ajoute see less
+      button.textContent ="See More";
+      }
     }
   });
 });

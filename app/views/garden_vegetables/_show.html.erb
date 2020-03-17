@@ -1,5 +1,5 @@
 <%  @garden_vegetables.each do |garden_vegetable|%>
-  <div class="description-show display-none" garden_vegetable_id=<%= garden_vegetable.id %>>
+  <div class="description-show display-none" garden_vegetable_id="<%= garden_vegetable.id %>">
     <i class="fas fa-minus-circle p-2"></i>
     <div class="title-description">
       <h1><%= garden_vegetable.vegetable.specie.capitalize %> </h1>
@@ -11,6 +11,7 @@
         <%= image_tag garden_vegetable.vegetable.photo_vegetable, class: "photo-description" %>
       </div>
     </div>
+
     <div class="onglet-description">
       <nav>
         <div class="nav nav-tabs list-inline tabs-underlined" id="nav-tab-<%=garden_vegetable.vegetable.id%>" role="tablist">
