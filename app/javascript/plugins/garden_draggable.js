@@ -103,11 +103,7 @@ export default function PluginsCollidable() {
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
 
-    // let myData = {
-    //     "id" : id,
-    //     "position" : pos,
-    //     "jsonId" : uniqueId,
-    // };
+
 
     const garden = document.querySelector(".garden-container");
     const area = garden.querySelector(".hidden");
