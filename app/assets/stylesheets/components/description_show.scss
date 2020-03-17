@@ -58,3 +58,17 @@ p {
   border-radius: 18px;
 
 }
+.task-description{
+  text-align: justify;
+  font-size: 14px;
+  margin: 20px;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.01);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 18px;
+    h5 {
+      align-self: center;
+    }
+}

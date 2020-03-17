@@ -50,7 +50,6 @@
       <div class="see-more">
         <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
           <p><i class="fas fa-plus-circle button-plus" task_id="<%=task.id%>"></i></p>
-          <%= link_to "done", mark_as_done_task_path(task.id), method: :patch %>
         <% end %>
       </div>
     </div>
