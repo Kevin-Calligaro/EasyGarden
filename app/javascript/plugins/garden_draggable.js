@@ -49,9 +49,16 @@ export default function PluginsCollidable() {
     cible.id = ("needVeg");
     const cible2 = event.data.dropzone.previousElementSibling.nextElementSibling.firstElementChild;
     cible2.id = ("needVeg2");
-
-
   });
+
+
+
+
+
+
+
+
+
 
 
   droppable.on('droppable:stop', (event) => {
@@ -82,20 +89,23 @@ export default function PluginsCollidable() {
     const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
 
     vegeCards.insertBefore(clone, vegeSpan.nextSibling ); // new vege !
-
-    vegeCards.id ="good" // remove the target
-    vegeSpan.id ="good1" // remove ""
-
-
+    vegeCards.id ="" // remove the target
+    vegeSpan.id ="" // remove ""
 
     let myData = {
         "id" : id,
         "position" : pos,
         "jsonId" : uniqueId,
     };
+
+    const garden = document.querySelector(".garden-container");
+    const area = garden.querySelector(".hidden");
+    area.classList.remove("hidden");
+
     myJson.push( myData )
     // console.log(myJson)
   });
+
   return droppable;
 };
 
