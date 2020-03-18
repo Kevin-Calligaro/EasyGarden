@@ -10,8 +10,10 @@
           <a href="#" class="Block--isDraggable vegetable" data-veg-id="<%= vegetable.id %>" data-veg-zone="<%= vegetable.area %>" title="Click to plant" style="">
 
             <div class="BlockContent">
-              <%= image_tag vegetable.icon_vegetable, class: "calibre-1 card-vege-icon" %>
-              <div style="width:<%= vegetable.area %>px" class="green-area hidden veggie-area area-size-<%= vegetable.area %>"></div>
+
+              <%= image_tag vegetable.icon_vegetable, class: "card-vege-icon" %>
+              <div style="width: <%= vegetable.area * 35 / 10 %>px; height: <%= vegetable.area * 35 / 10%>px; top:<%= - (vegetable.area * 35 / 10)/2 + 17  %>px; left:<%= - (vegetable.area * 35 / 10)/2 +17 %>px;" class="green-area hidden veggie-area area-size-<%= vegetable.area %>"></div>
+
               <!-- <div class="red-area hidden"></div> -->
             </div>
           </a>

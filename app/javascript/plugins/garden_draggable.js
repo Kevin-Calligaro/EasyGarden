@@ -55,9 +55,9 @@ export default function PluginsCollidable() {
 
   droppable.on('droppable:stop', (event) => {
     const pos = event.data.dropzone.dataset.position; // je recup la data-position du span cible => x1y2
-    console.log(event.data.dropzone)
+    // console.log(event.data.dropzone)
     const id  = event.data.dragEvent.source.dataset.vegId; // je recup la data-id du veg source => x1y2
-    console.log(id);
+    // console.log(id);
     const moving = document.querySelector('.draggable--original');
 
 
@@ -83,7 +83,7 @@ export default function PluginsCollidable() {
         "garden_vegetable_id" : uniqueId,
     };
     garden_vegetables_data.push( myData )
-    console.log(garden_vegetables_data)
+    // console.log(garden_vegetables_data)
 
 
     const backet = document.querySelector(".backet"); // select sidebar
@@ -108,7 +108,11 @@ export default function PluginsCollidable() {
           const addedNode = mutation.addedNodes[0]
           if (addedNode) {
             const veggieArea = addedNode.querySelector('.veggie-area')
-            veggieArea.classList.remove('hidden')
+            const veggie = addedNode.querySelector('.card-vege-icon')
+            console.log(veggie);
+            veggie.classList.add("garden-vege-icon");
+            veggie.classList.remove("card-vege-icon");
+            veggieArea.classList.remove('hidden');
           }
         }
       }
