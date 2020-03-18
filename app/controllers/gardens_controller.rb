@@ -14,6 +14,9 @@ class GardensController < ApplicationController
     @vegetables = Vegetable.all
   end
 
+  def update
+  end
+
   def new
 
   end

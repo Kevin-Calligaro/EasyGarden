@@ -1,7 +1,14 @@
 <div class="container-div">
   <div class="title-garden" style="position: absolute;right: 650px;top: 75px;">
-    <h1><%= @garden.title %></h1>
+    <h1><%#= @garden.title %></h1>
   </div>
+
+  <div class="garden-button">
+  <%= link_to "Edit", edit_garden_path, class: "btn btn-success"  %>
+  </div>
+
+  <%= render 'shared/garden_draggable', garden_vegetables: @garden_vegetables  %>
+
   <div class="sidebar-container">
      <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
      <div class="title-sidebar">
@@ -14,5 +21,8 @@
     <div class="vegetable-description">
       <%= render 'tasks/show' %>
   </div>
+
+
+
 </div>
 

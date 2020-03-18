@@ -7,9 +7,10 @@ const garden_vegetables_data =[]
 
 export default function PluginsCollidable() {
   const containerSelector = '#Collidable .BlockLayout';
-  const containers = document.querySelectorAll(containerSelector);
+  const containers        = document.querySelectorAll(containerSelector);
+
   const wallClass = 'CollidableWall';
-  const walls = document.querySelectorAll(`.${wallClass}`);
+  const walls     = document.querySelectorAll(`.${wallClass}`);
 
   if (containers.length === 0) {
     return false;
@@ -64,7 +65,8 @@ export default function PluginsCollidable() {
 
   droppable.on('droppable:stop', (event) => {
 
-    const pos = event.data.dropzone.previousElementSibling.dataset.position; // je recup la data-position du span cible => x1y2
+    const pos = event.data.dropzone.dataset.position; // je recup la data-position du span cible => x1y2
+    console.log(event.data.dropzone)
     const id  = event.data.dragEvent.source.dataset.vegId; // je recup la data-id du veg source => x1y2
     console.log(id);
     const moving = document.querySelector('.draggable--original');
@@ -104,9 +106,11 @@ export default function PluginsCollidable() {
     vegeSpan.id ="" // remove ""
 
 
+    console.log(event.data.dropzone)
 
-    const garden = document.querySelector(".garden-container");
-    const area = garden.querySelector(".hidden");
+    // const garden = document.querySelector(".garden-container");
+    const area = event.data.dropzone.querySelector(".veggie-area");
+    console.log(area);
     area.classList.remove("hidden");
     // console.log(myJson)
 
