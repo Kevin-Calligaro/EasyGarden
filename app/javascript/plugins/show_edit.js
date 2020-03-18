@@ -29,19 +29,25 @@ seeMoreButtons.forEach((button) => {
 
       seeMoreButtons.forEach((button) =>{
         button.textContent ="See More";
+        button.classList.remove("select");
+
       })
 
       button.textContent ="See Less";
+      button.classList.add("select");
 
 
     // Si la card de droite est displayed
     } else {
       // On la supprime en ajoutant la class display-none
       card.classList.add("display-none");
+      button.classList.add("select");
 
       if (button.textContent === "See Less") {
       // on ajoute see less
       button.textContent ="See More";
+      button.classList.remove("select");
+
       }
     }
   });
