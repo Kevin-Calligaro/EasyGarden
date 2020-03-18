@@ -1,0 +1,5 @@
+meta_product_name: "EasyGarden"
+meta_title: "EasyGarden - Draw & Organize Your Garden Easily"
+meta_description: "An easy way to draw your garden and to know what is the next steps for have a nice vegetables garden "
+meta_image: "Logo-Easy-Garden.png" # should exist in `app/assets/images/`
+twitter_account: "@Clement_Lucien1"   # required for Twitter Cards
