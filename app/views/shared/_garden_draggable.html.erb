@@ -1,18 +1,36 @@
 <div class="garden-area">
-      <!-- creation du jardin 40.times => 4metres, etc. -->
   <div class="garden-container">
+
     <div class="line-t"></div>
     <div class="line-b"></div>
     <div class="line-l"></div>
     <div class="line-r"></div>
 
-    <% 20.times do |index_y| %>
-    <% 15.times do |index_x| %>
-    <div class="BlockWrapper BlockWrapper--isDropzone garden-units" data-position="x<%= index_x %>-y<%= index_y %>">
-      <span class="garden-square"><div class="BlockContent"></div></span>
-    </div>
+    <% 15.times do |index_y| %>
+      <% 20.times do |index_x| %>
+          <% founded_veggi = garden_vegetables.find { |vege| vege.position == "x#{index_x}-y#{index_y}" }  %>
+
+          <% if founded_veggi %>
+            <div class="BlockWrapper BlockWrapper--isDropzone garden-units" data-position="x<%= index_x %>-y<%= index_y %>">
+              <span class="garden-square"><div class="BlockContent"></div></span>
+              <a href="#" class="Block--isDraggable vegetable" data-veg-id="<%= founded_veggi.vegetable_id %>" data-veg-zone="pending" title="Click to plant" style="">
+                <div class="BlockContent">
+                  <%= image_tag founded_veggi.vegetable.icon_vegetable, class: "calibre-1 card-vege-icon" %>
+                  <div class="green-area hidden veggie-area"></div>
+                  <!-- <div class="red-area hidden"></div> -->
+                </div>
+              </a>
+            </div>
+          <% else %>
+            <div class="BlockWrapper BlockWrapper--isDropzone garden-units" data-position="x<%= index_x %>-y<%= index_y %>">
+              <span class="garden-square"><div class="BlockContent"></div></span>
+            </div>
+          <% end %>
+
+
+      <% end %>
     <% end %>
-    <% end %>
+
   </div>
 </div>
 

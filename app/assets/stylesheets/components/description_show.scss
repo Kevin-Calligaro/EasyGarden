@@ -18,7 +18,7 @@ p {
 .title-description{
   margin: 20px 0px;
   width: 22vw;
-  height: 30px;
+  height: 200px;
   background-color: rgba(0,170,37,0.25);
   border-bottom-left-radius: 12px;
   border-top-left-radius: 12px;
@@ -38,10 +38,10 @@ p {
   }
 }
 
-.photo-description{
+img.photo-description{
   position: absolute;
   right: 20px;
-  top: 140px;
+  top: 100px;
   width: 120px;
   height: 90px;
 }

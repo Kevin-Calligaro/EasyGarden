@@ -10,15 +10,29 @@ button{
   padding: 5px;
 
 }
-.button-see:hover{
-    background-color: rgba(0, 170, 37, 0.45);
+.button-see:hover {
+  background-color: rgba(0, 170, 37, 0.45);
 }
+
+.button-see.select {
+  text-decoration: none;
+  background-color: rgba(0, 170, 37, 0.45);
+}
+  button:focus {
+    outline: none;
+  }
 
 .button-plus{
   color: gray;
+  font-size: 20px;
 }
 
 .button-plus:hover{
+  color: rgba(0, 170, 37, 0.45);
+}
+
+.button-plus.select {
+  // text-decoration: none;
   color: rgba(0, 170, 37, 0.45);
 }
 

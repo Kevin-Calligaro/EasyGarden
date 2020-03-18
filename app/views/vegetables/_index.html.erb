@@ -1,12 +1,9 @@
-
 <div class="col cards-vegetables">
   <div class="backet">
     <% @vegetables.each do |vegetable| %>
-
     <div class="card-vegetable">
       <div class="vege-photo">
         <%= image_tag vegetable.photo_vegetable, class: "card-vege-photo" %>
-
         <div class="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied">
           <span><div class="BlockContent"></div></span>
 
@@ -14,7 +11,7 @@
 
             <div class="BlockContent">
               <%= image_tag vegetable.icon_vegetable, class: "calibre-1 card-vege-icon" %>
-              <div class="green-area hidden"></div>
+              <div style="width: <%= veggie.area %>px" class="green-area hidden veggie-area area-size-<%= vegetable.area %>"></div>
               <!-- <div class="red-area hidden"></div> -->
             </div>
           </a>
@@ -29,7 +26,7 @@
         <p><em>Planting</em> <br> From <%= vegetable.planting_start.strftime("%b")%> to <%= vegetable.planting_end.strftime("%b") %></p>
         <% end %>
         <div class="d-flex align-items-center">
-          <button class="button-see select display" vegetable_id="<%= vegetable.id %>">See More</button>
+          <button class="button-see display" vegetable_id="<%= vegetable.id %>">See More</button>
         </div>
       </div>
     </div>

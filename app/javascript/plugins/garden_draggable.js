@@ -7,9 +7,10 @@ const garden_vegetables_data =[]
 
 export default function PluginsCollidable() {
   const containerSelector = '#Collidable .BlockLayout';
-  const containers = document.querySelectorAll(containerSelector);
+  const containers        = document.querySelectorAll(containerSelector);
+
   const wallClass = 'CollidableWall';
-  const walls = document.querySelectorAll(`.${wallClass}`);
+  const walls     = document.querySelectorAll(`.${wallClass}`);
 
   if (containers.length === 0) {
     return false;
@@ -52,19 +53,9 @@ export default function PluginsCollidable() {
     cible2.id = ("needVeg2");
   });
 
-
-
-
-
-
-
-
-
-
-
   droppable.on('droppable:stop', (event) => {
-
-    const pos = event.data.dropzone.previousElementSibling.dataset.position; // je recup la data-position du span cible => x1y2
+    const pos = event.data.dropzone.dataset.position; // je recup la data-position du span cible => x1y2
+    console.log(event.data.dropzone)
     const id  = event.data.dragEvent.source.dataset.vegId; // je recup la data-id du veg source => x1y2
     console.log(id);
     const moving = document.querySelector('.draggable--original');
@@ -103,17 +94,30 @@ export default function PluginsCollidable() {
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
 
-    // let myData = {
-    //     "id" : id,
-    //     "position" : pos,
-    //     "jsonId" : uniqueId,
-    // };
+    const dropzone = event.data.dropzone
 
-    const garden = document.querySelector(".garden-container");
-    const area = garden.querySelector(".hidden");
-    area.classList.remove("hidden");
-    // console.log(myJson)
+    // setTimeout(() => {
+    //   const area = dropzone.querySelector(".veggie-area");
+    //   area.classList.remove("hidden");
+    // },
+    // 500);
 
+    var displayVeggieArea = function(mutationsList) {
+      for(var mutation of mutationsList) {
+        if (mutation.type == 'childList') {
+          const addedNode = mutation.addedNodes[0]
+          if (addedNode) {
+            const veggieArea = addedNode.querySelector('.veggie-area')
+            veggieArea.classList.remove('hidden')
+          }
+        }
+      }
+    }
+
+    const veggieDroppedObserver = new MutationObserver(displayVeggieArea)
+    const config   = { childList: true }
+
+    veggieDroppedObserver.observe(dropzone, config)
   });
 
   return droppable;
