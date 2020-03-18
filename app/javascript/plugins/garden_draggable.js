@@ -105,15 +105,15 @@ export default function PluginsCollidable() {
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
 
+    const dropzone = event.data.dropzone
 
-    console.log(event.data.dropzone)
-
-    // const garden = document.querySelector(".garden-container");
-    const area = event.data.dropzone.querySelector(".veggie-area");
-    console.log(area);
-    area.classList.remove("hidden");
-    // console.log(myJson)
-
+    setTimeout(() => {
+      const area     = dropzone.querySelector(".veggie-area");
+      console.log(area);
+      area.classList.remove("hidden");
+      console.log(area);
+    },
+    500);
   });
 
   return droppable;
