@@ -16,8 +16,8 @@
     </div>
 
     <div>
-      <%= render 'shared/garden_draggable', garden_vegetables: @garden_vegetables  %>
-    </div>
+      <%= render "shared/garden_draggable", garden_vegetables: @garden_vegetables, mode: "show" %>
+          </div>
 
     <div class="garden-button">
       <button class="button-edit-save"><%= link_to "Edit", edit_garden_path  %> </button>

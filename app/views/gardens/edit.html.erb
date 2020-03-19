@@ -1,6 +1,4 @@
 <div class="edit-container d-flex">
-
-
   <div class="sidebar-container">
     <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
     <div class="title-sidebar">
@@ -15,8 +13,7 @@
     </div>
 
     <div>
-      <%= render 'shared/garden_draggable', garden_vegetables: @garden_vegetables  %>
-    </div>
+      <%= render "shared/garden_draggable", garden_vegetables: @garden_vegetables, mode: "edit" %>    </div>
 
     <div class="garden-button">
       <form  action="/garden_vegetables" method="post" >
