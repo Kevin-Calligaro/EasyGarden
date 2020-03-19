@@ -1,30 +1,37 @@
 <% content_for :meta_title, "#{@garden_vegetables.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <%# content_for :meta_description, @offer.description %>
 <%# content_for :meta_image, cl_image_path(@garden_vegetables.photo.path) %>
-<div class="container-div">
-  <div class="title-garden" style="position: absolute;right: 650px;top: 75px;">
-    <h1><%#= @garden.title %></h1>
-  </div>
-
-  <div class="garden-button">
-    <%= link_to "Edit", edit_garden_path, class: "btn btn-success"  %>
-  </div>
-
+<div class="container-div d-flex">
 
   <div class="sidebar-container">
-   <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
-   <div class="title-sidebar">
-    <h1>Next tasks</h1>
+    <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
+    <div class="title-sidebar">
+      <h1>Next tasks</h1>
+    </div>
+    <%= render 'tasks/index' %>
   </div>
-  <%= render 'tasks/index' %>
-</div>
 
-<div class="container-info">
-  <div class="vegetable-description">
-    <%= render 'tasks/show' %>
+  <div class="right-part">
+    <div class="title-garden" >
+      <h1><%= @garden.title %></h1>
+    </div>
+
+    <div>
+      <%= render 'shared/garden_draggable', garden_vegetables: @garden_vegetables  %>
+    </div>
+
+    <div class="garden-button">
+      <button class="button-edit-save"><%= link_to "Edit", edit_garden_path  %> </button>
+    </div>
   </div>
-</div>
 
-<%= render 'shared/garden_draggable', garden_vegetables: @garden_vegetables  %>
+
+
+  <div class="container-info">
+    <div class="vegetable-description">
+      <%= render 'tasks/show' %>
+    </div>
+  </div>
+
 </div>
 

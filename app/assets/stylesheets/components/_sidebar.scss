@@ -1,11 +1,9 @@
-body{
-  position: relative;
-}
+
 .sidebar-container{
-  width: auto;
+  position: sticky;
+  width: 320px;
   min-width: 320px;
   height: 100vh;
-  position: fixed;
   background-color: rgba(250,248,245,0.8);
   left: 0;
   top: 0;
@@ -14,7 +12,7 @@ body{
 }
 
 .title-sidebar{
-  width: 27vw;
+  width: inherit ;
   min-width: 340px;
   height: 30px;
   background-color: rgba(0,170,37,0.25);
@@ -30,15 +28,16 @@ body{
 }
 
 .cards-vegetables{
-  position: fixed;
+  margin-top: 20px;
+  position: absolute;
   overflow-y: scroll;
+  height: 70vh;
   top: 245px;
-  width: 350px;
-  min-width: 300px;
   bottom: 20px;
+  width: inherit;
 }
 .tasks-vegetables{
-  position: fixed;
+  position: absolute;
   overflow-y: scroll;
   top: 245px;
   width: 350px;
