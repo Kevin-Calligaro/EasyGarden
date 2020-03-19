@@ -4,15 +4,20 @@ $H: 35px; //10cm
 p {
   font-size: 10px;
 }
+.right-part{
+  overflow: hidden;
+}
 
 .garden-area {
-  background-image: asset-url("garden-texture.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   width: (20 * $L)+300;
   height: (15 * $H)+200;
-  margin: 0px auto auto 400px;
+  margin: 10px auto ;
+  border: 1px solid $light-gray;
+  align-items: center;
+  background-image: asset-url("garden-texture.png");
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .mode-edit {
@@ -23,7 +28,8 @@ p {
 
 
 .garden-container {
-  margin: 100px auto;
+  margin: 50px auto ;
+  flex-grow: 1;
   width: (20 * $L);
   height: (15 * $H);
   display: flex;
@@ -200,8 +206,7 @@ p {
 }
 
 .garden-button {
-  margin-left: 410px;
-  margin-top: 20px;
+  text-decoration: none;
 }
 
 .garden-vege-icon {

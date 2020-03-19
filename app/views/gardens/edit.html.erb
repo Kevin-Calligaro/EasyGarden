@@ -1,36 +1,37 @@
+<div class="edit-container d-flex">
 
-
-
-<div class="edit-container">
-
-  <div class="garden-button">
-    <form  action="/garden_vegetables" method="post" >
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <%= hidden_field_tag :garden_id, @garden.id %>
-      <label class="hidden" for="data-spot"></label>
-      <input class="hidden" type="text" id="data-spot" name="data-spot"></input>
-      <button class="btn btn-success test-data">Save !</button>
-    </form>
-  </div>
 
   <div class="sidebar-container">
     <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
     <div class="title-sidebar">
       <h1>Vegetables</h1>
     </div>
-
     <%= render 'vegetables/index'%>
-
   </div>
 
+  <div class="right-part">
+    <div class="title-garden">
+      <h1><%= @garden.title %></h1>
+    </div>
+
+    <div>
+      <%= render 'shared/garden_draggable', garden_vegetables: @garden_vegetables  %>
+    </div>
+
+    <div class="garden-button">
+      <form  action="/garden_vegetables" method="post" >
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :garden_id, @garden.id %>
+        <label class="hidden" for="data-spot"></label>
+        <input class="hidden" type="text" id="data-spot" name="data-spot"></input>
+        <button class="button-edit-save test-data">Save !</button>
+      </form>
+    </div>
+  </div>
 
   <div class="container-info">
     <div class="vegetable-description">
       <%= render 'vegetables/show' %>
     </div>
   </div>
-
-<%= render 'shared/garden_draggable', garden_vegetables: @garden_vegetables, mode: "edit" %>
-
-
 </div>
