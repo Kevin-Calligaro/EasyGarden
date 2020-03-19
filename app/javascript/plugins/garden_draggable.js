@@ -24,7 +24,6 @@ export default function PluginsCollidable() {
       constrainDimensions: true,
       cursorOffsetX: -27,
       cursorOffsetY: 27,
-      // appendTo: origin,
     },
     plugins: [Plugins.Collidable],
   });
@@ -75,8 +74,13 @@ export default function PluginsCollidable() {
     };
 
     let cloneSource = (event.data.dropzone.lastChild.outerHTML) // Clone the dragged vege
+
+    console.log(cloneSource);
+
     const clone = document.createElement("div"); // create object
+
     clone.innerHTML = cloneSource; // inject html in object
+
 
     let myData = {
       "vegetable_id" : id,
@@ -92,16 +96,17 @@ export default function PluginsCollidable() {
 
 
     const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
+    console.log(vegeCards);
     const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
+    console.log(vegeSpan);
 
 
-    if (vegeCards === undefined) {
+    // if (vegeCards === undefined) {
     vegeCards.insertBefore(clone, vegeSpan.nextSibling ); // new vege !
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
-    };
+    // };
 
-    const dropzone = event.data.dropzone
 
     // setTimeout(() => {
     //   const area = dropzone.querySelector(".veggie-area");
@@ -109,6 +114,7 @@ export default function PluginsCollidable() {
     // },
     // 500);
 
+    const dropzone = event.data.dropzone
     var displayVeggieArea = function(mutationsList) {
       for(var mutation of mutationsList) {
         if (mutation.type == 'childList') {
@@ -134,7 +140,7 @@ export default function PluginsCollidable() {
     const movedBlock = document.querySelector('.draggable-mirror');
     // console.log(movedBlock);
     const greenArea = movedBlock.querySelector('.green-area');
-    console.log(greenArea);
+    // console.log(greenArea);
     greenArea.classList.remove('hidden');
   });
 

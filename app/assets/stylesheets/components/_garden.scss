@@ -145,29 +145,32 @@ p {
 .panier {
   display: flex;
 }
+.veggie-area {
+  transition: 1s;
+  position: absolute;
+  opacity:0.8;
+  // background-image: asset-url("background-urgency/urgence_1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 8;
+}
 
+.green-area, .urgency-1-area {
+  background-image: asset-url("background-urgency/urgence_1.png");
+}
 
-  .green-area {
-    transition: 1s;
-    position: absolute;
-    opacity:0.8;
-    background-image: asset-url("background-urgency/urgence_1.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 8;
-  }
-  .red-area {
-    opacity:0.8;
-    transition: 1s;
-    position: absolute;
-    background-image: asset-url("background-urgency/urgence_1.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 8;
-  }
+.urgency-2-area {
+  background-image: asset-url("background-urgency/urgence_2.png");
+}
 
+.urgency-3-area {
+  background-image: asset-url("background-urgency/urgence_3.png");
+}
+
+.red-area, .urgency-4-area {
+  background-image: asset-url("background-urgency/urgence_4.png");
+}
 
 
 
@@ -196,10 +199,11 @@ p {
   height:$H;
   z-index: 15;
   object-fit: contain;
+  position: relative;
 }
 
 
-.draggable-mirror .green-area {
+.draggable-mirror .veggie-area  {
   top:300px;
 }
 

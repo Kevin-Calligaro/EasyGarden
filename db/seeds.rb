@@ -586,3 +586,126 @@ relationship56 = Relationship.create!(
 )
 
 puts "done relationship !"
+
+puts "add vegetable on garden"
+
+garden_vegetable_carrot = GardenVegetable.create!(
+  vegetable: carrot,
+  garden: garden1,
+  position: "x3-y5"
+)
+
+garden_vegetable_potato = GardenVegetable.create!(
+  vegetable: potato,
+  garden: garden1
+)
+
+garden_vegetable_tomato = GardenVegetable.create!(
+  vegetable: tomato,
+  garden: garden1,
+  position: "x1-y5"
+)
+
+garden_vegetable_egg_plant = GardenVegetable.create!(
+  vegetable: egg_plant,
+  garden: garden1
+)
+
+garden_vegetable_zucchini = GardenVegetable.create!(
+  vegetable: zucchini,
+  garden: garden1
+)
+
+garden_vegetable_onion = GardenVegetable.create!(
+  vegetable: onion,
+  garden: garden1
+)
+
+garden_vegetable_radish = GardenVegetable.create!(
+  vegetable: radish,
+  garden: garden1,
+  position: "x3-y10"
+)
+
+puts "Les legumes sont dans le jardin, je repète, les legumes sont dans le jardin"
+
+puts "Task for each garden_vegetable..."
+
+Task.create!(
+  garden_vegetable: garden_vegetable_carrot,
+  step: 1,
+  action: "seeding",
+  date: nil,
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_carrot,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
+puts "Done!"
+
+puts "Task for tomato..."
+
+Task.create!(
+  garden_vegetable: garden_vegetable_tomato,
+  step: 1,
+  action: "seeding",
+  date: "2020-01-02",
+  done: true
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_tomato,
+  step: 2,
+  action: "planting",
+  date: "2020-03-16",
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_tomato,
+  step: 3,
+  action: "harvesting",
+  date: "2020-03-30",
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_radish,
+  step: 1,
+  action: "seeding",
+  date: nil,
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_radish,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_radish,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
+Task.create!(
+  garden_vegetable: garden_vegetable_zucchini,
+  step: 2,
+  action: "harvesting",
+  date: nil,
+  done: false
+)
+
+
+puts "Done!"
