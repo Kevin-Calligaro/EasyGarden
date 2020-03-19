@@ -2,7 +2,7 @@
   <div class="description-show display-none" garden_vegetable_id="<%= garden_vegetable.id %>">
     <i class="fas fa-minus-circle p-2"></i>
     <div class="title-description">
-      <h1><%= garden_vegetable.vegetable.specie.capitalize %> </h1>
+      <h2><%= garden_vegetable.vegetable.specie.capitalize %> </h2>
     </div>
     <div class="d-flex">
       <p class="general-description">
@@ -27,7 +27,7 @@
       <div class="tab-content" id="nav-tabContent">
         <% if garden_vegetable.vegetable.seeding_start?%>
           <div class="tab-pane fade show active" id="nav-home-<%=garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-home-tab">
-            <h1>Seeding</h1>
+            <h2>Seeding</h2>
             <h5><em>From <%= garden_vegetable.vegetable.seeding_start.strftime("%B")%> to <%=garden_vegetable.vegetable.seeding_end.strftime("%B") %></em></h3>
             <p>
               <%= garden_vegetable.vegetable.sedding_desription%>
@@ -36,7 +36,7 @@
         <% end %>
         <% if garden_vegetable.vegetable.planting_start?%>
           <div class="tab-pane fade" id="nav-profile-<%=garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <h1>Planting</h1>
+            <h2>Planting</h2>
             <h5><em>From <%= garden_vegetable.vegetable.planting_start.strftime("%B")%> to <%= garden_vegetable.vegetable.planting_end.strftime("%B") %></em></h3>
             <p>
               <%= garden_vegetable.vegetable.planting_description%>
@@ -44,7 +44,7 @@
           </div>
         <% end %>
         <div class="tab-pane fade" id="nav-contact-<%=garden_vegetable.vegetable.id%>" role="tabpanel" aria-labelledby="nav-contact-tab">
-           <h1>Harvesting</h1>
+           <h2>Harvesting</h2>
           <h5><em>From <%= garden_vegetable.vegetable.harvesting_start.strftime("%B")%> to <%= garden_vegetable.vegetable.harvesting_end.strftime("%B") %></em></h3>
           <p>
             <%= garden_vegetable.vegetable.harvesting_description%>
