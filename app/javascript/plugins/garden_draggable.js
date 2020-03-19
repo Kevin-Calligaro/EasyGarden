@@ -88,12 +88,18 @@ export default function PluginsCollidable() {
 
 
     const backet = document.querySelector(".backet"); // select sidebar
+
+
+
     const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
     const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
 
+
+    if (vegeCards === undefined) {
     vegeCards.insertBefore(clone, vegeSpan.nextSibling ); // new vege !
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
+    };
 
     const dropzone = event.data.dropzone
 
@@ -126,7 +132,9 @@ export default function PluginsCollidable() {
   droppable.on('mirror:move', (event) => {
 
     const movedBlock = document.querySelector('.draggable-mirror');
+    // console.log(movedBlock);
     const greenArea = movedBlock.querySelector('.green-area');
+    console.log(greenArea);
     greenArea.classList.remove('hidden');
   });
 
