@@ -1,3 +1,5 @@
+<% displayed_grid = params[:controller] == 'gardens' && params[:action] == 'edit' ? 'border-ok' : 'border-none' %>
+
 <div class="garden-area">
   <div class="garden-container">
 
@@ -11,7 +13,7 @@
           <% founded_veggi = garden_vegetables.find { |vege| vege.position == "x#{index_x}-y#{index_y}" }  %>
 
           <% if founded_veggi %>
-            <div class="BlockWrapper BlockWrapper--isDropzone garden-units" data-position="x<%= index_x %>-y<%= index_y %>">
+            <div class="BlockWrapper BlockWrapper--isDropzone garden-units displayed_grid" data-position="x<%= index_x %>-y<%= index_y %>">
               <span class="garden-square"><div class="BlockContent"></div></span>
               <a href="#" class="Block--isDraggable vegetable" data-veg-id="<%= founded_veggi.vegetable_id %>" data-veg-zone="pending" title="Click to plant" style="">
                 <div class="BlockContent">
@@ -22,7 +24,7 @@
               </a>
             </div>
           <% else %>
-            <div class="BlockWrapper BlockWrapper--isDropzone garden-units" data-position="x<%= index_x %>-y<%= index_y %>">
+            <div class="BlockWrapper BlockWrapper--isDropzone garden-units displayed_grid" data-position="x<%= index_x %>-y<%= index_y %>">
               <span class="garden-square"><div class="BlockContent"></div></span>
             </div>
           <% end %>

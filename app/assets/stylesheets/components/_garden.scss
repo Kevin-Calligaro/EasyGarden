@@ -13,8 +13,8 @@ p {
   width: (20 * $L)+300;
   height: (15 * $H)+200;
   margin: 0px auto auto 400px;
-  border: 1px solid $light-gray;
 }
+
 
 
 .garden-container {
@@ -73,7 +73,7 @@ p {
 .garden-units {
   width: ($L);
   height: ($H);
-  border: 1px solid lightgrey;
+  // border: 1px solid lightgrey;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -176,3 +176,6 @@ p {
   object-fit: contain;
 }
 
+.border-ok {
+  border: 1px solid lightgrey;
+}
