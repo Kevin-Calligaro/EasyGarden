@@ -13,8 +13,8 @@ p {
   width: (20 * $L)+300;
   height: (15 * $H)+200;
   margin: 0px auto auto 400px;
-  border: 1px solid $light-gray;
 }
+
 
 
 .garden-container {
@@ -73,7 +73,7 @@ p {
 .garden-units {
   width: ($L);
   height: ($H);
-  border: 1px solid lightgrey;
+  // border: 1px solid lightgrey;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -87,6 +87,9 @@ p {
   margin: auto;
 }
 
+.Coucou-le-chat {
+  position: relative;
+}
 
 .vegetable-container {
   width: (12 * $L);
@@ -139,21 +142,20 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 10;
+  left: -27;
   // top: -25px;
   // left: -25px;
 }
 .red-area {
   transition: 1s;
   position: absolute;
-  width: 100px;
-  height: 100px;
-  background-image: asset-url("background-urgency/urgence_4.png");
+  background-image: asset-url("background-urgency/urgence_1.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 10;
-  top: -25px;
-  left: -25px;
+  // top: -25px;
+  // left: -25px;
 }
 
 
@@ -176,3 +178,10 @@ p {
   object-fit: contain;
 }
 
+.border-ok {
+  border: 1px solid lightgrey;
+}
+
+.draggable-mirror .green-area {
+  top:300px;
+}
