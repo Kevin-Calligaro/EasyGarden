@@ -1,24 +1,36 @@
-$L: 40px; //10cm
-$H: 40px; //10cm
+$L: 35px; //10cm
+$H: 35px; //10cm
 
 p {
   font-size: 10px;
 }
+.right-part{
+  overflow: hidden;
+}
 
 .garden-area {
-  background-image: asset-url("garden-texture.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   width: (20 * $L)+300;
   height: (15 * $H)+200;
-  margin: 0px auto auto 300px;
+  margin: 10px auto ;
   border: 1px solid $light-gray;
+  align-items: center;
+  background-image: asset-url("garden-texture.png");
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mode-edit {
+  .garden-units {
+    border: 0.5px solid lightgrey;
+  }
 }
 
 
+
 .garden-container {
-  margin: 100px auto;
+  margin: 50px auto ;
+  flex-grow: 1;
   width: (20 * $L);
   height: (15 * $H);
   display: flex;
@@ -87,6 +99,9 @@ p {
   margin: auto;
 }
 
+.Coucou-le-chat {
+  position: relative;
+}
 
 .vegetable-container {
   width: (12 * $L);
@@ -130,35 +145,71 @@ p {
 .panier {
   display: flex;
 }
-
-.green-area {
+.veggie-area {
   transition: 1s;
   position: absolute;
-  width: 100px;
-  height: 100px;
-  background-image: asset-url("background-urgency/urgence_1.png");
+  opacity:0.8;
+  // background-image: asset-url("background-urgency/urgence_1.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 10;
-  top: -25px;
-  left: -25px;
-}
-.red-area {
-  transition: 1s;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-image: asset-url("background-urgency/urgence_4.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 10;
-  top: -25px;
-  left: -25px;
+  z-index: 8;
 }
 
 
 .hidden{
   display: none;
 }
+
+.green-area, .urgency-1-area {
+  background-image: asset-url("background-urgency/urgence_1.png");
+}
+
+.urgency-2-area {
+  background-image: asset-url("background-urgency/urgence_2.png");
+}
+
+.urgency-3-area {
+  background-image: asset-url("background-urgency/urgence_3.png");
+}
+
+.red-area, .urgency-4-area {
+  background-image: asset-url("background-urgency/urgence_4.png");
+}
+
+
+
+.mode-show {
+  .green-area {
+    opacity:0.3;
+  }
+  .red-area {
+    opacity:0.3;
+  }
+}
+
+.hidden{
+  display: none;
+}
+
+.garden-button {
+  text-decoration: none;
+}
+
+.garden-vege-icon {
+  // position: absolute;
+  right: 0px;
+  top: 0px;
+  width: $L;
+  height:$H;
+  z-index: 15;
+  object-fit: contain;
+  position: relative;
+}
+
+
+.draggable-mirror .veggie-area  {
+  top:300px;
+}
+
+

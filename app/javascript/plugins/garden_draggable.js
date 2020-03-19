@@ -1,13 +1,16 @@
 
 // Learn more or give us feedback
 // eslint-disable-next-line import/no-unresolved
-import {Droppable, Plugins} from '@shopify/draggable';
+import {Droppable, Plugins, Sortable} from '@shopify/draggable';
+
+const garden_vegetables_data =[]
 
 export default function PluginsCollidable() {
   const containerSelector = '#Collidable .BlockLayout';
-  const containers = document.querySelectorAll(containerSelector);
+  const containers        = document.querySelectorAll(containerSelector);
+
   const wallClass = 'CollidableWall';
-  const walls = document.querySelectorAll(`.${wallClass}`);
+  const walls     = document.querySelectorAll(`.${wallClass}`);
 
   if (containers.length === 0) {
     return false;
@@ -42,7 +45,6 @@ export default function PluginsCollidable() {
     }
   });
 
-  const myJson =[]
   droppable.on('droppable:start', (event) => {
     const backet = document.querySelector(".backet");
     const cible = event.data.dropzone.previousElementSibling.nextElementSibling;
@@ -52,19 +54,11 @@ export default function PluginsCollidable() {
   });
 
 
-
-
-
-
-
-
-
-
-
   droppable.on('droppable:stop', (event) => {
-
-    const pos = event.data.dropzone.previousElementSibling.dataset.position; // je recup la data-position du span cible => x1y2
-    const id  = event.data.dragEvent.source.dataset.id; // je recup la data-id du veg source => x1y2
+    const pos = event.data.dropzone.dataset.position; // je recup la data-position du span cible => x1y2
+    // console.log(event.data.dropzone)
+    const id  = event.data.dragEvent.source.dataset.vegId; // je recup la data-id du veg source => x1y2
+    // console.log(id);
     const moving = document.querySelector('.draggable--original');
 
 
@@ -74,20 +68,41 @@ export default function PluginsCollidable() {
       uniqueId = Math.floor(Math.random() * (999 - 100) + 100);
       moving.dataset.gardenVeggieId = uniqueId
     } else {
-      const toDelete = myJson.find( vege => vege.jsonId === uniqueId);
+      const toDelete = garden_vegetables_data.find( vege => vege.jsonId === uniqueId);
 
-      myJson.splice(myJson.indexOf(toDelete), 1);
+      garden_vegetables_data.splice(garden_vegetables_data.indexOf(toDelete), 1);
       moving.dataset.gardenVeggieId = uniqueId
     };
 
     let cloneSource = (event.data.dropzone.lastChild.outerHTML) // Clone the dragged vege
+
+    console.log(cloneSource);
+
     const clone = document.createElement("div"); // create object
+
     clone.innerHTML = cloneSource; // inject html in object
 
-    const backet = document.querySelector(".backet"); // select sidebar
-    const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
-    const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
 
+    let myData = {
+      "vegetable_id" : id,
+      "position" : pos,
+      "garden_vegetable_id" : uniqueId,
+    };
+    garden_vegetables_data.push( myData )
+    // console.log(garden_vegetables_data)
+
+
+    const backet = document.querySelector(".backet"); // select sidebar
+
+
+
+    const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
+    console.log(vegeCards);
+    const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
+    console.log(vegeSpan);
+
+
+    // if (vegeCards === undefined) {
     vegeCards.insertBefore(clone, vegeSpan.nextSibling ); // new vege !
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
@@ -106,10 +121,52 @@ export default function PluginsCollidable() {
     // console.log(myJson)
   });
 
+
+    // };
+
+
+    // setTimeout(() => {
+    //   const area = dropzone.querySelector(".veggie-area");
+    //   area.classList.remove("hidden");
+    // },
+    // 500);
+
+    const dropzone = event.data.dropzone
+    var displayVeggieArea = function(mutationsList) {
+      for(var mutation of mutationsList) {
+        if (mutation.type == 'childList') {
+          const addedNode = mutation.addedNodes[0]
+          if (addedNode) {
+            const veggieArea = addedNode.querySelector('.veggie-area')
+            const veggie = addedNode.querySelector('.card-vege-icon')
+            // console.log(veggie);
+            veggie.classList.add("garden-vege-icon");
+            veggie.classList.remove("card-vege-icon");
+            veggieArea.classList.remove('hidden');
+          }
+        }
+      }
+    }
+    const veggieDroppedObserver = new MutationObserver(displayVeggieArea)
+    const config   = { childList: true }
+    veggieDroppedObserver.observe(dropzone, config)
+  });
+
+  droppable.on('mirror:move', (event) => {
+
+    const movedBlock = document.querySelector('.draggable-mirror');
+    // console.log(movedBlock);
+    const greenArea = movedBlock.querySelector('.green-area');
+    // console.log(greenArea);
+    greenArea.classList.remove('hidden');
+  });
+
   return droppable;
 };
 
-export { PluginsCollidable };
+
+
+export { PluginsCollidable, garden_vegetables_data };
 
 
 

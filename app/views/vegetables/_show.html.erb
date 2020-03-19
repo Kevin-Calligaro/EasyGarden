@@ -1,8 +1,7 @@
 <%  @vegetables.each do |vegetable|%>
-  <div class="description-show display-none" vegetable_id=<%= vegetable.id %>>
-    <i class="fas fa-minus-circle p-2"></i>
+  <div class="description-show display-none" vegetable_id="<%= vegetable.id %>">
     <div class="title-description">
-      <h1><%= vegetable.specie.capitalize %> </h1>
+      <h2><%= vegetable.specie.capitalize %> </h2>
     </div>
     <div class="d-flex">
       <p class="general-description">
@@ -26,8 +25,7 @@
       <div class="tab-content" id="nav-tabContent">
         <% if vegetable.seeding_start?%>
           <div class="tab-pane fade show active" id="nav-home-<%=vegetable.id%>" role="tabpanel" aria-labelledby="nav-home-tab">
-            <h1>Seeding</h1>
-            <h5><em>From <%= vegetable.seeding_start.strftime("%B")%> to <%=vegetable.seeding_end.strftime("%B") %></em></h3>
+            <h3><em>From <%= vegetable.seeding_start.strftime("%B")%> to <%=vegetable.seeding_end.strftime("%B") %></em></h3>
             <p>
               <%= vegetable.sedding_desription%>
             </p>
@@ -35,16 +33,14 @@
         <% end %>
         <% if vegetable.planting_start?%>
           <div class="tab-pane fade" id="nav-profile-<%=vegetable.id%>" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <h1>Planting</h1>
-            <h5><em>From <%= vegetable.planting_start.strftime("%B")%> to <%= vegetable.planting_end.strftime("%B") %></em></h3>
+            <h3><em>From <%= vegetable.planting_start.strftime("%B")%> to <%= vegetable.planting_end.strftime("%B") %></em></h3>
             <p>
               <%= vegetable.planting_description%>
             </p>
           </div>
         <% end %>
         <div class="tab-pane fade" id="nav-contact-<%=vegetable.id%>" role="tabpanel" aria-labelledby="nav-contact-tab">
-           <h1>Harvesting</h1>
-          <h5><em>From <%= vegetable.harvesting_start.strftime("%B")%> to <%= vegetable.harvesting_end.strftime("%B") %></em></h3>
+          <h3><em>From <%= vegetable.harvesting_start.strftime("%B")%> to <%= vegetable.harvesting_end.strftime("%B") %></em></h3>
           <p>
             <%= vegetable.harvesting_description%>
           </p>

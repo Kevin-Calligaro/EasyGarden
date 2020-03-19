@@ -1,4 +1,40 @@
-<%#= render 'shared/garden_wraper' %>
-
-
-
+<div class="home-page">
+  <div class="banner">
+      <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden-banner") %>
+      <div class="slogans">
+        <h3>Draw & makes it grow<br>your<br>garden vegetables
+      </div>
+      <div class="btn button-create-garden-banner">
+        <%= link_to "Create my garden", new_user_registration_path, style: "text-decoration:none;color:black;" %>
+      </div>
+  </div>
+  <div class="home-container">
+    <div class="step-container">
+      <div class="step-content">
+        <div class="patate-logo"></div>
+        <h2>Step 1</h2>
+        <h4>I create my garden</h4>
+        <span class= "trait"></span>
+      </div>
+      <div class="step-content">
+        <div class="carrot-logo"></div>
+        <h2>Step 2</h2>
+        <h4>Draw my garden vegetables</h4>
+        <span class= "trait"></span>
+      </div>
+      <div class="step-content">
+        <div class="oignon-logo"></div>
+        <h2>Step 3</h2>
+        <h4>I follow the evolution of my gardens step by step<h4>
+      </div>
+    </div>
+    <div class="btn-create-garden">
+      <div class="btn button-create-garden">
+        <%= link_to "Create my garden", new_user_registration_path, style: "text-decoration:none;color:black;" %>
+      </div>
+      <div class="link-show-garden">
+        <%= link_to "You already have one?", garden_path(Garden.all.first.id), style: "text-decoration:none;color:#A5C83F;" %>
+      </div>
+    </div>
+  </div>
+</div>

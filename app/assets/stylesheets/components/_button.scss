@@ -1,4 +1,4 @@
-.button{
+button{
   text-decoration: none;
 }
 .button-see {
@@ -10,6 +10,74 @@
   padding: 5px;
 
 }
-.button-see:hover{
-    background-color: rgba(0, 170, 37, 0.45);
+.button-see:hover {
+  background-color: rgba(0, 170, 37, 0.45);
+}
+
+.button-see.select {
+  text-decoration: none;
+  background-color: rgba(0, 170, 37, 0.45);
+}
+  button:focus {
+    outline: none;
   }
+
+.button-plus{
+  color: gray;
+  font-size: 20px;
+}
+
+.button-plus:hover{
+  color: rgba(0, 170, 37, 0.45);
+}
+
+.button-plus.select {
+  // text-decoration: none;
+  color: rgba(0, 170, 37, 0.45);
+}
+
+.button-done {
+  min-width: 85px;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid rgba(0, 170, 37, 0.45);
+  box-sizing: border-box;
+  border-radius: 18px;
+  padding: 10px;
+  margin: 10px;
+  margin-right: 30px;
+  color: black;
+}
+
+.button-done:hover{
+  text-decoration: none;
+  background-color: rgba(0, 170, 37, 0.45);
+  text-align: center;
+  color: black;
+  min-width: 85px;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 18px;
+  padding: 10px;
+  margin: 10px;
+  margin-right: 30px;
+}
+.garden-button{
+  text-align: center;
+}
+ a, a:hover{
+    color:black;
+    text-decoration: none;
+  }
+.button-edit-save{
+  width: 85px;
+  text-decoration: none;
+  border: 1px solid rgba(0, 170, 37, 0.45);
+  box-sizing: border-box;
+  border-radius: 18px;
+  padding: 5px;
+
+}
+.button-edit-save:hover{
+  background-color: rgba(0, 170, 37, 0.45);
+}

@@ -1,0 +1,57 @@
+<%  @tasks_not_done.each do |task|%>
+<div class="description-show display-none" data-task-id="<%= task.id %>">
+  <div class="title-description">
+    <h1><%= task.garden_vegetable.vegetable.specie.capitalize %> </h1>
+  </div>
+  <div class="d-flex">
+    <p class="general-description">
+      <%= task.garden_vegetable.vegetable.description %>      </p>
+      <div class="vege-photo-description">
+        <%= image_tag task.garden_vegetable.vegetable.photo_vegetable, class: "photo-description" %>
+      </div>
+    </div>
+    <div class="title-description">
+      <h3><%= task.action.capitalize %> </h3>
+    </div>
+
+    <div class="onglet-description">
+      <div class="task-description">
+        <% if task.action == "seeding" %>
+        <% if task.garden_vegetable.vegetable.seeding_start?%>
+        <div class="" id="nav-home-<%=task.garden_vegetable.vegetable.id%>">
+          <div class="d-flex justify-content-between">
+            <h5><em>From <%= task.garden_vegetable.vegetable.seeding_start.strftime("%B")%> to <%=task.garden_vegetable.vegetable.seeding_end.strftime("%B") %></em></h3>
+            <%= link_to "Mark as done", mark_as_done_task_path(task.id), method: :patch, class: "button-done" %>
+          </div>
+          <p>
+            <%= task.garden_vegetable.vegetable.sedding_desription%>
+          </p>
+          </div>
+          <% end %>
+          <% elsif task.action == "planting" %>
+          <% if task.garden_vegetable.vegetable.planting_start?%>
+          <div class="" id="nav-profile-<%=task.garden_vegetable.vegetable.id%>">
+            <div class="d-flex justify-content-between">
+              <h5><em>From <%= task.garden_vegetable.vegetable.planting_start.strftime("%B")%> to <%= task.garden_vegetable.vegetable.planting_end.strftime("%B") %></em></h3>
+              <%= link_to "Mark as done", mark_as_done_task_path(task.id), method: :patch, class: "button-done" %>
+            </div>
+            <p>
+              <%= task.garden_vegetable.vegetable.planting_description%>
+            </p>
+            </div>
+            <% end %>
+            <% elsif task.action == "harvesting" %>
+            <div class="" id="nav-contact-<%=task.garden_vegetable.vegetable.id%>">
+              <div class="d-flex justify-content-between">
+                <h5><em>From <%= task.garden_vegetable.vegetable.harvesting_start.strftime("%B")%> to <%= task.garden_vegetable.vegetable.harvesting_end.strftime("%B") %></em></h3>
+                <%= link_to "Mark as done", mark_as_done_task_path(task.id), method: :patch, class: "button-done"%>
+              </div>
+              <p>
+                <%= task.garden_vegetable.vegetable.harvesting_description%>
+              </p>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>

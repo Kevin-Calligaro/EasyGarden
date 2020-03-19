@@ -12,13 +12,20 @@
   padding: 15px;
   margin: 15px 15px;
   // width: 100%;
-    h2{      font-size: 24px;
+    h2{
+      font-family: Lunchbox;
+      font-size: 24px;
       text-align: center;
       border-bottom: 1px solid rgba(0,170,37,0.25);
     }
     p{
       font-size: 14px;
       padding-top: 10px;
+    }
+    .card-vege-icon {
+      position: absolute;
+      right: 0px;
+      top: 0px;
     }
 }
 
@@ -36,22 +43,20 @@
     }
 }
 .card-vege-photo{
-  width: 100px;
-  height: 80px;
+  height: 70px;
   position: absolute;
-  left: -25px;
-  top: -20px;
-  width: 120px;
+  left: -2px;
+  top: -18px;
+
 
 }
 
-.card-vege-icon{
-  position: absolute;
-  right: 0px;
-  top: 0px;
+.card-vege-icon {
   width: 40px;
   height:40px;
   z-index: 15;
+  object-fit: contain;
+  position: relative;
 
 }
 
