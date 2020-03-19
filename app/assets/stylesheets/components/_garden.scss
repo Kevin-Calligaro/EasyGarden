@@ -15,6 +15,11 @@ p {
   margin: 0px auto auto 400px;
 }
 
+.mode-edit {
+  .garden-units {
+    border: 0.5px solid lightgrey;
+  }
+}
 
 
 .garden-container {
@@ -134,30 +139,61 @@ p {
   display: flex;
 }
 
-.green-area {
-  transition: 1s;
-  position: absolute;
-  background-image: asset-url("background-urgency/urgence_1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 10;
-  left: -27;
-  // top: -25px;
-  // left: -25px;
-}
-.red-area {
-  transition: 1s;
-  position: absolute;
-  background-image: asset-url("background-urgency/urgence_1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 10;
-  // top: -25px;
-  // left: -25px;
+.mode-edit {
+  .green-area {
+    transition: 1s;
+    position: absolute;
+    opacity:0.8;
+    background-image: asset-url("background-urgency/urgence_1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+    left: -27;
+    // top: -25px;
+    // left: -25px;
+  }
+  .red-area {
+    opacity:0.8;
+    transition: 1s;
+    position: absolute;
+    background-image: asset-url("background-urgency/urgence_1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+    // top: -25px;
+    // left: -25px;
+  }
 }
 
+.mode-show {
+  .green-area {
+    transition: 1s;
+    position: absolute;
+    opacity:0.3;
+    background-image: asset-url("background-urgency/urgence_1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+    left: -27;
+    // top: -25px;
+    // left: -25px;
+  }
+  .red-area {
+    opacity:0.3;
+    transition: 1s;
+    position: absolute;
+    background-image: asset-url("background-urgency/urgence_1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+    // top: -25px;
+    // left: -25px;
+  }
+}
 
 .hidden{
   display: none;
@@ -178,10 +214,9 @@ p {
   object-fit: contain;
 }
 
-.border-ok {
-  border: 1px solid lightgrey;
-}
 
 .draggable-mirror .green-area {
   top:300px;
 }
+
+

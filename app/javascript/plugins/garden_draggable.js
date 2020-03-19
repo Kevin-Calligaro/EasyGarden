@@ -117,10 +117,8 @@ export default function PluginsCollidable() {
         }
       }
     }
-
     const veggieDroppedObserver = new MutationObserver(displayVeggieArea)
     const config   = { childList: true }
-
     veggieDroppedObserver.observe(dropzone, config)
   });
 
@@ -128,23 +126,9 @@ export default function PluginsCollidable() {
 
     const movedBlock = document.querySelector('.draggable-mirror');
     const greenArea = movedBlock.querySelector('.green-area');
-
-console.log(movedBlock);
-
     greenArea.classList.remove('hidden');
-
   });
 
-
-
-
-  var divs = wrapper.querySelectorAll('div');
-
-  for (var d = 0; d < divs.length; d++) {
-    if (divs[d].querySelectorAll('p').length === 0) {
-      wrapper.removeChild(divs[d]);
-    }
-  }
 
   return droppable;
 };
