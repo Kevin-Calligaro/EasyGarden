@@ -156,6 +156,11 @@ p {
   z-index: 8;
 }
 
+
+.hidden{
+  display: none;
+}
+
 .green-area, .urgency-1-area {
   background-image: asset-url("background-urgency/urgence_1.png");
 }

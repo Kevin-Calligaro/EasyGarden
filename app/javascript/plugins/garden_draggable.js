@@ -53,6 +53,7 @@ export default function PluginsCollidable() {
     cible2.id = ("needVeg2");
   });
 
+
   droppable.on('droppable:stop', (event) => {
     const pos = event.data.dropzone.dataset.position; // je recup la data-position du span cible => x1y2
     // console.log(event.data.dropzone)
@@ -105,6 +106,22 @@ export default function PluginsCollidable() {
     vegeCards.insertBefore(clone, vegeSpan.nextSibling ); // new vege !
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
+
+    let myData = {
+        "id" : id,
+        "position" : pos,
+        "jsonId" : uniqueId,
+    };
+
+    const garden = document.querySelector(".garden-container");
+    const area = garden.querySelector(".hidden");
+    area.classList.remove("hidden");
+
+    myJson.push( myData )
+    // console.log(myJson)
+  });
+
+
     // };
 
 
@@ -143,7 +160,6 @@ export default function PluginsCollidable() {
     // console.log(greenArea);
     greenArea.classList.remove('hidden');
   });
-
 
   return droppable;
 };
