@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900&display=swap');
 // Define fonts for body and headers
 $body-font: "Roboto", "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$headers-font: "Lunchbox", "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -16,10 +16,14 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // }
 // $my-font: "Font Name";
  @font-face {
-  font-family: "LunchBox";
-  src: font-url('Lunchbox.eot');
-  src: font-url('Lunchbox.eot?#iefix') format('embedded-opentype'),
-       font-url('Lunchbox.woff') format('woff'),
-       font-url('Lunchbox.ttf') format('truetype')
+    font-family: 'LunchBox';
+    src: url('LunchBox.eot'); /* IE9 Compat Modes */
+    src: url('LunchBox.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('LunchBox.woff') format('woff'), /* Modern Browsers */
+         url('LunchBox.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('LunchBox.svg#LunchBox') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
 }
-       $my-font: "Lunchbox";
+
