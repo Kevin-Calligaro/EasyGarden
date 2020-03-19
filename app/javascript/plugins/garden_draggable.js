@@ -24,6 +24,7 @@ export default function PluginsCollidable() {
       constrainDimensions: true,
       cursorOffsetX: -27,
       cursorOffsetY: 27,
+      // appendTo: origin,
     },
     plugins: [Plugins.Collidable],
   });
