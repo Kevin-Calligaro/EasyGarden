@@ -8,8 +8,11 @@ import { persisteData } from '../persiste';
 // cloning();
 
 import { PluginsCollidable, garden_vegetables_data } from '../plugins/garden_draggable.js';
+// import { PluginsMirrors } from '../plugins/mirror.js';
 
 PluginsCollidable();
+// PluginsMirrors();
+
 
 
 const buttontest = document.querySelector(".test-data");

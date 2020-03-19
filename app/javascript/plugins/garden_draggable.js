@@ -1,7 +1,7 @@
 
 // Learn more or give us feedback
 // eslint-disable-next-line import/no-unresolved
-import {Droppable, Plugins} from '@shopify/draggable';
+import {Droppable, Plugins, Sortable} from '@shopify/draggable';
 
 const garden_vegetables_data =[]
 
@@ -78,9 +78,9 @@ export default function PluginsCollidable() {
     clone.innerHTML = cloneSource; // inject html in object
 
     let myData = {
-        "vegetable_id" : id,
-        "position" : pos,
-        "garden_vegetable_id" : uniqueId,
+      "vegetable_id" : id,
+      "position" : pos,
+      "garden_vegetable_id" : uniqueId,
     };
     garden_vegetables_data.push( myData )
     // console.log(garden_vegetables_data)
@@ -109,7 +109,7 @@ export default function PluginsCollidable() {
           if (addedNode) {
             const veggieArea = addedNode.querySelector('.veggie-area')
             const veggie = addedNode.querySelector('.card-vege-icon')
-            console.log(veggie);
+            // console.log(veggie);
             veggie.classList.add("garden-vege-icon");
             veggie.classList.remove("card-vege-icon");
             veggieArea.classList.remove('hidden');
@@ -117,15 +117,23 @@ export default function PluginsCollidable() {
         }
       }
     }
-
     const veggieDroppedObserver = new MutationObserver(displayVeggieArea)
     const config   = { childList: true }
-
     veggieDroppedObserver.observe(dropzone, config)
   });
 
+  droppable.on('mirror:move', (event) => {
+
+    const movedBlock = document.querySelector('.draggable-mirror');
+    const greenArea = movedBlock.querySelector('.green-area');
+    greenArea.classList.remove('hidden');
+  });
+
+
   return droppable;
 };
+
+
 
 export { PluginsCollidable, garden_vegetables_data };
 
