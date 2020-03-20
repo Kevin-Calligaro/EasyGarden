@@ -1,9 +1,6 @@
 <div class="tasks-vegetables">
   <% @tasks_not_done.each do |task| %>
     <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
-    <div class="title-sidebar">
-      <h1>Next tasks</h1>
-    </div>
       <div class="action-task d-flex justify-content-space-around">
           <div class="">
           <div class="action-color d-flex align-items-center justify-content-center">
