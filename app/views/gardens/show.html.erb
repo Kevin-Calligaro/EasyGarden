@@ -5,7 +5,8 @@
 <div class="container-div d-flex">
 
   <div class="sidebar-container">
-    <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
+    <%= link_to(image_tag("Logo-Easy-Garden.png", :title => "Home", class: "logo-easy-garden"), "/") %>
+    <%#= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
     <div class="title-sidebar">
       <h2>Next tasks</h2>
     </div>
