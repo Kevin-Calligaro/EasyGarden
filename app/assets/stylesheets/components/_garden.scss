@@ -17,7 +17,6 @@ p {
   background-image: asset-url("garden-texture.png");
   background-size: 120%;
   background-repeat: round;
-  // background-position: contain;
 }
 
 .mode-edit {
@@ -25,8 +24,6 @@ p {
     border: 0.5px solid lightgrey;
   }
 }
-
-
 
 .garden-container {
   margin: 50px auto ;
@@ -85,7 +82,6 @@ p {
 .garden-units {
   width: ($L);
   height: ($H);
-  // border: 1px solid lightgrey;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -146,10 +142,8 @@ p {
   display: flex;
 }
 .veggie-area {
-  transition: 1s;
   position: absolute;
   opacity:0.8;
-  // background-image: asset-url("background-urgency/urgence_1.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -177,8 +171,6 @@ p {
   background-image: asset-url("background-urgency/urgence_4.png");
 }
 
-
-
 .mode-show {
   .green-area {
     opacity:0.3;
@@ -197,7 +189,6 @@ p {
 }
 
 .garden-vege-icon {
-  // position: absolute;
   right: 0px;
   top: 0px;
   width: $L;
@@ -211,5 +202,3 @@ p {
 .draggable-mirror .veggie-area  {
   top:300px;
 }
-
-
