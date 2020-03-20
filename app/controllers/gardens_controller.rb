@@ -32,6 +32,7 @@ class GardensController < ApplicationController
 
   def load_tasks
     @tasks_not_done = @garden.tasks.where(done: false).order("step, date IS NOT NULL, date ASC")
+    @tasks_not_done = @tasks_not_done.sort_by { |task| -Task::URGENCIES.index(task.final_urgency) }
     @tasks_per_veggie = @tasks_not_done.group_by(&:garden_vegetable)
   end
 end

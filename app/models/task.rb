@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   STARTING_ACTIONS = ["seeding", "planting"]
+  URGENCIES = ["not urgent", "urgent soon", "urgent", "very urgent"]
   belongs_to :garden_vegetable
 
   def mark_as_done!
@@ -12,6 +13,16 @@ class Task < ApplicationRecord
 
   def followings_tasks
     self.garden_vegetable.tasks.where.not(id: self.id).where("step > ? ", self.step).order(step: :asc)
+  end
+
+  def final_urgency
+    if step == 1
+      first_tasks_urgency
+    elsif step > 1 && date != nil
+      urgency
+    else
+      "not urgent"
+    end
   end
 
   def first_tasks_urgency
