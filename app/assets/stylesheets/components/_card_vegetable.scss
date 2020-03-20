@@ -18,6 +18,7 @@
       text-align: left;
       border-bottom: 0.5px solid rgba(0,170,37,0.25);
       padding-bottom: 3px;
+      font-weight: 600;
     }
     p{
       font-size: 16px;
@@ -78,11 +79,13 @@
   // position: absolute;
   display: flex;
   justify-content: space-between;
-
+  h6 {
+  line-height: 1.8;
+  }
 }
 
 .date-card {
-  font-weight: lighter;
+  font-weight: 100;
   font-size: 14px;
 }
 
