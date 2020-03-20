@@ -79,11 +79,13 @@
   // position: absolute;
   display: flex;
   justify-content: space-between;
-
+  h6 {
+  line-height: 1.8;
+  }
 }
 
 .date-card {
-  font-weight: lighter;
+  font-weight: 100;
   font-size: 14px;
 }
 

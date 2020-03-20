@@ -20,9 +20,9 @@
       <h2><%= vegetable.specie.capitalize%></h2>
       <div class="d-flex justify-content-between middle-bloc">
         <% if vegetable.seeding_start? %>
-          <p><em>Seeding</em> <br><i class="fas fa-calendar-alt"></i> <span class="date-card">From </span> <%= vegetable.seeding_start.strftime("%b")%> <span class="date-card"> to </span> <%= vegetable.seeding_end.strftime("%b") %></p>
+          <h6><em>Seeding</em> <br><i class="fas fa-calendar-alt"></i> <span class="date-card">From </span> <%= vegetable.seeding_start.strftime("%b")%> <span class="date-card"> to </span> <%= vegetable.seeding_end.strftime("%b") %></h6>
         <% else %>
-          <p><em>Planting</em> <br><i class="fas fa-calendar-alt"></i> <span class="date-card">From </span> <%= vegetable.planting_start.strftime("%b")%> <span class="date-card"> to </span> <%= vegetable.planting_end.strftime("%b") %></p>
+          <h6><em>Planting</em> <br><i class="fas fa-calendar-alt"></i> <span class="date-card">From </span> <%= vegetable.planting_start.strftime("%b")%> <span class="date-card"> to </span> <%= vegetable.planting_end.strftime("%b") %></h6>
         <% end %>
         <div class="d-flex align-items-center">
           <button class="button-see display" vegetable_id="<%= vegetable.id %>">See More</button>
