@@ -1,7 +1,10 @@
 p {
     font-size: 16px;
   }
+h2, h3, h4{
+  font-weight: lighter;
 
+}
 .description-show{
   z-index: 43;
   position: fixed;
@@ -24,9 +27,10 @@ p {
   position: relative;
   right: 0vw;
     h3 {
-    position: absolute;
-    bottom: -22px;
-    padding-left: 40px;
+      font-weight: lighter;
+      position: absolute;
+      bottom: -22px;
+      padding-left: 40px;
   }
 }
 
@@ -50,6 +54,8 @@ p {
 }
 
 .title-description  h2, h3{
+  font-weight: lighter;
+
     position: absolute;
     bottom: -25px;
     padding-left: 40px;
