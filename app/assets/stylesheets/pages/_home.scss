@@ -40,10 +40,12 @@ body{
 .step-container{
   width: 80vw;
   height:auto;
-  background-color: #DFDFDF;
+  background: rgba(250,248,245,1) ;
   display:flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-bottom: 100px;
+  border-radius: 18px;
 }
 
 .step-content{
@@ -51,7 +53,8 @@ body{
   height: auto;
   display:flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 60px;
+
 }
 
 .step-number{
@@ -63,12 +66,12 @@ body{
   text-align: center;
   background-color: rgba(0,170,37,0.25);
   height: 40px;
-  width: 220px;
+  width: auto;
   position: relative;
   border-radius: 0 18px 18px 0;
   h2{
-    font-size: 45px;
-    font-weight: 200;
+    font-size: 40px;
+    font-weight: 100;
     margin-top: 20px;
     position: absolute;
     top: -12px;
@@ -86,6 +89,7 @@ body{
 
 .step-instruction{
   text-align: center;
+  font-style: italic;
   margin-top: 10px;
   height: 30px;
   width: 100%;
@@ -96,12 +100,15 @@ body{
 }
 
 .step-show{
-display:flex;
-align-items: center;
-width: 100%;
-height: 80%;
+  display:flex;
+  align-items: center;
+  width: 100%;
+  height: 80%;
 }
-
+.drag-exp{
+  position: relative;
+  top: -55px;
+}
 .step1{
   justify-content: space-evenly;
   width: 100%;
@@ -113,22 +120,24 @@ height: 80%;
 .step2{
   height: auto;
   width: 100%;
-  justify-content: flex-end;
-  margin-right: 50px;
+  justify-content: center;
+  padding-right: 75px;
   margin-bottom: 30px;
   margin-top: 60px;
+  .step2:last-child{
+    margin-left: 20px;
+  }
 }
 
 .step3{
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 
 
   .step3-task{
     text-align: center;
-    display: flex;
     justify-content: space-arround;
     align-items: center;
     margin-bottom: 30px;
@@ -137,24 +146,25 @@ height: 80%;
   }
 }
 
-.btn-create-garden{
-  border-radius: 18px;
-  a{
-    margin-top:5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
+// .btn-create-garden{
+//   border-radius: 18px;
+//   a{
+//     margin-top:5px;
+//     margin-bottom: 5px;
+//     margin-left: 10px;
+//     margin-right: 10px;
+//   }
+// }
 
 .btn-my-garden{
+  font-size: 24px;
   text-align: center;
   font-family: "Mali";
   color: #e75c54;
   font-weight: bold;
   background-color: rgba(250,248,245,0.46);
   border-radius: 18px;
-  width: 165px;
+  width: 190px;
   border: 2px solid #e75c54;
   padding: 5px 20px;
   transition: 0.3s;
@@ -163,4 +173,31 @@ height: 80%;
 .btn-my-garden:hover{
   color: rgba(250,248,245,0.8);
   background-color: #e75c54;
+}
+
+.btn-create-garden{
+  position: relative;
+  bottom: -35px;
+  text-align: center;
+  font-family: "Mali";
+  font-size: 26px;
+  font-weight: bold;
+  background-color: #e75c54;
+  border-radius: 18px;
+  width: max-content;
+  padding: 15px 50px;
+  transition: 0.3s;
+  border-radius: 50px;
+  color: white;
+  a {
+    color: white !important;
+  }
+}
+.btn-create-garden:hover{
+  background-color: rgba(250,248,245,0.46);
+  border: 2px solid #e75c54;
+  a {
+    color: #e75c54 !important;
+
+  }
 }
