@@ -42,6 +42,7 @@ body{
   height:auto;
   background: rgba(250,248,245,1) ;
   display:flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-evenly;
   margin-bottom: 100px;
@@ -176,7 +177,7 @@ body{
 }
 
 .btn-create-garden{
-  position: relative;
+  position: absolute;
   bottom: -35px;
   text-align: center;
   font-family: "Mali";
