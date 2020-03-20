@@ -3,6 +3,7 @@ button{
 }
 .button-see {
   font-family: mali;
+  font-weight: 200;
   min-width: 85px;
   text-decoration: none;
   border: 1px solid rgba(0, 170, 37, 0.45);
@@ -10,16 +11,15 @@ button{
   border-radius: 18px;
   padding: 7px;
   transition: 0.4s;
-
-}
-.button-see:hover {
+  &:hover {
   background-color: rgba(0, 170, 37, 0.45);
-}
-
-.button-see.select {
+  }
+  &.select {
   text-decoration: none;
   background-color: rgba(0, 170, 37, 0.45);
+  }
 }
+
   button:focus {
     outline: none;
   }
