@@ -1,9 +1,6 @@
 p {
     font-size: 16px;
   }
-h1, h2, h3, h4{
-  font-family: Lunchbox;
-}
 
 .description-show{
   z-index: 43;
@@ -26,13 +23,13 @@ h1, h2, h3, h4{
   border-top-left-radius: 12px;
   position: relative;
   right: 0vw;
-  h3{
+    h3 {
     position: absolute;
-    bottom: -30px;
+    bottom: -22px;
     padding-left: 40px;
-
   }
 }
+
 .title-description{
   width: 100%;
   margin: 20px 0px;
@@ -51,6 +48,7 @@ h1, h2, h3, h4{
     font-size: 14px;
   }
 }
+
 .title-description  h2, h3{
     position: absolute;
     bottom: -25px;
@@ -87,4 +85,7 @@ img.photo-description{
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.05);
   border-radius: 18px;
 
+}
+.tab-pane  h3{
+  position: inherit;
 }

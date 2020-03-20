@@ -1,7 +1,7 @@
 <%  @tasks_not_done.each do |task|%>
 <div class="description-show display-none" data-task-id="<%= task.id %>">
   <div class="title-description">
-    <h1><%= task.garden_vegetable.vegetable.specie.capitalize %> </h1>
+    <h2><%= task.garden_vegetable.vegetable.specie.capitalize %> </h2>
   </div>
   <div class="d-flex">
     <p class="general-description">
