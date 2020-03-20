@@ -1,58 +1,59 @@
-<div class="col tasks-vegetables">
+<div class="tasks-vegetables">
   <% @tasks_not_done.each do |task| %>
     <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
-    <div class="title-sidebar">
-      <h1>Next tasks</h1>
-    </div>
       <div class="action-task d-flex justify-content-space-around">
-        <div class="action-color">
+          <div class="">
+          <div class="action-color d-flex align-items-center justify-content-center">
           <% if task.step == 1 %>
             <% case task.first_tasks_urgency %>
               <% when "not urgent" %>
-                <%= image_tag "background-urgency/urgence_1.png", style: 'height:45px;width:45px;opacity:0.5' %>
+                <%= image_tag "background-urgency/urgence_1.png", style: 'height:45px;opacity:0.5' %>
               <% when "very urgent" %>
-                <%= image_tag "background-urgency/urgence_4.png", style: 'height:45px;width:45px;opacity:0.7' %>
+                <%= image_tag "background-urgency/urgence_4.png", style: 'height:45px;opacity:0.7' %>
               <% when "urgent" %>
-                <%= image_tag "background-urgency/urgence_3.png", style: 'height:45px;width:45px;opacity:0.7' %>
+                <%= image_tag "background-urgency/urgence_3.png", style: 'height:45px;opacity:0.7' %>
               <% when "urgent soon" %>
-                <%= image_tag "background-urgency/urgence_2.png", style: 'height:45px;width:45px;opacity:0.7' %>
+                <%= image_tag "background-urgency/urgence_2.png", style: 'height:45px;opacity:0.7' %>
             <% end %>
           <% elsif task.step > 1 && task.date != nil %>
             <% if task.step %>
               <% case task.urgency %>
                 <% when "not urgent" %>
-                  <%= image_tag "background-urgency/urgence_1.png", style: 'height:45px;width:45px;opacity:0.5' %>
+                  <%= image_tag "background-urgency/urgence_1.png", style: 'height:45px;opacity:0.5' %>
                 <% when "very urgent" %>
-                  <%= image_tag "background-urgency/urgence_4.png", style: 'height:45px;width:45px;opacity:0.7' %>
+                  <%= image_tag "background-urgency/urgence_4.png", style: 'height:45px;opacity:0.7' %>
                 <% when "urgent" %>
-                  <%= image_tag "background-urgency/urgence_3.png", style: 'height:45px;width:45px;opacity:0.7' %>
+                  <%= image_tag "background-urgency/urgence_3.png", style: 'height:45px;opacity:0.7' %>
                 <% when "urgent soon" %>
-                  <%= image_tag "background-urgency/urgence_2.png", style: 'height:45px;width:45px;opacity:0.7' %>
+                  <%= image_tag "background-urgency/urgence_2.png", style: 'height:45px;opacity:0.7' %>
               <% end %>
             <% end %>
           <% end %>
+
           <div class="action-logo">
             <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
               <% if task.action == "seeding" %>
-                <%= image_tag "icon-seeding.png" %>
+                <%= image_tag "icon-seeding-black.png" %>
               <% elsif task.action == "planting" %>
-                <%= image_tag "icon-planting.png" %>
+                <%= image_tag "icon-planting-black.png" %>
               <% else %>
-                <%= image_tag "icon-harvesting.png" %>
+                <%= image_tag "icon-harvesting-black.png" %>
               <% end %>
             <% end %>
+            </div>
           </div>
         </div>
         <div class="Action-title d-flex justify-content-evenly">
-          <div class="specie-type">
+          <div class="specie-type d-flex align-items-center">
             <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
-              <h2><%= task.action %> <br> <strong><%= task.garden_vegetable.vegetable.specie %></strong></h2>
+              <h6><%= task.action %> </h6>
+              <h5> <%= task.garden_vegetable.vegetable.specie %></h5>
             <% end %>
           </div>
         </div>
-        <div class="see-more">
+        <div class="see-more d-flex align-items-center">
           <% if task.step > 1 && task.date != nil || task.step == 1 && task.date == nil %>
-            <p><i class="fas fa-plus-circle button-plus" task_id="<%=task.id%>"></i></p>
+            <i class="far fa-question-circle button-plus" task_id="<%=task.id%>"></i>
           <% end %>
         </div>
       </div>
