@@ -6,22 +6,28 @@
 
   <div class="sidebar-container">
     <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
-
+    <div class="title-sidebar">
+      <h2>Next tasks</h2>
+    </div>
     <%= render 'tasks/index' %>
   </div>
 
   <div class="right-part">
-    <div class="title-garden" >
-      <h1><%= @garden.title %></h1>
-    </div>
 
+    <div class="top-title d-flex justify-content-around">
+      <div class="title-garden" >
+        <h1>Take a look on your garden</h1>
+        <h4>  Stay informed of the next steps</h4>
+
+      </div>
+      <div class="garden-button">
+        <button class="button-edit-save"><%= link_to "Edit", edit_garden_path  %> </button>
+      </div>
+    </div>
     <div>
       <%= render "shared/garden_draggable", garden_vegetables: @garden_vegetables, mode: "show" %>
           </div>
 
-    <div class="garden-button">
-      <button class="button-edit-save"><%= link_to "Edit", edit_garden_path  %> </button>
-    </div>
   </div>
 
 

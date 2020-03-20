@@ -1,7 +1,7 @@
 <%  @vegetables.each do |vegetable|%>
   <div class="description-show display-none" vegetable_id="<%= vegetable.id %>">
     <div class="title-description">
-      <h1><%= vegetable.specie.capitalize %> </h1>
+      <h2><%= vegetable.specie.capitalize %> </h2>
     </div>
     <div class="d-flex">
       <p class="general-description">
@@ -14,19 +14,18 @@
       <nav>
         <div class="nav nav-tabs list-inline tabs-underlined" id="nav-tab-<%=vegetable.id%>" role="tablist">
           <% if vegetable.seeding_start?%>
-            <a class="nav-item nav-link tab-underlined active" id="nav-home-tab-<%=vegetable.id%>" data-toggle="tab" href="#nav-home-<%=vegetable.id%>" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag("icon-seeding.png", class: "icon-action-description") %> Seeding</a>
+            <a class="nav-item nav-link tab-underlined active" id="nav-home-tab-<%=vegetable.id%>" data-toggle="tab" href="#nav-home-<%=vegetable.id%>" role="tab" aria-controls="nav-home" aria-selected="true"><h4> <%= image_tag("icon-seeding.png", class: "icon-action-description") %> Seeding</h4></a>
           <% end %>
           <% if vegetable.planting_start?%>
-            <a class="nav-item nav-link tab-underlined" id="nav-profile-tab-<%=vegetable.id%>" data-toggle="tab" href="#nav-profile-<%=vegetable.id%>" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag("icon-planting.png", class: "icon-action-description") %> Planting</a>
+            <a class="nav-item nav-link tab-underlined" id="nav-profile-tab-<%=vegetable.id%>" data-toggle="tab" href="#nav-profile-<%=vegetable.id%>" role="tab" aria-controls="nav-profile" aria-selected="false"><h4><%= image_tag("icon-planting.png", class: "icon-action-description") %> Planting</h4></a>
          <% end %>
-          <a class="nav-item nav-link tab-underlined" id="nav-contact-tab-<%=vegetable.id%>" data-toggle="tab" href="#nav-contact-<%=vegetable.id%>" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag("icon-harvesting.png", class: "icon-action-description") %> Harvesting</a>
+          <a class="nav-item nav-link tab-underlined" id="nav-contact-tab-<%=vegetable.id%>" data-toggle="tab" href="#nav-contact-<%=vegetable.id%>" role="tab" aria-controls="nav-contact" aria-selected="false"><h4><%= image_tag("icon-harvesting.png", class: "icon-action-description") %> Harvesting</h4></a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
         <% if vegetable.seeding_start?%>
           <div class="tab-pane fade show active" id="nav-home-<%=vegetable.id%>" role="tabpanel" aria-labelledby="nav-home-tab">
-            <h3>Seeding</h3>
-            <h5><em>From <%= vegetable.seeding_start.strftime("%B")%> to <%=vegetable.seeding_end.strftime("%B") %></em></h3>
+            <h4><i class="fas fa-calendar-alt"></i> <em> From <%= vegetable.seeding_start.strftime("%B")%> to <%=vegetable.seeding_end.strftime("%B") %></em></h4>
             <p>
               <%= vegetable.sedding_desription%>
             </p>
@@ -34,16 +33,14 @@
         <% end %>
         <% if vegetable.planting_start?%>
           <div class="tab-pane fade" id="nav-profile-<%=vegetable.id%>" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <h3>Planting</h3>
-            <h5><em>From <%= vegetable.planting_start.strftime("%B")%> to <%= vegetable.planting_end.strftime("%B") %></em></h3>
+            <h4><em>From <%= vegetable.planting_start.strftime("%B")%> to <%= vegetable.planting_end.strftime("%B") %></em></h4>
             <p>
               <%= vegetable.planting_description%>
             </p>
           </div>
         <% end %>
         <div class="tab-pane fade" id="nav-contact-<%=vegetable.id%>" role="tabpanel" aria-labelledby="nav-contact-tab">
-           <h3>Harvesting</h3>
-          <h5><em>From <%= vegetable.harvesting_start.strftime("%B")%> to <%= vegetable.harvesting_end.strftime("%B") %></em></h3>
+          <h4><em>From <%= vegetable.harvesting_start.strftime("%B")%> to <%= vegetable.harvesting_end.strftime("%B") %></em></h4>
           <p>
             <%= vegetable.harvesting_description%>
           </p>

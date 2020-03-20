@@ -2,28 +2,32 @@
   <div class="sidebar-container">
     <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden") %>
     <div class="title-sidebar">
-      <h1>Vegetables</h1>
+      <h2>Vegetables</h2>
     </div>
     <%= render 'vegetables/index'%>
   </div>
 
   <div class="right-part">
-    <div class="title-garden">
-      <h1><%= @garden.title %></h1>
+    <div class="top-title d-flex justify-content-around">
+      <div class="title-garden">
+        <h1>Let's design my garden</h1>
+        <h4>  Add vegetables in your virtual garden</h4>
+      </div>
+      <div class="garden-button">
+        <form  action="/garden_vegetables" method="post" >
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= hidden_field_tag :garden_id, @garden.id %>
+          <label class="hidden" for="data-spot"></label>
+          <input class="hidden" type="text" id="data-spot" name="data-spot"></input>
+          <button class="button-edit-save test-data">Save !</button>
+        </form>
+      </div>
     </div>
 
     <div>
       <%= render "shared/garden_draggable", garden_vegetables: @garden_vegetables, mode: "edit" %>    </div>
 
-    <div class="garden-button">
-      <form  action="/garden_vegetables" method="post" >
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <%= hidden_field_tag :garden_id, @garden.id %>
-        <label class="hidden" for="data-spot"></label>
-        <input class="hidden" type="text" id="data-spot" name="data-spot"></input>
-        <button class="button-edit-save test-data">Save !</button>
-      </form>
-    </div>
+
   </div>
 
   <div class="container-info">

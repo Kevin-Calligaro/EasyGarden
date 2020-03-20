@@ -53,6 +53,7 @@ export default function PluginsCollidable() {
     cible2.id = ("needVeg2");
   });
 
+
   droppable.on('droppable:stop', (event) => {
     const pos = event.data.dropzone.dataset.position; // je recup la data-position du span cible => x1y2
     // console.log(event.data.dropzone)
@@ -74,8 +75,11 @@ export default function PluginsCollidable() {
     };
 
     let cloneSource = (event.data.dropzone.lastChild.outerHTML) // Clone the dragged vege
+
     const clone = document.createElement("div"); // create object
+
     clone.innerHTML = cloneSource; // inject html in object
+
 
     let myData = {
       "vegetable_id" : id,
@@ -87,14 +91,32 @@ export default function PluginsCollidable() {
 
 
     const backet = document.querySelector(".backet"); // select sidebar
-    const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
-    const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
 
+
+
+    const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
+    console.log(vegeCards);
+    const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
+    console.log(vegeSpan);
+
+
+    // if (vegeCards === undefined) {
     vegeCards.insertBefore(clone, vegeSpan.nextSibling ); // new vege !
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
 
-    const dropzone = event.data.dropzone
+
+
+    const garden = document.querySelector(".garden-container");
+    const area = garden.querySelector(".hidden");
+    area.classList.remove("hidden");
+
+    // console.log(myJson)
+
+
+
+    // };
+
 
     // setTimeout(() => {
     //   const area = dropzone.querySelector(".veggie-area");
@@ -102,6 +124,7 @@ export default function PluginsCollidable() {
     // },
     // 500);
 
+    const dropzone = event.data.dropzone
     var displayVeggieArea = function(mutationsList) {
       for(var mutation of mutationsList) {
         if (mutation.type == 'childList') {
@@ -125,10 +148,11 @@ export default function PluginsCollidable() {
   droppable.on('mirror:move', (event) => {
 
     const movedBlock = document.querySelector('.draggable-mirror');
+    // console.log(movedBlock);
     const greenArea = movedBlock.querySelector('.green-area');
+    // console.log(greenArea);
     greenArea.classList.remove('hidden');
   });
-
 
   return droppable;
 };
