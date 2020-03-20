@@ -1,5 +1,10 @@
 .edit-container{
   justify-content: space-between;
+  background-image: asset-url("garden-texture.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100px;
+
 }
 .display-none {
   display: none;
