@@ -1,40 +1,58 @@
 <div class="home-page">
-  <div class="banner">
-      <%= image_tag("Logo-Easy-Garden.png", class: "logo-easy-garden-banner") %>
-      <div class="slogans">
-        <h3>Draw & makes it grow<br>your<br>garden vegetables
-      </div>
-      <div class="btn button-create-garden-banner">
-        <%= link_to "Create my garden", new_user_registration_path, style: "text-decoration:none;color:black;" %>
-      </div>
+  <div class="home-bar">
+    <div class="logo">
+      <%= image_tag "logo-easygarden.png", style: "width:110px;height:60px;" %>
+    </div>
+    <div class="btn-my-garden">
+        <%= link_to "My garden", garden_path(Garden.all.first.id), class: "btn btn-danger" %>
+    </div>
   </div>
-  <div class="home-container">
-    <div class="step-container">
-      <div class="step-content">
-        <div class="patate-logo"></div>
+
+  <div class="slogan">
+    <h1>Draw it & Grow it</h1>
+  </div>
+
+  <div class="step-container">
+
+    <div class="step-content">
+      <div class="step-number">
         <h2>Step 1</h2>
-        <h4>I create my garden</h4>
-        <span class= "trait"></span>
       </div>
-      <div class="step-content">
-        <div class="carrot-logo"></div>
+      <div class="step-infos">
+        <div class="step-instruction">
+          <h6>Pick the vegetables you want to grow</h6>
+        </div>
+        <div class="step-show"></div>
+      </div>
+    </div>
+
+    <div class="step-content">
+      <div class="step-number">
         <h2>Step 2</h2>
-        <h4>Draw my garden vegetables</h4>
-        <span class= "trait"></span>
       </div>
-      <div class="step-content">
-        <div class="oignon-logo"></div>
+      <div class="step-infos">
+        <div class="step-instruction">
+          <h6>Drag your choice into your garden </h6>
+        </div>
+        <div class="step-show"></div>
+      </div>
+    </div>
+
+    <div class="step-content">
+      <div class="step-number">
         <h2>Step 3</h2>
-        <h4>I follow the evolution of my gardens step by step<h4>
+      </div>
+      <div class="step-infos">
+        <div class="step-instruction">
+          <h6>Now, just follow our lead</h6>
+        </div>
+        <div class="step-show"></div>
       </div>
     </div>
-    <div class="btn-create-garden">
-      <div class="btn button-create-garden">
-        <%= link_to "Create my garden", new_user_registration_path, style: "text-decoration:none;color:black;" %>
-      </div>
-      <div class="link-show-garden">
-        <%= link_to "You already have one?", garden_path(Garden.all.first.id), style: "text-decoration:none;color:#A5C83F;" %>
-      </div>
-    </div>
+  </div>
+  <div class="btn-create-garden">
+    <%= link_to "Create my garden", new_user_registration_path  %>
   </div>
 </div>
+
+
