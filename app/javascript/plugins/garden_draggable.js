@@ -76,8 +76,6 @@ export default function PluginsCollidable() {
 
     let cloneSource = (event.data.dropzone.lastChild.outerHTML) // Clone the dragged vege
 
-    console.log(cloneSource);
-
     const clone = document.createElement("div"); // create object
 
     clone.innerHTML = cloneSource; // inject html in object
@@ -107,19 +105,14 @@ export default function PluginsCollidable() {
     vegeCards.id ="" // remove the target
     vegeSpan.id ="" // remove ""
 
-    let myData = {
-        "id" : id,
-        "position" : pos,
-        "jsonId" : uniqueId,
-    };
+
 
     const garden = document.querySelector(".garden-container");
     const area = garden.querySelector(".hidden");
     area.classList.remove("hidden");
 
-    myJson.push( myData )
     // console.log(myJson)
-  });
+
 
 
     // };
