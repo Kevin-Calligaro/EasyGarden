@@ -45,35 +45,7 @@
   bottom: 20px;
 }
 
-.action-task{
-  position: relative;
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.01);
-  box-sizing: content-box;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.05);
-  border-radius: 18px;
-  padding: 15px;
-  margin: 15px 15px;
-  text-align: center;
-  h2{
-    font-size: 22px;
-  }
-}
-
-.action-color{
-  position: relative;
-  z-index: 1;
-  width: 20px;
-  height: 20px;
-}
-
-.action-logo{
-  position: absolute;
-  left: 11px;
-  top: 7px;
-}
 .logo-easy-garden{
-
   width: 210px;
   height: 120px;
   margin: 30px;
@@ -86,6 +58,4 @@
   text-align: center;
 }
 
-.fa-question-circle{
-  font-size: 18px;
-}
+
