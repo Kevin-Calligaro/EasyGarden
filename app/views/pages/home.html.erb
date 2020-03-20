@@ -3,7 +3,7 @@
     <div class="logo">
       <%= image_tag "Logo-Easy-Garden.png", style: "width:110px;height:60px;" %>
     </div>
-    <%= link_to "My garden", garden_path(Garden.all.first.id), class: "" %>
+    <%= link_to "My garden", garden_path(Garden.all.first.id), class: "btn-my-garden" %>
   </div>
 
   <div class="slogan">
@@ -14,37 +14,56 @@
 
     <div class="step-content">
       <div class="step-number">
-        <h2>Step 1</h2>
+        <div class="step">
+          <h2>Step 1</h2>
+        </div>
       </div>
       <div class="step-infos">
         <div class="step-instruction">
           <h6>Pick the vegetables you want to grow</h6>
         </div>
-        <div class="step-show"></div>
+        <div class="step-show step1">
+          <%= image_tag "radish.png", style: "width:150px;height:100px;" %>
+          <%= image_tag "zucchini.png", style: "width:150px;height:100px;" %>
+          <%= image_tag "beans.png", style: "width:150px;height:100px;" %>
+          <%= image_tag "tomato.png", style: "width:150px;height:100px;" %>
+        </div>
       </div>
     </div>
 
     <div class="step-content">
       <div class="step-number">
-        <h2>Step 2</h2>
+        <div class="step">
+          <h2>Step 2</h2>
+        </div>
       </div>
       <div class="step-infos">
         <div class="step-instruction">
           <h6>Drag your choice into your garden </h6>
         </div>
-        <div class="step-show"></div>
+        <div class="step-show step2">
+          <%= image_tag "SchemaGarden.png", style: "width:500px;height:300px;" %>
+        </div>
       </div>
     </div>
 
     <div class="step-content">
       <div class="step-number">
-        <h2>Step 3</h2>
+        <div class="step">
+          <h2>Step 3</h2>
+        </div>
       </div>
       <div class="step-infos">
         <div class="step-instruction">
           <h6>Now, just follow our lead</h6>
         </div>
-        <div class="step-show"></div>
+        <div class="step-show step3">
+          <div class="step3-task">
+            <%= image_tag "Seeding-task.png", style: "width:auto;height:50px;margin: 10px" %>
+            <%= image_tag "Planting-task.png", style: "width:auto;height:50px;margin: 10px" %>
+            <%= image_tag "Harvesting-task.png", style: "width:auto;height:50px;margin: 10px" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
