@@ -1,20 +1,16 @@
 class GardensController < ApplicationController
+  before_action :load_garden, only: [:show, :edit]
+  before_action :load_tasks, only: [:show, :edit]
+
   def show
     @garden_vegetables = GardenVegetable.all
-    @garden = Garden.find(params[:id])
-    @tasks_not_done = @garden.tasks.where(done: false).order("step, date IS NOT NULL, date ASC")
     @vegetables = Vegetable.all
-    @tasks_per_veggie = @tasks_not_done.group_by(&:garden_vegetable)
   end
 
   def edit
-    @garden = Garden.find(params[:id])
     @garden_vegetables = GardenVegetable.all
-    @tasks_not_done = @garden.tasks.where(done: false).order("step, date IS NOT NULL, date ASC")
     @garden_vegetable = GardenVegetable.new
     @vegetables = Vegetable.all
-    @tasks_per_veggie = @tasks_not_done.group_by(&:garden_vegetable)
-
   end
 
   def update
@@ -26,6 +22,17 @@ class GardensController < ApplicationController
 
   def create
 
+  end
+
+  private
+
+  def load_garden
+    @garden = Garden.find(params[:id])
+  end
+
+  def load_tasks
+    @tasks_not_done = @garden.tasks.where(done: false).order("step, date IS NOT NULL, date ASC")
+    @tasks_per_veggie = @tasks_not_done.group_by(&:garden_vegetable)
   end
 end
 
