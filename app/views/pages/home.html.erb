@@ -1,11 +1,9 @@
 <div class="home-page">
   <div class="home-bar">
     <div class="logo">
-      <%= image_tag "logo-easygarden.png", style: "width:110px;height:60px;" %>
+      <%= image_tag "Logo-Easy-Garden.png", style: "width:110px;height:60px;" %>
     </div>
-    <div class="btn-my-garden">
-        <%= link_to "My garden", garden_path(Garden.all.first.id), class: "btn btn-danger" %>
-    </div>
+    <%= link_to "My garden", garden_path(Garden.all.first.id), class: "" %>
   </div>
 
   <div class="slogan">
