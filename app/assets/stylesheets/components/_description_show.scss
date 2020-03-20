@@ -35,7 +35,7 @@ h2, h3, h4{
 }
 
 .title-description{
-  width: 100%;
+  width: 103%;
   margin: 20px 0px;
   height: 30px;
   background-color: rgba(0,170,37,0.25);
@@ -53,12 +53,19 @@ h2, h3, h4{
   }
 }
 
-.title-description  h2, h3{
-  font-weight: lighter;
-
+.title-description {
+  h2 {
+    font-weight: 600;
     position: absolute;
     bottom: -25px;
     padding-left: 40px;
+  }
+  h3 {
+    font-weight: lighter;
+    position: absolute;
+    bottom: -25px;
+    padding-left: 40px;
+    }
   }
 
 img.photo-description{
