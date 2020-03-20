@@ -1,31 +1,27 @@
 <div class="cards-vegetables">
   <div class="backet">
+
     <% @vegetables.each do |vegetable| %>
     <div class="card-vegetable">
       <div class="vege-photo">
         <%= image_tag vegetable.photo_vegetable, class: "card-vege-photo" %>
         <div class="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied">
           <span><div class="BlockContent"></div></span>
-
-
           <a href="#" class="Block--isDraggable vegetable" data-veg-id="<%= vegetable.id %>" data-veg-zone="<%= vegetable.area %>" title="Click to plant" style="">
-
             <div class="BlockContent Coucou-le-chat">
-
               <%= image_tag vegetable.icon_vegetable, class: "card-vege-icon" %>
-              <div style="width: <%= vegetable.area * 35 / 10 %>px; height: <%= vegetable.area * 35 / 10%>px; top:<%= - (vegetable.area * 35 / 10)/2 + 17  %>px; right:<%= - (vegetable.area * 35 / 10)/2 +17 %>px;" class="green-area hidden veggie-area area-size-<%= vegetable.area %>"></div>
-              <div style="width: <%= vegetable.area * 35 / 10 %>px; height: <%= vegetable.area * 35 / 10%>px; top:<%= - (vegetable.area * 35 / 10)/2 + 17  %>px; left:<%= - (vegetable.area * 35 / 10)/2 +17 %>px;" class="red-area hidden veggie-area area-size-<%= vegetable.area %>"></div>
+                <div style="width: <%= vegetable.area * 35 / 10 %>px; height: <%= vegetable.area * 35 / 10%>px; top:<%= - (vegetable.area * 35 / 10)/2 + 17  %>px; right:<%= - (vegetable.area * 35 / 10)/2 +17 %>px;" class="<%= garden_veggie_urgency_class(vegetable, @tasks_per_veggie[vegetable])%> veggie-area area-size-<%= vegetable.area %> hidden"></div>
             </div>
           </a>
         </div>
 
       </div>
       <h2><%= vegetable.specie.capitalize%></h2>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between middle-bloc">
         <% if vegetable.seeding_start? %>
-        <p><em>Seeding</em> <br> From <%= vegetable.seeding_start.strftime("%b")%> to <%= vegetable.seeding_end.strftime("%b") %></p>
+          <p><em>Seeding</em> <br><i class="fas fa-calendar-alt"></i> From <%= vegetable.seeding_start.strftime("%b")%> to <%= vegetable.seeding_end.strftime("%b") %></p>
         <% else %>
-        <p><em>Planting</em> <br> From <%= vegetable.planting_start.strftime("%b")%> to <%= vegetable.planting_end.strftime("%b") %></p>
+          <p><em>Planting</em> <br><i class="fas fa-calendar-alt"></i> From <%= vegetable.planting_start.strftime("%b")%> to <%= vegetable.planting_end.strftime("%b") %></p>
         <% end %>
         <div class="d-flex align-items-center">
           <button class="button-see display" vegetable_id="<%= vegetable.id %>">See More</button>
@@ -33,6 +29,7 @@
       </div>
     </div>
     <% end %>
+
   </div>
 </div>
 

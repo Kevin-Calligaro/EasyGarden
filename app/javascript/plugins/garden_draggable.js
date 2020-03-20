@@ -23,7 +23,7 @@ export default function PluginsCollidable() {
     mirror: {
       constrainDimensions: true,
       cursorOffsetX: -27,
-      cursorOffsetY: 27,
+      cursorOffsetY: 19,
     },
     plugins: [Plugins.Collidable],
   });
@@ -95,9 +95,9 @@ export default function PluginsCollidable() {
 
 
     const vegeCards = backet.querySelector("#needVeg") // find the dragged vege wraper
-    console.log(vegeCards);
+    // console.log(vegeCards);
     const vegeSpan = backet.querySelector("#needVeg2") // find de sibling span
-    console.log(vegeSpan);
+    // console.log(vegeSpan);
 
 
     // if (vegeCards === undefined) {
@@ -149,7 +149,7 @@ export default function PluginsCollidable() {
 
     const movedBlock = document.querySelector('.draggable-mirror');
     // console.log(movedBlock);
-    const greenArea = movedBlock.querySelector('.green-area');
+    const greenArea = movedBlock.querySelector('.hidden');
     // console.log(greenArea);
     greenArea.classList.remove('hidden');
   });
