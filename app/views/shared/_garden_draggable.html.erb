@@ -9,30 +9,38 @@
 
     <% 15.times do |index_y| %>
       <% 20.times do |index_x| %>
-          <% founded_veggi = garden_vegetables.find { |vege| vege.position == "x#{index_x}-y#{index_y}" }  %>
+        <% founded_veggi = garden_vegetables.find { |vege| vege.position == "x#{index_x}-y#{index_y}" }  %>
 
-          <% if founded_veggi %>
-            <div class="BlockWrapper BlockWrapper--isDropzone garden-units displayed_grid" data-position="x<%= index_x %>-y<%= index_y %>">
-              <span class="garden-square"><div class="BlockContent"></div></span>
-              <a href="#" class="Block--isDraggable vegetable" data-veg-id="<%= founded_veggi.vegetable_id %>" data-veg-zone="pending" title="Click to plant" style="">
-                <div class="BlockContent">
-                  <%= image_tag founded_veggi.vegetable.icon_vegetable, class: "calibre-1 card-vege-icon" %>
-                  <div style="width: <%= founded_veggi.vegetable.area * 35 / 10 %>px; height: <%= founded_veggi.vegetable.area * 35 / 10%>px; top:<%= - (founded_veggi.vegetable.area * 35 / 10)/2 + 17  %>px; right:<%= - (founded_veggi.vegetable.area * 35 / 10)/2 +17 %>px;" class="<%= garden_veggie_urgency_class(founded_veggi, @tasks_per_veggie[founded_veggi])%> veggie-area area-size-<%= founded_veggi.vegetable.area %>"></div>
-                  <!--<div style="width: <%= founded_veggi.vegetable.area * 35 / 10 %>px; height: <%= founded_veggi.vegetable.area * 35 / 10%>px; top:<%= - (founded_veggi.vegetable.area * 35 / 10)/2 + 17  %>px; left:<%= - (founded_veggi.vegetable.area * 35 / 10)/2 +17 %>px;" class="area_transparence red-area hidden veggie-area area-size-<%= founded_veggi.vegetable.area %>"></div> -->
+        <% if founded_veggi %>
+          <div class="BlockWrapper BlockWrapper--isDropzone garden-units displayed_grid" data-position="x<%= index_x %>-y<%= index_y %>">
+            <span class="garden-square"><div class="BlockContent"></div></span>
+            <% tasks = @tasks_per_veggie[founded_veggi] %>
+            <a href="#" task_id="<%=tasks.first.id if tasks.present? %>" class="<%= 'Block--isDraggable' if mode == 'edit' %> vegetable button-plus" data-veg-id="<%= founded_veggi.vegetable_id %>" data-veg-zone="pending" title="Click to plant" style="">
 
-                </div>
-              </a>
-            </div>
-          <% else %>
-            <div class="BlockWrapper BlockWrapper--isDropzone garden-units displayed_grid" data-position="x<%= index_x %>-y<%= index_y %>">
-              <span class="garden-square"><div class="BlockContent"></div></span>
-            </div>
-          <% end %>
-
-
+              <div class="BlockContent">
+                <%= image_tag founded_veggi.vegetable.icon_vegetable, class: "calibre-1 card-vege-icon"%>
+                <div style="width: <%= founded_veggi.vegetable.area * 35 / 10 %>px; height: <%= founded_veggi.vegetable.area * 35 / 10%>px; top:<%= - (founded_veggi.vegetable.area * 35 / 10)/2 + 17  %>px; right:<%= - (founded_veggi.vegetable.area * 35 / 10)/2 +17 %>px;" class="<%= garden_veggie_urgency_class(founded_veggi, @tasks_per_veggie[founded_veggi])%> veggie-area area-size-<%= founded_veggi.vegetable.area %>"></div>
+              </div>
+            </a>
+          </div>
+        <% else %>
+          <div class="BlockWrapper BlockWrapper--isDropzone garden-units displayed_grid" data-position="x<%= index_x %>-y<%= index_y %>">
+            <span class="garden-square"><div class="BlockContent"></div></span>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
-
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
