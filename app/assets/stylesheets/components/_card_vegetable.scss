@@ -15,12 +15,12 @@
   // width: 100%;
     h2{
       font-size: 28px;
-      text-align: center;
+      text-align: left;
       border-bottom: 0.5px solid rgba(0,170,37,0.25);
       padding-bottom: 3px;
     }
     p{
-      font-size: 14px;
+      font-size: 16px;
       padding-top: 10px;
     }
     .card-vege-icon {
@@ -81,8 +81,10 @@
 
 }
 
-
-
+.date-card {
+  font-weight: lighter;
+  font-size: 14px;
+}
 
 
 
