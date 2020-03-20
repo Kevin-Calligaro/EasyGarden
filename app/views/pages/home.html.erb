@@ -1,7 +1,7 @@
 <div class="home-page">
   <div class="home-bar">
     <div class="logo">
-      <%= image_tag "Logo-Easy-Garden.png", style: "width:110px;height:60px;" %>
+      <%= image_tag "Logo-Easy-Garden.png", style: "width:170px" %>
     </div>
     <%= link_to "My garden", garden_path(Garden.all.first.id), class: "btn-my-garden" %>
   </div>
@@ -10,7 +10,7 @@
     <h1>Draw it & Grow it</h1>
   </div>
 
-  <div class="step-container">
+  <div class="step-container align-items-center">
 
     <div class="step-content">
       <div class="step-number">
@@ -23,10 +23,10 @@
           <h6>Pick the vegetables you want to grow</h6>
         </div>
         <div class="step-show step1">
-          <%= image_tag "radish.png", style: "width:150px;height:100px;" %>
-          <%= image_tag "zucchini.png", style: "width:150px;height:100px;" %>
-          <%= image_tag "beans.png", style: "width:150px;height:100px;" %>
-          <%= image_tag "tomato.png", style: "width:150px;height:100px;" %>
+          <%= image_tag "radish.png", style: "width:150px" %>
+          <%= image_tag "zucchini.png", style: "width:150px" %>
+          <%= image_tag "beans.png", style: "width:150px" %>
+          <%= image_tag "tomato.png", style: "width:150px" %>
         </div>
       </div>
     </div>
@@ -42,7 +42,8 @@
           <h6>Drag your choice into your garden </h6>
         </div>
         <div class="step-show step2">
-          <%= image_tag "SchemaGarden.png", style: "width:500px;height:300px;" %>
+          <%= image_tag "drag-example.png", style: "width:300px", class: "drag-exp" %>
+          <%= image_tag "SchemaGarden.png", style: "width:450px" %>
         </div>
       </div>
     </div>
@@ -59,16 +60,18 @@
         </div>
         <div class="step-show step3">
           <div class="step3-task">
-            <%= image_tag "Seeding-task.png", style: "width:auto;height:40px;margin: 20px" %>
-            <%= image_tag "Planting-task.png", style: "width:auto;height:40px;margin: 20px" %>
-            <%= image_tag "Harvesting-task.png", style: "width:auto;height:40px;margin: 20px" %>
+            <div class="d-flex justify-content-around">
+            <%= image_tag "Seeding-task.png", style: "width:auto;height:50px;margin: 20px" %>
+            <%= image_tag "Planting-task.png", style: "width:auto;height:50px;margin: 20px" %>
+            </div>
+            <%= image_tag "Harvesting-task.png", style: "width:auto;height:50px;margin: 20px" %>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="btn-create-garden">
-    <%= link_to "Create my garden", new_user_registration_path  %>
+        <div class="btn-create-garden ">
+          <%= link_to "Create my garden", new_user_registration_path  %>
+        </div>
   </div>
 </div>
 
